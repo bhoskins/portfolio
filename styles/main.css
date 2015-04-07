@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface);
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+/**********************************
+    Fonts
+***********************************/
+body {
+  margin: 0 auto;
+  width: 90%; }
+
+.header {
+  height: 600px;
+  border: 1px solid green;
+  background: url("../images/sunflower-bg.png") center center no-repeat;
+  background-size: cover; }
+
+.name-text {
+  margin: 0;
+  font-family: "Droid Serif, serif";
+  font-size: 4em; }
+
+.header-subtitle {
+  margin: 0;
+  font-family: helvetica, sans-serif;
+  font-size: 2.5em; }
+
+.header-text-block {
+  margin-top: 1em;
+  margin-left: 1em; }
+
+.header-p-text {
+  padding-left: 2em;
+  font-family: arial, sanserif;
+  font-size: 1.2em;
+  width: 50%; }
+
+.tagline-text {
+  font-family: "Droid Serif, serif"; }
+
+.communicate {
+  padding-left: 1em; }
+
+.inspire {
+  padding-left: 2em; }
+
+.interact {
+  padding-left: 3em; }
+
+.respond {
+  padding-left: 4em; }
+
+.tagline-text {
+  margin-top: 2em;
+  margin-left: 1.2em;
+  font-family: "Droid Serif, serif";
+  color: #D7E098; }
+
+/*# sourceMappingURL=main.css.map */

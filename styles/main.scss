@@ -1,0 +1,95 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
+// font-family: 'Abril Fatface', cursive;
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface);
+
+$max-width: 960px;
+
+$header-text-block-margin: 1em;
+
+/**********************************
+    Fonts
+***********************************/
+// 'Droid Serif', serif;
+// 'Abril Fatface', cursive;
+
+$name-font-family: 'Droid Serif, serif';
+$header-p-font-family: arial, sanserif;
+
+$header-name-size: 4em;
+$header-subtitle-size: 2.5em;
+
+$header-p-padding-left: 2em;
+
+
+$primary-color: navy;
+$secondary-color: gold;
+
+$tagline-color: #D7E098;
+//#B4C61D; light green
+// #ffD700; yellow
+
+
+body {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.header {
+  height: 600px;
+  border: 1px solid green;
+  background: url('../images/sunflower-bg.png') center center no-repeat;
+  background-size: cover;
+}
+
+.name-text {
+  margin: 0;
+  font-family: $name-font-family;
+  font-size: $header-name-size;
+}
+
+.header-subtitle {
+  margin: 0;
+  font-family: helvetica, sans-serif;
+  font-size: $header-subtitle-size;
+}
+
+.header-text-block {
+  margin-top: $header-text-block-margin;
+  margin-left: $header-text-block-margin;
+}
+
+.header-p-text {
+  padding-left: $header-p-padding-left;
+  font-family: $header-p-font-family;
+  font-size: 1.2em;
+  width: 50%;
+}
+
+.tagline-text {
+  font-family: $name-font-family;
+}
+
+.communicate {
+  padding-left: 1em;
+}
+
+.inspire {
+  padding-left: 2em;
+}
+
+.interact {
+  padding-left: 3em;
+}
+
+.respond {
+  padding-left: 4em;
+}
+
+.tagline-text {
+  margin-top: 2em;
+  margin-left: 1.2em;
+  font-family: $name-font-family;
+  color: $tagline-color;
+}
