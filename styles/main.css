@@ -14,9 +14,13 @@ html {
 ***********************************/
 body {
   margin: 0 auto;
-  width: 90%; }
+  width: 90%;
+  height: 2000px;
+  background-color: #441F00; }
 
 .header {
+  position: relative;
+  margin: 0;
   height: 600px;
   border: 1px solid green;
   background: url("../images/sunflower-bg.png") center center no-repeat;
@@ -25,12 +29,14 @@ body {
 .name-text {
   margin: 0;
   font-family: "Droid Serif, serif";
-  font-size: 4em; }
+  font-size: 4em;
+  color: #441F00; }
 
 .header-subtitle {
   margin: 0;
   font-family: helvetica, sans-serif;
-  font-size: 2.5em; }
+  font-size: 2.5em;
+  color: #441F00; }
 
 .header-text-block {
   margin-top: 1em;
@@ -40,6 +46,7 @@ body {
   padding-left: 2em;
   font-family: arial, sanserif;
   font-size: 1.2em;
+  color: #5C5C5C;
   width: 50%; }
 
 .tagline-text {
@@ -62,5 +69,18 @@ body {
   margin-left: 1.2em;
   font-family: "Droid Serif, serif";
   color: #D7E098; }
+
+/******************************************
+    Nav
+******************************************/
+.nav {
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  margin: 0;
+  display: block;
+  height: 2em;
+  width: 100%;
+  background-color: #EB8C00; }
 
 /*# sourceMappingURL=main.css.map */

@@ -25,6 +25,12 @@ $header-p-padding-left: 2em;
 
 $primary-color: navy;
 $secondary-color: gold;
+// $background-color: #B1AF96;
+ $background-color:#441F00; //dark brown
+$name-font-color: $background-color;
+// #EB8C00; gold
+$subtitle-color: $name-font-color;
+$header-p-color: #5C5C5C;
 
 $tagline-color: #D7E098;
 //#B4C61D; light green
@@ -34,9 +40,13 @@ $tagline-color: #D7E098;
 body {
   margin: 0 auto;
   width: 90%;
+  height: 2000px;
+  background-color: $background-color;
 }
 
 .header {
+  position: relative;
+  margin: 0;
   height: 600px;
   border: 1px solid green;
   background: url('../images/sunflower-bg.png') center center no-repeat;
@@ -47,12 +57,14 @@ body {
   margin: 0;
   font-family: $name-font-family;
   font-size: $header-name-size;
+  color: $name-font-color;
 }
 
 .header-subtitle {
   margin: 0;
   font-family: helvetica, sans-serif;
   font-size: $header-subtitle-size;
+  color: $subtitle-color;
 }
 
 .header-text-block {
@@ -64,6 +76,7 @@ body {
   padding-left: $header-p-padding-left;
   font-family: $header-p-font-family;
   font-size: 1.2em;
+  color: $header-p-color;
   width: 50%;
 }
 
@@ -92,4 +105,18 @@ body {
   margin-left: 1.2em;
   font-family: $name-font-family;
   color: $tagline-color;
+}
+
+/******************************************
+    Nav
+******************************************/
+.nav {
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  margin: 0;
+  display: block;
+  height: 2em;
+  width: 100%;
+  background-color: #EB8C00;
 }
