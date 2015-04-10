@@ -7,26 +7,45 @@ $(document).ready(function(){
     //window.router = new AppRouter();
     //Backbone.history.start();
     console.log('its working');
-    $('.js-toggle-cover').hover(function(){
+
+  // function toggleDiv(item) {
+  //     $('.js-' + item +'-toggle-cover').hover(function(){
+  //     $('.js-' + item + '-icon-bw').fadeOut( "fast");
+  //     $('.js-' + item + '-icon-info').animate(
+  //       { color: 'blue' }, "fast" );
+  //   },
+  //     function(){
+  //      $('.js-' + item + '-icon-bw').fadeIn( "fast" );
+  //   }
+  //   }
+
+    // function('food');
+
+
+
+    $('.js-food-toggle-cover').hover(function(){
       $('.js-food-icon-bw').fadeOut( "fast");
-      $('.food-icon-info').animate(
+      $('.js-food-icon-info').animate(
         { color: 'blue' }, "fast" );
     },
       function(){
        $('.js-food-icon-bw').fadeIn( "fast" );
     });
 
-    //slide up animation
-    // $('.js-toggle-cover').on("mouseover", (function(){
-    //   $('.food-icon-info').slideToggle( "slow", function(){
 
-    //   });
-    // }));
-    // $('.js-toggle-cover').on("mouseout", (function(){
-    //   $('.food-icon-info').slideToggle( "slow", function(){
+    $('.js-surf-toggle-cover').hover(function(){
+      $('.js-surf-icon-bw').fadeOut( "fast");
+      $('.js-surf-icon-info').animate(
+        { color: 'blue' }, "fast" );
+    },
+      function(){
+       $('.js-surf-icon-bw').fadeIn( "fast" );
+    });
 
-    //   });
-    // }));
+
+
+
+
 
 
 

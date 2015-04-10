@@ -175,15 +175,13 @@ ul, li, a {
   width: 100%;
   height: 150px; }
 
-.food-icon {
-  background: url("../images/food-icon.png") no-repeat;
-  z-index: 1; }
-
 .icon-bw {
-  background: url("../images/food-icon-bw.png") no-repeat;
   z-index: 20; }
 
-.food-icon-info {
+.sample-icon {
+  z-index: 1; }
+
+.icon-info {
   position: absolute;
   bottom: 0;
   left: 5%;
@@ -210,5 +208,17 @@ ul, li, a {
   font-weight: 800;
   text-align: center;
   line-height: 1.2em; }
+
+.food-icon {
+  background: url("../images/food-icon.png") no-repeat; }
+
+.food-icon-bw {
+  background: url("../images/food-icon-bw.png") no-repeat; }
+
+.surf-icon {
+  background: url("../images/surf-and-paddle.png") no-repeat; }
+
+.surf-icon-bw {
+  background: url("../images/surf-and-paddle-bw.png") no-repeat; }
 
 /*# sourceMappingURL=main.css.map */
