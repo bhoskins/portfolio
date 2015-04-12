@@ -4,9 +4,41 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles/main.css">
   <title>Beth Hoskins Portfolio</title>
+  <script src="//use.typekit.net/xbo0ody.js"></script>
 </head>
 <body>
   <header class="header">
+    <div class="header-overlay js-header-overlay">
+      <h3 class="flower-text composite-text">
+        Composite Flower
+      </h3>
+      <h3 class="flower-text disk-text">
+        Disk
+      </h3>
+      <h3 class="disk2-text flower-text">
+        Flowers
+      </h3>
+      <div class="left-arrow">
+      </div>
+      <h3 class="flower-text ray-text">
+        Ray Flowers
+      </h3>
+      <div class="right-arrow">
+      </div><!-- .right-arrow -->
+    </div><!-- .header-overlay -->
+
+    <div class="sunflower-info js-sunflower-info">
+      <h3 class="sunflower-info-headline">
+        Sunflower
+      </h3>
+      <h2 class="sunflower-subtitle-text">
+        Genus: Helianthus
+      </h2>
+      <p class="sunflower-p">
+        Their seeds contain tryptophan which boosts brainpower and elevates mood.
+      </p>
+    </div><!-- .sunflower-info -->
+
     <div class="header-text-block">
     <h1 class="name-text header-text">
       Beth Hoskins
@@ -20,36 +52,49 @@
       I'm in the business of translating ideas
       <br />into websites & apps that
       <br />
-      <span class="text-highlight communicate">
+      <span class="text-highlight communicate js-communicate">
         communicate
       </span><br />
-      <span class="text-highlight inspire">
+      <span class="text-highlight inspire js-inspire">
         inspire
       </span><br />
-      <span class="text-highlight interact">
-        interact
-      </span><br />
-      <span class="text-highlight respond">
-        & respond
+      <span class="text-highlight interact js-interact">
+        interact & respond
       </span><br />
     </p>
     <h3 class="tagline-text">
       I would love to bring the web to life for you
     </h3>
 
-    <!-- <nav class="nav">
+    <div class="js-live-flower live-flower">
+    </div><!-- .js-live-flower live-flower -->
+    <div class="flower-color js-flower-color">
+    </div><!-- .flower-color js-flower-color -->
+    <div class="header-bg">
+    </div><!-- .header-bg -->
+
+
+
+<!--     <nav class="nav">
       <ul class="main-nav">
 
       </ul>
     </nav> -->
   </header>
 
-  <div class="btn-wrapper">
+    <nav class="nav">
+      <ul class="main-nav">
+
+      </ul>
+        <div class="btn-wrapper">
     <button class="twitter nav-btn">Tw</button>
     <button class="contact nav-btn">LI</button>
     <button class="github nav-btn">GH</button>
     <button class="email nav-btn">Email</button>
   </div><!-- .btn-wrapper -->
+    </nav>
+
+
 
   <div class="main-content-wrapper">
     <h3 class="content-headline skill-set-headline">
@@ -60,14 +105,18 @@
     <h3 class="content-headline samples-headline neat-last">Samples</h3>
 
     <p class="content-p skills-text neat-block">
-      Html, Css, Javascript, JQuery, Underscore, Backbone, Ember, Ember-Cli, Sass, Bourbon, Neat <br />
+      Html, Css, Javascript, JQuery, Underscore, Backbone, Ember, Ember-Cli, Sass, Bourbon, Neat, Adobe Photoshop & Illustrator <br />
       (And anything else given enough time to study it first)
     </p>
 
     <div class="neat-block bio-wrapper">
-      <p class="content-p bio-text">
-      I grew up in Rock Hill, SC and have had a life long love affair with technology. I followed my dream to The Iron Yard in Greenville, SC where I finished a course in Front-end Engineering. <br />
-      On a personal note I spent many years serving as a minister in the Presbyterian Church (USA) in different places with all kinds of people.<br />
+    <img src="images/author-200.png" class="author-img" width="200">
+      <p class="content-p bio-text first-p">
+      I grew up in Rock Hill, SC and have had a life long love affair with technology. Recently I followed my dream to The Iron Yard in Greenville, SC where I finished a course in Front-end Engineering.
+      </p>
+      <p class='content-p second-p'>
+      On a personal note I spent many years serving as a minister in the Presbyterian Church (USA) in different places with all kinds of people.
+      <p />
 
         <blockquote class="blockquote neat-inner-block">
           <span class="start-quotation-span">
@@ -81,10 +130,19 @@
         </blockquote>
 
 
-        <p class="content-p bio-text neat-inner-block">
-          I love dogs, a hot cup of mint green tea, walking in God's good creation, cooking, eating and a good bottle of wine shared with friends. If you want to know more give me a call&hellip;  <br />
+        <p class="content-p bio-text third-p neat-inner-block">
+          <ul class="tabs">
+            <li>I love dogs,</li>
+            <li>a hot cup of mint green tea,</li>
+            <li>walking in God's good creation,</li>
+            <li>cooking, eating and</li>
+            <li>a good bottle of wine</li>
+            <li>shared with friends.</li>
+          </ul>
+          </p>
+          <p class="fourth-p content-p bio-text neat-inner-block"> If you want to consult about a project or need to know more call me&hellip;  <br />
           <button class="phone-btn">Phone</button>
-          or an email&hellip;<br />
+          or email&hellip;<br />
           <button class="email-btn">Email</button>
           I'll keep the corkscrew handy.
         </p>

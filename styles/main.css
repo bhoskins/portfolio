@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho);
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9,6 +9,9 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
+/***********************************
+    Margins and Paddings and Borders
+************************************/
 /**********************************
     Fonts
 ***********************************/
@@ -26,13 +29,154 @@ ul, li, a {
   text-decoration: none;
   list-style: none; }
 
+.invisible {
+  display: none; }
+
 .header {
   position: relative;
   margin: 0;
   height: 600px;
-  border: 1px solid green;
-  background: url("../images/sunflower-bg.png") center center no-repeat;
+  background-size: cover;
+  z-index: 0; }
+
+.header-bg {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("../images/flower-transparent-bg.png") right bottom no-repeat;
+  background-size: cover;
+  z-index: -1; }
+
+.flower-color {
+  background: RGBA(2, 124, 219, 1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  text-align: right;
+  z-index: -10; }
+
+.live-flower {
+  position: absolute;
+  background: rgba(229, 229, 229, 0.7);
+  background: url(../images/sunflower-bg-flower-only.png) no-repeat;
+  background-position: right bottom;
+  background-size: cover;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 40; }
+
+.grow {
+  -webkit-transform: translateY(50px); }
+
+/*
+@keyframes grow {
+  from {
+    -webkit-transform: translateX
+    Y(0);
+  }
+  to {
+  -webkit-transform: translateY(-100px);
+  }
+}
+*/
+.header-overlay {
+  background: rgba(255, 255, 255, 0);
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  text-align: right;
+  z-index: 50; }
+
+.flower-text {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rancho', cursive;
+  font-size: 2em;
+  color: RGBA(95, 58, 0, 1); }
+
+.composite-text {
+  text-align: center;
+  margin-bottom: -0.4em;
+  padding-right: 3em; }
+
+.disk-text,
+.disk2-text {
+  padding-right: 0.5em; }
+
+.disk-text {
+  margin-top: 0;
+  margin-bottom: -0.3em;
+  padding-right: 0.8em; }
+
+.disk2-text {
+  margin: 0;
+  padding-top: 0; }
+
+.left-arrow {
+  position: absolute;
+  right: 12%;
+  width: 165px;
+  height: 120px;
+  background: url(../images/left-arrow-dark-brown.gif) no-repeat center center;
   background-size: cover; }
+
+.ray-text {
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: -0.2em; }
+
+.right-arrow {
+  position: absolute;
+  left: 18%;
+  width: 57px;
+  height: 33px;
+  background: url(../images/right-arrow-dark-brown.gif) no-repeat center center;
+  background-size: cover; }
+
+.sunflower-info {
+  background: rgba(229, 229, 229, 0.7);
+  position: absolute;
+  display: none;
+  bottom: 30px;
+  right: 440px;
+  width: 23%;
+  height: 28%;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  border: 3px solid RGBA(95, 58, 0, 1);
+  z-index: 50; }
+
+.sunflower-info-headline,
+.sunflower-subtitle-text,
+.sunflower-p {
+  margin: 0;
+  padding: 0;
+  color: RGBA(95, 58, 0, 1);
+  text-align: center; }
+
+.sunflower-info-headline {
+  font-family: Georgia, sans-serif;
+  font-size: 1.5em;
+  padding-top: 0.2em; }
+
+.sunflower-subtitle-text {
+  font-family: cursive;
+  font-size: 1.2em; }
+
+.sunflower-p {
+  font-family: arial, sans-serif;
+  font-size: 0.9em; }
 
 .name-text {
   margin: 0;
@@ -47,18 +191,18 @@ ul, li, a {
   color: #441F00; }
 
 .header-text-block {
-  margin-top: 1em;
-  margin-left: 1em; }
+  margin-top: 2em;
+  margin-left: 2em; }
 
 .header-p-text {
-  padding-left: 2em;
+  position: relative;
+  margin-left: 6em;
+  padding-top: 1em;
   font-family: arial, sanserif;
   font-size: 1.2em;
-  color: #5C5C5C;
-  width: 50%; }
-
-.tagline-text {
-  font-family: "Droid Serif, serif"; }
+  color: #441F00;
+  width: 50%;
+  z-index: 60; }
 
 .communicate {
   padding-left: 1em; }
@@ -73,23 +217,34 @@ ul, li, a {
   padding-left: 4em; }
 
 .tagline-text {
-  margin-top: 2em;
-  margin-left: 1.2em;
-  font-family: "Droid Serif, serif";
-  color: #D7E098; }
+  margin-top: 1.6em;
+  margin-left: 1.5em;
+  font-family: arial, sanserif;
+  color: #D7E098;
+  line-height: 1em; }
 
 /******************************************
     Nav
 ******************************************/
 .nav {
-  position: absolute;
-  bottom: -2em;
-  left: 0;
-  margin: 0;
+  margin: 0 auto;
+  width: 960px;
   display: block;
   height: 2em;
-  width: 100%;
-  background-color: #EB8C00; }
+  border: 1px solid #441F00;
+  border-top: none;
+  border-bottom: none; }
+
+.nav:before,
+.nav:after {
+  content: "";
+  display: table; }
+
+.nav:after {
+  clear: both; }
+
+.nav {
+  zoom: 1; }
 
 .btn-wrapper {
   position: relative;
@@ -126,7 +281,8 @@ ul, li, a {
   margin-left: auto;
   margin-right: auto;
   height: 800px;
-  border: 1px solid green; }
+  border: 1px solid #441F00;
+  border-top: none; }
   .main-content-wrapper::after {
     clear: both;
     content: "";
@@ -163,9 +319,41 @@ ul, li, a {
   margin-top: 0.5em;
   border: 1px solid black; }
 
+/******************************************
+    Start Bio Section
+******************************************/
+.author-img {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  border-radius: 1em;
+  border: 3px solid #441F00; }
+
 .start-quotation-span {
   margin-left: -35px; }
 
+.tabs {
+  margin: 0;
+  padding: 0; }
+
+.tabs li:nth-child(2) {
+  margin-left: 1em; }
+
+.tabs li:nth-child(3) {
+  margin-left: 2em; }
+
+.tabs li:nth-child(4) {
+  margin-left: 3em; }
+
+.tabs li:nth-child(5) {
+  margin-left: 1em; }
+
+.tabs li:nth-child(6) {
+  margin-left: 2em; }
+
+/***********************************
+    Samples Section
+***********************************/
 .sample-icon,
 .icon-bw,
 .toggle-cover {
