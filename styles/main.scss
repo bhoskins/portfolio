@@ -7,7 +7,8 @@
 
 $max-width: 960px;
 
-$header-text-block-margin: 2em;
+$header-text-block-margin: 3%;
+$header-name-margin-top: 2em;
 $header-p-padding-top: 1em;
 $header-p-padding-left: 6em;
 
@@ -23,15 +24,13 @@ $main-content-border-color: #441F00; //dark brown
     Fonts
 ***********************************/
 // font-family: 'Abril Fatface', cursive;
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400);
 // 'Droid Serif', serif;
 // 'Abril Fatface', cursive;
 // 'Rancho', cursive;
 
-// .tk-tekton-pro
-  //regular, oblique, bold, bold
-  // Typekit Kit ID: xbo0ody
 
+$body-font: 'Roboto', sans-serif;
 $name-font-family: 'Droid Serif, serif';
 $header-p-font-family: arial, sanserif;
 $tagline-font-family: $header-p-font-family;
@@ -51,6 +50,7 @@ $name-font-color: #441F00;
 $subtitle-color: $name-font-color;
 $header-p-color: #441F00;
 // #5C5C5C; softer brown
+$highlight-text-color: #FF3D56;
 
 $tagline-color: #D7E098; //flower yellow
 //#B4C61D; light green
@@ -60,16 +60,24 @@ $tagline-color: #D7E098; //flower yellow
 /*****************************************
     Basic Styling
 *****************************************/
+html {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   margin: 0 auto;
   width: 90%;
-  height: 2000px;
-  background-color: $background-color;
+  //height: 3000px;
+  //background-color: $background-color;
+  background: url('../images/sand-bg.png') repeat;
+  font: 'Roboto';
+  font-size: 1.2em;
 }
 
 ul, li, a {
   margin: 0;
+  padding: 0;
   text-decoration: none;
   list-style: none;
 }
@@ -80,10 +88,12 @@ ul, li, a {
 
 .header {
   position: relative;
-  margin: 0;
+  top: 0;
+  left: 0;
+  //margin: -2em;
   height: 600px;
   //background: url('../images/flower-transparent-bg.png') center center no-repeat;
-  background-size: cover;
+  //background-size: cover;
   z-index: 0;
 }
 
@@ -104,7 +114,7 @@ ul, li, a {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 90%;
   height: 100%;
   text-align: right;
   z-index: -10;
@@ -238,37 +248,46 @@ ul, li, a {
 
 .sunflower-info-headline {
   font-family: Georgia, sans-serif;
-  font-size: 1.5em;
+  font-size: 1.1em;
   padding-top: 0.2em;
 }
 
 .sunflower-subtitle-text {
   font-family: cursive;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .sunflower-p {
   font-family: arial, sans-serif;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
+/**************************************
+    Main Headline
+**************************************/
+
 .name-text {
-  margin: 0;
+  padding-top: $header-text-block-margin;
+  //margin-top pushes entire header down, gap
+  margin-top: 0;
+  margin-bottom: 0;
   font-family: $name-font-family;
   font-size: $header-name-size;
   color: $name-font-color;
 }
 
 .header-subtitle {
+  position: relative;
   margin: 0;
   font-family: helvetica, sans-serif;
   font-size: $header-subtitle-size;
   color: $subtitle-color;
+  z-index: 60;
 }
 
 .header-text-block {
-  margin-top: $header-text-block-margin;
-  margin-left: $header-text-block-margin;
+  //padding-top: $header-text-block-margin;
+  padding-left: $header-text-block-margin;
 }
 
 .header-p-text {
@@ -283,6 +302,17 @@ ul, li, a {
   z-index: 60;
 }
 
+img {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.text-highlight {
+  vertical-align: middle;
+  //line-height: 48px;
+}
+
 .communicate {
   padding-left: 1em;
 }
@@ -292,7 +322,8 @@ ul, li, a {
 }
 
 .interact {
-  padding-left: 3em;
+  margin-left: 3em;
+
 }
 
 .respond {
@@ -351,26 +382,48 @@ ul, li, a {
   width: 60px;
   height: 60px;
   border-radius: 100%;
-  background-color: #A75600;
+  //background-color: #A75600;
 }
 
-.btn-wrapper button:nth-child(2) {
+.btn-wrapper li:nth-child(2) {
   position: absolute;
   top: 0;
   left: 30%;
 }
 
-.btn-wrapper button:nth-child(3) {
+.btn-wrapper li:nth-child(3) {
   position: absolute;
   top: 0;
   right: 30%;
 }
 
-.btn-wrapper button:last-child {
+.btn-wrapper li:last-child {
   position: absolute;
   top: 0;
   right: 0;
 }
+
+.github-btn {
+  background: url(../images/buttons/github-icon.png) no-repeat center center;
+  background-size: contain;
+}
+
+.linkedin-btn {
+  background: url(../images/buttons/linkedin-icon-1.png) no-repeat center center;
+  background-size: contain;
+}
+
+.twitter-btn {
+  background: url(../images/buttons/twitter-2-icon.png) no-repeat center center;
+  background-size: contain;
+}
+
+.wordpress-btn {
+  background: url(../images/buttons/wordpress-icon.png) no-repeat center center;
+  background-size: contain;
+}
+
+
 
 /******************************************
     Main Content
@@ -378,14 +431,39 @@ ul, li, a {
 
 .main-content-wrapper {
   @include outer-container;
-  height: 800px;
+  //height: 800px;
   border: $main-content-border;
   border-top: none;
 }
 
+.skill-wrapper {
+  text-align: center;
+}
+
+.content-p {
+  font-family: 'Roboto';
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+.skills-text,
+.bio-wrapper {
+  @include pad(default 0.1em default 0.1em);
+}
+
+
 .content-headline,
 .neat-block {
-  @include span-columns(4);
+  @include span-columns(12);
+  margin: 0.3em;
+}
+
+.neat-sub3 {
+  @include span-columns(3);
+  height: 50px;
+  font-size: 1.2em;
+  line-height: 50px;
+  border: 1px solid black;
 }
 
 .content-headline {
@@ -407,26 +485,53 @@ ul, li, a {
   margin: 0 auto;
 }
 
-.samples-ul li {
-  position: relative;
-  width: 90%;
-  height: 150px;
-  margin-top: 0.5em;
-  border: 1px solid black;
-}
-
 /******************************************
     Start Bio Section
 ******************************************/
 .author-img {
-  display: block;
-  margin: 0 auto;
-  width: 80%;
+  float: left;
+  margin-top: 0;
+  margin-bottom: 1em;
+  width: 28%;
+  padding: 0.5em;
   border-radius: 1em;
   border: 3px solid $main-content-border-color;
 }
+
+.content-p {
+  float:right;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  padding-right: 0.5em;
+  width: 70%;
+}
 .start-quotation-span {
-  margin-left: -35px;
+  margin-left: -25px;
+}
+
+.blockquote {
+  float: left;
+  //clear: left;
+  margin-left: 1em;
+  margin-right: 0;
+  padding-right: 0;
+  width: 25%;
+  font-family: 'Roboto';
+  font-size: 1.1em;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.second-p {
+  margin-bottom: 0;
+}
+
+.third-p {
+  float: right;
+  width: 70%;
+  margin-top: 0;
+  padding-top: 0;
+
 }
 
 .tabs {
@@ -455,8 +560,35 @@ ul, li, a {
 }
 
 /***********************************
-    Samples Section
+    Projects Section
 ***********************************/
+.neat-sub4 {
+  @include span-columns(4);
+}
+
+.project {
+  @include span-columns(4);
+  position: relative;
+  display: inline-block;
+  //width: 90%;
+  height: 150px;
+  margin-top: 0.5em;
+  border: 1px solid black;
+}
+
+.samples-ul li {
+  @include span-columns(4);
+  position: relative;
+  display: inline-block;
+  //width: 90%;
+  height: 150px;
+  margin-top: 0.5em;
+  border: 1px solid black;
+}
+
+.neat-last {
+  @include omega();
+}
 
 .sample-icon,
 .icon-bw,
@@ -481,10 +613,12 @@ ul, li, a {
   //display: none;
   bottom: 0;
   left: 5%;
-  color: red;
+  color: $highlight-text-color;
   background-color: rgba(229, 229, 229, 0.8);
   width: 90%;
   height: 60%;
+  font-size: 0.8em;
+  line-height: 1em;
   border-radius: 10px;
   z-index: 40;
 }
@@ -511,18 +645,22 @@ ul, li, a {
 
 .food-icon {
   background: url('../images/food-icon.png') no-repeat;
+  background-size: cover;
 }
 
 .food-icon-bw {
   background: url('../images/food-icon-bw.png') no-repeat;
+  background-size: cover;
 }
 
 .surf-icon {
   background: url('../images/surf-and-paddle.png') no-repeat;
+  background-size: cover;
 }
 
 .surf-icon-bw {
   background: url('../images/surf-and-paddle-bw.png') no-repeat;
+  background-size: cover;
 }
 
 

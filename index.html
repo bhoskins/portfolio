@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles/main.css">
+
   <title>Beth Hoskins Portfolio</title>
-  <script src="//use.typekit.net/xbo0ody.js"></script>
 </head>
 <body>
   <header class="header">
@@ -53,12 +53,17 @@
       <br />into websites & apps that
       <br />
       <span class="text-highlight communicate js-communicate">
+      <img src="images/icons/Communicate-icon.png" width="36px">
         communicate
       </span><br />
       <span class="text-highlight inspire js-inspire">
+      <img src="images/icons/idea-48.png" width="36px">
+      <img src="images/icons/15-Light-Bulb-icon.png" width="36px">
         inspire
       </span><br />
       <span class="text-highlight interact js-interact">
+      <img src="images/icons/Hand-Touch-icon-black.png" width="30px">
+      <img src="images/icons/Hand-Touch-icon.png" width="30px">
         interact & respond
       </span><br />
     </p>
@@ -83,10 +88,34 @@
   </header>
 
     <nav class="nav">
-      <ul class="main-nav">
+      <ul class="main-nav btn-wrapper">
+        <li class="github nav-btn">
+          <a href="https://github.com/bhoskins">
+            <div class="nav-btn github-btn">
+            </div>
+          </a>
+        </li>
+         <li class="linkedin nav-btn">
+          <a href="https://www.linkedin.com/in/bethhoskins/">
+            <div class="nav-btn linkedin-btn">
+            </div>
+          </a>
+        </li>
+         <li class="twitter nav-btn">
+          <a href="https://twitter.com/bhoskins333">
+            <div class="nav-btn twitter-btn">
+            </div>
+          </a>
+        </li>
+         <li class="email nav-btn">
+          <a href="http://pastorbeth.com">
+            <div class="nav-btn wordpress-btn">
+            </div>
+          </a>
+        </li>
 
       </ul>
-        <div class="btn-wrapper">
+       <!--  <div class="">
     <button class="twitter nav-btn">Tw</button>
     <button class="contact nav-btn">LI</button>
     <button class="github nav-btn">GH</button>
@@ -97,17 +126,34 @@
 
 
   <div class="main-content-wrapper">
+
+    <div class="neat-block skill-wrapper"
     <h3 class="content-headline skill-set-headline">
     Skill Set
     </h3>
+    <ul>
+        <li class="neat-sub3">Html</li>
+        <li class="neat-sub3">CSS</li>
+        <li class="neat-sub3">Javascript</li>
+        <li class="neat-sub3 neat-last">JQuery</li>
+        <li class="neat-sub3">Underscore</li>
+        <li class="neat-sub3">Backbone</li>
+        <li class="neat-sub3">Ember-Cli</li>
+        <li class="neat-sub3 neat-last">Photoshop</li>
+        <li class="neat-sub3">Sass</li>
+        <li class="neat-sub3">Bourbon</li>
+        <li class="neat-sub3">Neat</li>
+        <li class="neat-sub3 neat-last">Illustrator</li>
+
+    </ul>
+
+    <p class="content-p skill-comment neat-block">
+      And anything else given enough time to study it first
+    </p>
+
+    </div><!-- .neat-block skill-wrapper -->
 
     <h3 class="content-headline bio-headline">Bio</h3>
-    <h3 class="content-headline samples-headline neat-last">Samples</h3>
-
-    <p class="content-p skills-text neat-block">
-      Html, Css, Javascript, JQuery, Underscore, Backbone, Ember, Ember-Cli, Sass, Bourbon, Neat, Adobe Photoshop & Illustrator <br />
-      (And anything else given enough time to study it first)
-    </p>
 
     <div class="neat-block bio-wrapper">
     <img src="images/author-200.png" class="author-img" width="200">
@@ -118,40 +164,98 @@
       On a personal note I spent many years serving as a minister in the Presbyterian Church (USA) in different places with all kinds of people.
       <p />
 
-        <blockquote class="blockquote neat-inner-block">
-          <span class="start-quotation-span">
-            <img src="images/examplestartquote.gif" width="20px" >
-          </span>
-          &ldquo;Live, love, learn. <br />
-          Rinse and repeat.&rdquo;
-          <span class="end-quotation-span">
-            <img src="images/exampleendquote.gif" width="20px" >
-          </span>
-        </blockquote>
+<!--
+
+        -->
 
 
         <p class="content-p bio-text third-p neat-inner-block">
-          <ul class="tabs">
+          <ul class="tabs content-p">
             <li>I love dogs,</li>
-            <li>a hot cup of mint green tea,</li>
+            <li>a cup of mint green tea,</li>
             <li>walking in God's good creation,</li>
             <li>cooking, eating and</li>
             <li>a good bottle of wine</li>
             <li>shared with friends.</li>
           </ul>
           </p>
-          <p class="fourth-p content-p bio-text neat-inner-block"> If you want to consult about a project or need to know more call me&hellip;  <br />
+          <p class="fourth-p content-p bio-text neat-inner-block"> If you want to consult about a project or need to know more call me&hellip;
+<!--
+          <br />
           <button class="phone-btn">Phone</button>
           or email&hellip;<br />
           <button class="email-btn">Email</button>
-          I'll keep the corkscrew handy.
+          I'll keep the corkscrew handy. -->
         </p>
 
       </p>
 
+      <blockquote class="blockquote neat-inner-block content-p">
+          <span class="start-quotation-span">
+            <img src="images/examplestartquote.gif" width="20px" >
+          </span>
+          Live, love, learn. <br />
+          Rinse and repeat.
+          <span class="end-quotation-span">
+            <img src="images/exampleendquote.gif" width="20px" >
+          </span>
+        </blockquote>
+
     </div><!--.neat-block .bio-wrapper -->
 
+    <h3 class="content-headline samples-headline neat-block">Projects</h3>
+
+      <div class="neat-sub4 project">
+        <div class="js-food-toggle-cover toggle-cover">
+        </div><!--.js-toggle-cover .toggle-cover -->
+        <div class="js-food-icon-bw food-icon-bw icon-bw">
+        </div><!-- .js-food-icon-bw .food-icon-bw -->
+        <div class="sample-icon js-food-icon food-icon">
+        </div><!-- ..food-icon .sample-icon -->
+
+        <div class="food-icon-info js-food-icon-info icon-info">
+          <h4 class="overlay-heading">
+                Pocket Meal Planner
+          </h4>
+          <p class="overlay-p-text">
+            App made with Ember-Cli<br />
+            with a Parse back-end.
+          </p>
+        </div><!-- .food-icon-info -->
+         <!--  </a> -->
+      </div> <!-- .neat-sub4 project -->
+
+      <div class="neat-sub4 project">
+        <!--  <a href="#"> -->
+
+        <div class="js-surf-toggle-cover toggle-cover">
+        </div><!--.js-toggle-cover .toggle-cover -->
+        <div class="surf-icon-bw js-surf-icon-bw icon-bw">
+        </div><!-- .js-food-icon-bw .food-icon-bw -->
+        <div class="sample-icon surf-icon">
+        </div><!-- ..food-icon .sample-icon -->
+
+        <div class="surf-icon-info js-surf-icon-info icon-info">
+          <h4 class="overlay-heading">
+            Surf a Paddle Exercise
+          </h4>
+          <p class="overlay-p-text">
+            Pixel Perfect Copy<br />
+            with Html and Css.
+          </p>
+        </div><!-- .food-icon-info -->
+         <!--  </a> -->
+      </div> <!-- .project neat-sub4 -->
+
+      <div class="neat-sub4 neat-last project">
+      Project  3 in here
+      </div>
+
     <div class="samples-wrapper neat-block neat-last">
+      <h3 class="content-headline samples-headline neat-block">Projects</h3>
+
+
+
       <ul class="samples-ul">
         <li class="sample-li">
          <!--  <a href="#"> -->
@@ -175,7 +279,7 @@
          <!--  </a> -->
         </li>
 
-        <li class="sample-li">
+        <li class="sample-li neat-sub4">
         <!--  <a href="#"> -->
 
           <div class="js-surf-toggle-cover toggle-cover">
@@ -201,8 +305,8 @@
 
 
         </li>
-        <li class="sample-li"></li>
-        <li class="sample-li"></li>
+        <li class="sample-li neat-sub4 neat-last"></li>
+        <li class="sample-li neat-sub4"></li>
       </ul>
     </div>
 

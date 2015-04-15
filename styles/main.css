@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400);
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -18,14 +18,20 @@ html {
 /*****************************************
     Basic Styling
 *****************************************/
+html {
+  margin: 0;
+  padding: 0; }
+
 body {
   margin: 0 auto;
   width: 90%;
-  height: 2000px;
-  background-color: #E5E5E5; }
+  background: url("../images/sand-bg.png") repeat;
+  font: 'Roboto';
+  font-size: 1.2em; }
 
 ul, li, a {
   margin: 0;
+  padding: 0;
   text-decoration: none;
   list-style: none; }
 
@@ -34,9 +40,9 @@ ul, li, a {
 
 .header {
   position: relative;
-  margin: 0;
+  top: 0;
+  left: 0;
   height: 600px;
-  background-size: cover;
   z-index: 0; }
 
 .header-bg {
@@ -55,7 +61,7 @@ ul, li, a {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 90%;
   height: 100%;
   text-align: right;
   z-index: -10; }
@@ -167,32 +173,38 @@ ul, li, a {
 
 .sunflower-info-headline {
   font-family: Georgia, sans-serif;
-  font-size: 1.5em;
+  font-size: 1.1em;
   padding-top: 0.2em; }
 
 .sunflower-subtitle-text {
   font-family: cursive;
-  font-size: 1.2em; }
+  font-size: 1em; }
 
 .sunflower-p {
   font-family: arial, sans-serif;
-  font-size: 0.9em; }
+  font-size: 0.8em; }
 
+/**************************************
+    Main Headline
+**************************************/
 .name-text {
-  margin: 0;
+  padding-top: 3%;
+  margin-top: 0;
+  margin-bottom: 0;
   font-family: "Droid Serif, serif";
   font-size: 4em;
   color: #441F00; }
 
 .header-subtitle {
+  position: relative;
   margin: 0;
   font-family: helvetica, sans-serif;
   font-size: 2.5em;
-  color: #441F00; }
+  color: #441F00;
+  z-index: 60; }
 
 .header-text-block {
-  margin-top: 2em;
-  margin-left: 2em; }
+  padding-left: 3%; }
 
 .header-p-text {
   position: relative;
@@ -204,6 +216,14 @@ ul, li, a {
   width: 50%;
   z-index: 60; }
 
+img {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle; }
+
+.text-highlight {
+  vertical-align: middle; }
+
 .communicate {
   padding-left: 1em; }
 
@@ -211,7 +231,7 @@ ul, li, a {
   padding-left: 2em; }
 
 .interact {
-  padding-left: 3em; }
+  margin-left: 3em; }
 
 .respond {
   padding-left: 4em; }
@@ -255,23 +275,38 @@ ul, li, a {
 .nav-btn {
   width: 60px;
   height: 60px;
-  border-radius: 100%;
-  background-color: #A75600; }
+  border-radius: 100%; }
 
-.btn-wrapper button:nth-child(2) {
+.btn-wrapper li:nth-child(2) {
   position: absolute;
   top: 0;
   left: 30%; }
 
-.btn-wrapper button:nth-child(3) {
+.btn-wrapper li:nth-child(3) {
   position: absolute;
   top: 0;
   right: 30%; }
 
-.btn-wrapper button:last-child {
+.btn-wrapper li:last-child {
   position: absolute;
   top: 0;
   right: 0; }
+
+.github-btn {
+  background: url(../images/buttons/github-icon.png) no-repeat center center;
+  background-size: contain; }
+
+.linkedin-btn {
+  background: url(../images/buttons/linkedin-icon-1.png) no-repeat center center;
+  background-size: contain; }
+
+.twitter-btn {
+  background: url(../images/buttons/twitter-2-icon.png) no-repeat center center;
+  background-size: contain; }
+
+.wordpress-btn {
+  background: url(../images/buttons/wordpress-icon.png) no-repeat center center;
+  background-size: contain; }
 
 /******************************************
     Main Content
@@ -280,7 +315,6 @@ ul, li, a {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  height: 800px;
   border: 1px solid #441F00;
   border-top: none; }
   .main-content-wrapper::after {
@@ -288,14 +322,39 @@ ul, li, a {
     content: "";
     display: table; }
 
+.skill-wrapper {
+  text-align: center; }
+
+.content-p {
+  font-family: 'Roboto';
+  font-size: 1em;
+  line-height: 1.2em; }
+
+.skills-text,
+.bio-wrapper {
+  padding: 2.35765% 0.1em 2.35765% 0.1em; }
+
 .content-headline,
 .neat-block {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 31.76157%; }
+  width: 100%;
+  margin: 0.3em; }
   .content-headline:last-child,
   .neat-block:last-child {
+    margin-right: 0; }
+
+.neat-sub3 {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  height: 50px;
+  font-size: 1.2em;
+  line-height: 50px;
+  border: 1px solid black; }
+  .neat-sub3:last-child {
     margin-right: 0; }
 
 .content-headline {
@@ -312,25 +371,47 @@ ul, li, a {
   display: block;
   margin: 0 auto; }
 
-.samples-ul li {
-  position: relative;
-  width: 90%;
-  height: 150px;
-  margin-top: 0.5em;
-  border: 1px solid black; }
-
 /******************************************
     Start Bio Section
 ******************************************/
 .author-img {
-  display: block;
-  margin: 0 auto;
-  width: 80%;
+  float: left;
+  margin-top: 0;
+  margin-bottom: 1em;
+  width: 28%;
+  padding: 0.5em;
   border-radius: 1em;
   border: 3px solid #441F00; }
 
+.content-p {
+  float: right;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  padding-right: 0.5em;
+  width: 70%; }
+
 .start-quotation-span {
-  margin-left: -35px; }
+  margin-left: -25px; }
+
+.blockquote {
+  float: left;
+  margin-left: 1em;
+  margin-right: 0;
+  padding-right: 0;
+  width: 25%;
+  font-family: 'Roboto';
+  font-size: 1.1em;
+  font-weight: 900;
+  font-style: italic; }
+
+.second-p {
+  margin-bottom: 0; }
+
+.third-p {
+  float: right;
+  width: 70%;
+  margin-top: 0;
+  padding-top: 0; }
 
 .tabs {
   margin: 0;
@@ -352,8 +433,45 @@ ul, li, a {
   margin-left: 2em; }
 
 /***********************************
-    Samples Section
+    Projects Section
 ***********************************/
+.neat-sub4 {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%; }
+  .neat-sub4:last-child {
+    margin-right: 0; }
+
+.project {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  position: relative;
+  display: inline-block;
+  height: 150px;
+  margin-top: 0.5em;
+  border: 1px solid black; }
+  .project:last-child {
+    margin-right: 0; }
+
+.samples-ul li {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  position: relative;
+  display: inline-block;
+  height: 150px;
+  margin-top: 0.5em;
+  border: 1px solid black; }
+  .samples-ul li:last-child {
+    margin-right: 0; }
+
+.neat-last {
+  margin-right: 0; }
+
 .sample-icon,
 .icon-bw,
 .toggle-cover {
@@ -373,10 +491,12 @@ ul, li, a {
   position: absolute;
   bottom: 0;
   left: 5%;
-  color: red;
+  color: #FF3D56;
   background-color: rgba(229, 229, 229, 0.8);
   width: 90%;
   height: 60%;
+  font-size: 0.8em;
+  line-height: 1em;
   border-radius: 10px;
   z-index: 40; }
 
@@ -398,15 +518,19 @@ ul, li, a {
   line-height: 1.2em; }
 
 .food-icon {
-  background: url("../images/food-icon.png") no-repeat; }
+  background: url("../images/food-icon.png") no-repeat;
+  background-size: cover; }
 
 .food-icon-bw {
-  background: url("../images/food-icon-bw.png") no-repeat; }
+  background: url("../images/food-icon-bw.png") no-repeat;
+  background-size: cover; }
 
 .surf-icon {
-  background: url("../images/surf-and-paddle.png") no-repeat; }
+  background: url("../images/surf-and-paddle.png") no-repeat;
+  background-size: cover; }
 
 .surf-icon-bw {
-  background: url("../images/surf-and-paddle-bw.png") no-repeat; }
+  background: url("../images/surf-and-paddle-bw.png") no-repeat;
+  background-size: cover; }
 
 /*# sourceMappingURL=main.css.map */

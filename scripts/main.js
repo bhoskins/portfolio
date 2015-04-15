@@ -15,50 +15,52 @@ $(document).ready(function(){
       $(".js-header-overlay, .js-sunflower-info").fadeOut( "slow");
     });
 
-    $('.js-inspire').hover(function(){
-      console.log('mousein');
-      $(".js-live-flower").animate({
-          'background-size': '130%'
-      }, 1000, function(){
-      });
-    },
-    function (){
-      console.log('mouseout');
-     $(".js-live-flower").animate({
-          'background-size': '100%'
-      }, 1000, function(){
-    });
-   });
+   //  $('.js-inspire').hover(function(){
+   //    console.log('mousein');
+   //    $(".js-live-flower").animate({
+   //        'background-size': '130%'
+   //    }, 1000, function(){
+   //    });
+   //  },
+   //  function (){
+   //    console.log('mouseout');
+   //   $(".js-live-flower").animate({
+   //        'background-size': '100%'
+   //    }, 1000, function(){
+   //  });
+   // });
 
     $('.js-interact').hover(function(){
+      var totalWidth = $('.js-interact').outerWidth();
+      var width = totalWidth / 12;
       $('.interact').on( 'mousemove', function(e){
       $('.js-live-flower').addClass('invisible');
       var offset = $(this).offset();
       var x = Math.floor(e.pageX - offset.left);
       var y = e.pageY - offset.top;
-      console.log('x is ' + x);
-      console.log('y is ' + y);
-      if ( x > 0 && x < 23) {
+      // console.log('x is ' + x);
+      // console.log('y is ' + y);
+      if ( x > 0 && x < width) {
         $('.js-flower-color').css('background-color', 'rgb(255, 255, 255)');
-      } else if ( x >=23 && x < 68) {
+      } else if ( x >= (width + 1) && x < (2 * width)) {
         $('.js-flower-color').css('background-color', 'rgb(255, 0, 220)');
-      } else if (x >=68 && x <91 ) {
+      } else if (x >= (2 * width) && x < (3 * width) ) {
         $('.js-flower-color').css('background-color', 'rgb(255, 120, 0)');
-      } else if ( x >= 91 && x < 114) {
+      } else if ( x >= (3 * width) && x < (4 * width)) {
         $('.js-flower-color').css('background-color', 'rgb(128, 255, 0)');
-      } else if ( x >= 114 && x < 136) {
+      } else if ( x >= (4 * width) && x < (5 * width)) {
         $('.js-flower-color').css('background-color', 'rgb(0, 199, 94)');
-      } else if ( x >= 136 && x < 158) {
+      } else if ( x >= (5 * width) && x < (6 * width)) {
         $('.js-flower-color').css('background-color', 'rgb(0, 255, 128)');
-      } else if ( x >= 158 && x < 181) {
+      } else if ( x >= (6 * width) && x < (7 * width)) {
         $('.js-flower-color').css('background-color', 'rgb(0, 255, 255)');
-      } else if ( x >= 181 && x < 203) {
+      } else if ( x >= (7 * width) && x < (8 * width)) {
         $('.js-flower-color').css('background-color', 'rgb(0, 128, 255)');
-      } else if ( x >= 203 && x < 226) {
+      } else if ( x >= (8 * width) && x < (9 * width)) {
         $('.js-flower-color').css('background-color', 'rgb(0, 0, 255)');
-      } else if ( x >= 226 && x < 248) {
+      } else if ( x >= (9 * width) && x < (10 * width)) {
         $('.js-flower-color').css('background-color', 'rgb(128, 0, 255)');
-      } else if ( x >= 248 && x < 271) {
+      } else if ( x >= (10 * width) && x < (11 * width)) {
         $('.js-flower-color').css('background-color', 'rgb(255, 0, 0)');
       } else {
         $('.js-flower-color').css('background-color', 'rgb(2, 124, 219)');
