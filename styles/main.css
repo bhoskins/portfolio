@@ -404,14 +404,29 @@ img {
 /******************************************
     Start Bio Section
 ******************************************/
-.author-img {
+.author-img-wrap {
   float: left;
+  width: 29%;
   margin-top: 0;
-  margin-bottom: 1em;
-  width: 28%;
-  padding: 0.5em;
+  margin-bottom: 0;
+  padding: 0; }
+
+.author-img {
+  margin: 0 auto;
+  width: 90%;
   border-radius: 1em;
   border: 3px solid #441F00; }
+
+.blockquote {
+  padding: 0;
+  margin-top: 0.5em;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  font-family: 'Roboto';
+  font-size: 1.1em;
+  font-weight: 900;
+  font-style: italic; }
 
 .bio-text {
   float: right;
@@ -419,20 +434,6 @@ img {
   margin-bottom: 0.5em;
   padding-right: 0.5em;
   width: 70%; }
-
-.start-quotation-span {
-  margin-left: -25px; }
-
-.blockquote {
-  float: left;
-  margin-left: 1em;
-  margin-right: 0;
-  padding-right: 0;
-  width: 25%;
-  font-family: 'Roboto';
-  font-size: 1.1em;
-  font-weight: 900;
-  font-style: italic; }
 
 .second-p {
   margin-bottom: 0; }
@@ -443,9 +444,14 @@ img {
   margin-top: 0;
   padding-top: 0; }
 
+.fourth-p {
+  clear: both;
+  width: 100%; }
+
 .tabs {
+  float: right;
   margin: 0;
-  padding: 0; }
+  padding-right: 5em; }
 
 .tabs li:nth-child(2) {
   margin-left: 1em; }
