@@ -9,8 +9,12 @@ $max-width: 960px;
 
 $header-text-block-margin: 3%;
 $header-name-margin-top: 2em;
+$header-p-margin-top: 0;
 $header-p-padding-top: 1em;
-$header-p-padding-left: 6em;
+$header-p-padding-left: 3em;
+$header-padding-bottom-xlarge: 6em;
+$header-padding-bottom-large: 1em;
+$header-padding-bottom-small: 0;
 
 $tagline-line-height: 1em;
 $tagline-margin-top: 1.6em;
@@ -24,7 +28,7 @@ $main-content-border-color: #441F00; //dark brown
     Fonts
 ***********************************/
 // font-family: 'Abril Fatface', cursive;
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400|Fredericka+the+Great|Mystery+Quest|Lily+Script+One|Cherry+Swash|Lemon|Lobster);
 // 'Droid Serif', serif;
 // 'Abril Fatface', cursive;
 // 'Rancho', cursive;
@@ -33,10 +37,14 @@ $main-content-border-color: #441F00; //dark brown
 $body-font: 'Roboto', sans-serif;
 $name-font-family: 'Droid Serif, serif';
 $header-p-font-family: arial, sanserif;
-$tagline-font-family: $header-p-font-family;
+$tagline-font-family: $name-font-family;
 
-$header-name-size: 4em;
-$header-subtitle-size: 2.5em;
+$header-name-size: 3em; //4
+$header-subtitle-size: 1.5em; //2.2
+
+$header-p-font-size: 1em;
+
+$header-tagline-size: 1em;
 
 
 $primary-color: navy;
@@ -66,11 +74,16 @@ html {
 }
 
 body {
-  margin: 0 auto;
+  margin-top: -14px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
+  margin-bottom: 3em;
   width: 90%;
   //height: 3000px;
   //background-color: $background-color;
-  background: url('../images/sand-bg.png') repeat;
+  background: url('../images/wild_flowers.png')repeat;
+  //sand-bg.png, grey_sandbag.png, wild_flowers.png
   font: 'Roboto';
   font-size: 1.2em;
 }
@@ -86,20 +99,43 @@ ul, li, a {
   display: none;
 }
 
-.header {
+
+.header-wrap {
+  margin: 0 auto;
+  display: block;
   position: relative;
+  max-width: 1200px;
+  padding-bottom: 50%;
+}
+
+
+.header {
+  position: absolute;
   top: 0;
   left: 0;
+  margin-top: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
+  //padding-bottom: $header-padding-bottom-xlarge;
   //margin: -2em;
-  height: 600px;
-  //background: url('../images/flower-transparent-bg.png') center center no-repeat;
-  //background-size: cover;
-  z-index: 0;
+  width: 100%;
+  height: 100%;
+  /*
+  background-image: url(../images/sunflower-bg-no-sky.png);
+
+  background-image: url('../images/flower-transparent-bg.png');
+  */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 50;
 }
 
 .header-bg {
   position: absolute;
   margin: 0;
+  padding: 0;
   top: 0;
   left: 0;
   height: 100%;
@@ -109,13 +145,15 @@ ul, li, a {
   z-index: -1;
 }
 
+
 .flower-color {
   background: RGBA(2, 124, 219, 1);
   position: absolute;
-  top: 0;
+  //display: none;
+  bottom: 0;
   right: 0;
-  width: 90%;
-  height: 100%;
+  width: 60%;
+  height: 95%;
   text-align: right;
   z-index: -10;
 }
@@ -124,16 +162,16 @@ ul, li, a {
 .live-flower {
   position: absolute;
   //display: none;
-  background: rgba(229, 229, 229, 0.7);
+  //background: rgba(229, 229, 229, 0.7);
   background: url(../images/sunflower-bg-flower-only.png) no-repeat;
   background-position: right bottom;
   //calc(50% + 1em);
   background-size: cover;
-  bottom: 0;
+  top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  z-index: 40;
+  z-index: 30;
 }
 
 .grow {
@@ -209,7 +247,7 @@ ul, li, a {
 
 .ray-text {
   text-align: left;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: -0.2em;
 }
 
@@ -229,7 +267,7 @@ ul, li, a {
   bottom: 30px;
   right: 440px;
   width: 23%;
-  height: 28%;
+  height: 30%;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
@@ -286,17 +324,21 @@ ul, li, a {
 }
 
 .header-text-block {
+  position: relative;
+  top: 0;
+  left: 0;
   //padding-top: $header-text-block-margin;
   padding-left: $header-text-block-margin;
 }
 
 .header-p-text {
   position: relative;
+  margin-top: $header-p-margin-top;
   margin-left: $header-p-padding-left;
   padding-top: $header-p-padding-top;
   //padding-left: $header-p-padding-left;
   font-family: $header-p-font-family;
-  font-size: 1.2em;
+  font-size: $header-p-font-size;
   color: $header-p-color;
   width: 50%;
   z-index: 60;
@@ -310,7 +352,16 @@ img {
 
 .text-highlight {
   vertical-align: middle;
+  //font-family: 'Vast Shadow';
+  //font-family: 'Fredericka the Great';
+  //font-family: 'Mystery Quest';
+
+  //font-family: 'Lemon';
+  //font-family: 'Cherry Swash';
+  font-family: 'Lily Script One';
+  //font-family: 'Lobster';
   //line-height: 48px;
+  //text-transform: all-caps;;
 }
 
 .communicate {
@@ -334,6 +385,7 @@ img {
   margin-top: $tagline-margin-top;
   margin-left: $tagline-margin-left;
   font-family: $tagline-font-family;
+  font-size: $header-tagline-size;
   color: $tagline-color;
   line-height: $tagline-line-height;
 }
@@ -376,6 +428,7 @@ img {
   top: -30px;
   width: 40%;
   margin: 0 auto;
+  z-index: 100;
 }
 
 .nav-btn {
@@ -463,7 +516,7 @@ img {
   height: 50px;
   font-size: 1.2em;
   line-height: 50px;
-  border: 1px solid black;
+  //border: 1px solid black;
 }
 
 .content-headline {
@@ -498,7 +551,7 @@ img {
   border: 3px solid $main-content-border-color;
 }
 
-.content-p {
+.bio-text {
   float:right;
   margin-top: 0;
   margin-bottom: 0.5em;
@@ -662,6 +715,37 @@ img {
   background: url('../images/surf-and-paddle-bw.png') no-repeat;
   background-size: cover;
 }
+
+.github-icon {
+  background: url('../images/github-icon.png') no-repeat;
+  background-size: cover;
+}
+
+.github-icon-bw {
+  background: url('../images/github-icon-bw.png') no-repeat;
+  background-size: cover;
+}
+
+/***********************************
+    Media Queries
+***********************************/
+
+/*
+@media screen only and (min-width: 1375px) {
+  .header {
+    padding-bottom: $header-padding-bottom-xlarge;
+    border: 3px solid green;
+  }
+}
+
+@media screen only and (max-width: 1374px) and
+  (min-width: 1060px) {
+  .header {
+  padding-bottom: 0;
+  border: 1px solid red;
+  }
+  }
+  */
 
 
 

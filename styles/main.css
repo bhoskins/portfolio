@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400|Fredericka+the+Great|Mystery+Quest|Lily+Script+One|Cherry+Swash|Lemon|Lobster);
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -23,9 +23,13 @@ html {
   padding: 0; }
 
 body {
-  margin: 0 auto;
+  margin-top: -14px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
+  margin-bottom: 3em;
   width: 90%;
-  background: url("../images/sand-bg.png") repeat;
+  background: url("../images/wild_flowers.png") repeat;
   font: 'Roboto';
   font-size: 1.2em; }
 
@@ -38,16 +42,37 @@ ul, li, a {
 .invisible {
   display: none; }
 
-.header {
+.header-wrap {
+  margin: 0 auto;
+  display: block;
   position: relative;
+  max-width: 1200px;
+  padding-bottom: 50%; }
+
+.header {
+  position: absolute;
   top: 0;
   left: 0;
-  height: 600px;
-  z-index: 0; }
+  margin-top: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0;
+  width: 100%;
+  height: 100%;
+  /*
+  background-image: url(../images/sunflower-bg-no-sky.png);
+
+  background-image: url('../images/flower-transparent-bg.png');
+  */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 50; }
 
 .header-bg {
   position: absolute;
   margin: 0;
+  padding: 0;
   top: 0;
   left: 0;
   height: 100%;
@@ -59,24 +84,23 @@ ul, li, a {
 .flower-color {
   background: RGBA(2, 124, 219, 1);
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
-  width: 90%;
-  height: 100%;
+  width: 60%;
+  height: 95%;
   text-align: right;
   z-index: -10; }
 
 .live-flower {
   position: absolute;
-  background: rgba(229, 229, 229, 0.7);
   background: url(../images/sunflower-bg-flower-only.png) no-repeat;
   background-position: right bottom;
   background-size: cover;
-  bottom: 0;
+  top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  z-index: 40; }
+  z-index: 30; }
 
 .grow {
   -webkit-transform: translateY(50px); }
@@ -138,7 +162,7 @@ ul, li, a {
 
 .ray-text {
   text-align: left;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: -0.2em; }
 
 .right-arrow {
@@ -156,7 +180,7 @@ ul, li, a {
   bottom: 30px;
   right: 440px;
   width: 23%;
-  height: 28%;
+  height: 30%;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
@@ -192,26 +216,30 @@ ul, li, a {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Droid Serif, serif";
-  font-size: 4em;
+  font-size: 3em;
   color: #441F00; }
 
 .header-subtitle {
   position: relative;
   margin: 0;
   font-family: helvetica, sans-serif;
-  font-size: 2.5em;
+  font-size: 1.5em;
   color: #441F00;
   z-index: 60; }
 
 .header-text-block {
+  position: relative;
+  top: 0;
+  left: 0;
   padding-left: 3%; }
 
 .header-p-text {
   position: relative;
-  margin-left: 6em;
+  margin-top: 0;
+  margin-left: 3em;
   padding-top: 1em;
   font-family: arial, sanserif;
-  font-size: 1.2em;
+  font-size: 1em;
   color: #441F00;
   width: 50%;
   z-index: 60; }
@@ -222,7 +250,8 @@ img {
   vertical-align: middle; }
 
 .text-highlight {
-  vertical-align: middle; }
+  vertical-align: middle;
+  font-family: 'Lily Script One'; }
 
 .communicate {
   padding-left: 1em; }
@@ -239,7 +268,8 @@ img {
 .tagline-text {
   margin-top: 1.6em;
   margin-left: 1.5em;
-  font-family: arial, sanserif;
+  font-family: "Droid Serif, serif";
+  font-size: 1em;
   color: #D7E098;
   line-height: 1em; }
 
@@ -270,7 +300,8 @@ img {
   position: relative;
   top: -30px;
   width: 40%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  z-index: 100; }
 
 .nav-btn {
   width: 60px;
@@ -352,8 +383,7 @@ img {
   width: 23.23176%;
   height: 50px;
   font-size: 1.2em;
-  line-height: 50px;
-  border: 1px solid black; }
+  line-height: 50px; }
   .neat-sub3:last-child {
     margin-right: 0; }
 
@@ -383,7 +413,7 @@ img {
   border-radius: 1em;
   border: 3px solid #441F00; }
 
-.content-p {
+.bio-text {
   float: right;
   margin-top: 0;
   margin-bottom: 0.5em;
@@ -532,5 +562,33 @@ img {
 .surf-icon-bw {
   background: url("../images/surf-and-paddle-bw.png") no-repeat;
   background-size: cover; }
+
+.github-icon {
+  background: url("../images/github-icon.png") no-repeat;
+  background-size: cover; }
+
+.github-icon-bw {
+  background: url("../images/github-icon-bw.png") no-repeat;
+  background-size: cover; }
+
+/***********************************
+    Media Queries
+***********************************/
+/*
+@media screen only and (min-width: 1375px) {
+  .header {
+    padding-bottom: $header-padding-bottom-xlarge;
+    border: 3px solid green;
+  }
+}
+
+@media screen only and (max-width: 1374px) and
+  (min-width: 1060px) {
+  .header {
+  padding-bottom: 0;
+  border: 1px solid red;
+  }
+  }
+  */
 
 /*# sourceMappingURL=main.css.map */

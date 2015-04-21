@@ -10,9 +10,13 @@ $(document).ready(function(){
 
     $('.js-communicate').hover(function(){
       $(".js-header-overlay, .js-sunflower-info").fadeIn( "slow");
+      setTimeout(function(){
+
+      });
     },
     function (){
       $(".js-header-overlay, .js-sunflower-info").fadeOut( "slow");
+
     });
 
    //  $('.js-inspire').hover(function(){
@@ -111,6 +115,15 @@ $(document).ready(function(){
     },
       function(){
        $('.js-surf-icon-bw').fadeIn( "fast" );
+    });
+
+    $('.js-github-toggle-cover').hover(function(){
+      $('.js-github-icon-bw').fadeOut( "fast");
+      $('.js-github-icon-info').animate(
+        { color: 'blue' }, "fast" );
+    },
+      function(){
+       $('.js-github-icon-bw').fadeIn( "fast" );
     });
 
 
