@@ -8,6 +8,28 @@ $(document).ready(function(){
     //Backbone.history.start();
     console.log('Welcome to my code!');
 
+    var viewWidth = $(window).width();
+    var viewHeight = $(window).height();
+
+    var availHeight = window.screen.availHeight; // minus menu bars
+    var totalHeight = window.screen.height; // total screen real estate
+    var height = viewHeight + "px";
+    var bodyHeight = (3 * viewHeight) + "px";
+
+    var padBot = (((viewHeight) / viewWidth) * 100) + "%";
+
+    console.log('height ' + height);
+    console.log('body height ' + bodyHeight);
+    console.log('pad bottom is ' + padBot);
+    $('.body').outerHeight( bodyHeight);
+    $('.header-wrap').css('padding-bottom', padBot);
+    $('.work-wrap, .contact-wrap').height(height);
+
+
+
+
+
+
     $('.js-communicate').hover(function(){
       $(".js-header-overlay, .js-sunflower-info").fadeIn( "slow");
       setTimeout(function(){
@@ -42,8 +64,6 @@ $(document).ready(function(){
       var offset = $(this).offset();
       var x = Math.floor(e.pageX - offset.left);
       var y = e.pageY - offset.top;
-      // console.log('x is ' + x);
-      // console.log('y is ' + y);
       if ( x > 0 && x < width) {
         $('.js-flower-color').css('background-color', 'rgb(255, 255, 255)');
       } else if ( x >= (width + 1) && x < (2 * width)) {
