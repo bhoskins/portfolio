@@ -22,10 +22,13 @@ $header-p-padding-left: 3em;
 $header-padding-bottom-xlarge: 6em;
 $header-padding-bottom-large: 1em;
 $header-padding-bottom-small: 0;
+$header-margin-top: 2em;
+$header-margin-left: 8%;
+$header-text-margin-left: 15%;
 
 $tagline-line-height: 1em;
 $tagline-margin-top: 1.6em;
-$tagline-margin-left: 1.5em;
+$tagline-margin-left: 8%;
 
 $main-content-border: 1px solid #441F00; //dark brown
 $main-content-border-color: #441F00; //dark brown
@@ -46,8 +49,8 @@ $name-font-family: 'Droid Serif, serif';
 $header-p-font-family: arial, sanserif;
 $tagline-font-family: $name-font-family;
 
-$header-name-size: 3em; //4
-$header-subtitle-size: 1.5em; //2.2
+$header-name-size: 5em; //4
+$header-subtitle-size: 2.5em; //2.2
 
 $header-p-font-size: 1em;
 
@@ -358,14 +361,16 @@ ul, li, a {
   position: relative;
   top: 0;
   left: 0;
+  margin-top: $header-margin-top;
+  margin-left: $header-margin-left;
   //padding-top: $header-text-block-margin;
-  padding-left: $header-text-block-margin;
+  //padding-left: $header-text-block-margin;
 }
 
 .header-p-text {
   position: relative;
   margin-top: $header-p-margin-top;
-  margin-left: $header-p-padding-left;
+  margin-left: $header-text-margin-left;
   padding-top: $header-p-padding-top;
   //padding-left: $header-p-padding-left;
   font-family: $header-p-font-family;

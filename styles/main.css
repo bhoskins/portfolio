@@ -247,14 +247,14 @@ ul, li, a {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Droid Serif, serif";
-  font-size: 3em;
+  font-size: 5em;
   color: #441F00; }
 
 .header-subtitle {
   position: relative;
   margin: 0;
   font-family: helvetica, sans-serif;
-  font-size: 1.5em;
+  font-size: 2.5em;
   color: #441F00;
   z-index: 60; }
 
@@ -262,12 +262,13 @@ ul, li, a {
   position: relative;
   top: 0;
   left: 0;
-  padding-left: 3%; }
+  margin-top: 2em;
+  margin-left: 8%; }
 
 .header-p-text {
   position: relative;
   margin-top: 0;
-  margin-left: 3em;
+  margin-left: 15%;
   padding-top: 1em;
   font-family: arial, sanserif;
   font-size: 1em;
@@ -298,7 +299,7 @@ img {
 
 .tagline-text {
   margin-top: 1.6em;
-  margin-left: 1.5em;
+  margin-left: 8%;
   font-family: "Droid Serif, serif";
   font-size: 1em;
   color: #D7E098;

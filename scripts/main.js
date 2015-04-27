@@ -26,8 +26,15 @@ $(document).ready(function(){
     $('.work-wrap, .contact-wrap').height(height);
 
 
+function textFit(){
+  var nameWidth = $('.name-text').width();
+  var nameWRatio = nameWidth / viewWidth  ;
+  // Starting size 5em for name and 2.5em for subtitle
+  $('.name-text').css('font-size', (nameWRatio * 5) + 'em');
+  $('.header-subtitle').css('font-size', (nameWRatio * 2.5) + 'em');
+}
 
-
+$(window).on('resize', textFit);
 
 
     $('.js-communicate').hover(function(){
