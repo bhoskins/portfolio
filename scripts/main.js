@@ -14,7 +14,7 @@ $(document).ready(function(){
     var availHeight = window.screen.availHeight; // minus menu bars
     var totalHeight = window.screen.height; // total screen real estate
     var height = viewHeight + "px";
-    var bodyHeight = (3 * viewHeight) + "px";
+    var bodyHeight = (4 * viewHeight) + "px";
 
     var padBot = (((viewHeight) / viewWidth) * 100) + "%";
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
     console.log('pad bottom is ' + padBot);
     $('.body').outerHeight( bodyHeight);
     $('.header-wrap').css('padding-bottom', padBot);
-    $('.work-wrap, .contact-wrap').height(height);
+    $('.skillSet-wrap, .projects-wrap, .contact-wrap').height(height);
 
 
 function textFit(){
@@ -126,31 +126,33 @@ $(window).on('resize', textFit);
 
 
     $('.js-food-toggle-cover').hover(function(){
-      $('.js-food-icon-bw').fadeOut( "fast");
-      $('.js-food-icon-info').animate(
-        { color: 'blue' }, "fast" );
+      $('.js-food-icon').fadeOut( "fast");
+      $('.js-food-toggle-cover').css( 'box-shadow',
+        '0px 0px 50px 11px yellow' );
     },
       function(){
-       $('.js-food-icon-bw').fadeIn( "fast" );
+       $('.js-food-icon').fadeIn( "fast" );
+        $('.js-food-toggle-cover').css( 'box-shadow',
+        'none' );
     });
 
 
     $('.js-surf-toggle-cover').hover(function(){
-      $('.js-surf-icon-bw').fadeOut( "fast");
+      $('.js-surf-icon').fadeOut( "fast");
       $('.js-surf-icon-info').animate(
         { color: 'blue' }, "fast" );
     },
       function(){
-       $('.js-surf-icon-bw').fadeIn( "fast" );
+       $('.js-surf-icon').fadeIn( "fast" );
     });
 
     $('.js-github-toggle-cover').hover(function(){
-      $('.js-github-icon-bw').fadeOut( "fast");
+      $('.js-github-icon').fadeOut( "fast");
       $('.js-github-icon-info').animate(
         { color: 'blue' }, "fast" );
     },
       function(){
-       $('.js-github-icon-bw').fadeIn( "fast" );
+       $('.js-github-icon').fadeIn( "fast" );
     });
 
 
