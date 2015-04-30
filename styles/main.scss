@@ -71,7 +71,7 @@ $tagline-color: #D7E098; //flower yellow
     Fonts
 ***********************************/
 // font-family: 'Abril Fatface', cursive;
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400|Fredericka+the+Great|Mystery+Quest|Lily+Script+One|Cherry+Swash|Lemon|Lobster);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400|Fredericka+the+Great|Mystery+Quest|Lily+Script+One|Cherry+Swash|Lemon|Lobster|Open+Sans+Condensed:300,700|Open+Sans:700italic,400);
 // 'Droid Serif', serif;
 // 'Abril Fatface', cursive;
 // 'Rancho', cursive;
@@ -79,7 +79,7 @@ $tagline-color: #D7E098; //flower yellow
 
 $body-font: 'Roboto', sans-serif;
 $name-font-family: 'Droid Serif, serif';
-$header-p-font-family: arial, sanserif;
+$header-p-font-family: 'Open Sans', Verdana, Helvetica, Arial, sans-serif;
 $tagline-font-family: $name-font-family;
 
 $header-name-size: 5em; //4
@@ -113,8 +113,8 @@ body {
   //background-color: $background-color;
   background: url('../images/wild_flowers.png')repeat;
   //sand-bg.png, grey_sandbag.png, wild_flowers.png
-  font: 'Roboto';
-  font-size: 1.2em;
+  //font: 'Roboto';
+  //font-size: 1.2em;
 }
 
 ul, li, a {
@@ -124,14 +124,96 @@ ul, li, a {
   list-style: none;
 }
 
-p,
-.projects-wrap li {
+/*
+h1 {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.3999996185303px;
+}
+h3 {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.3999996185303px;
+}
+p, li, a {
   font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
   line-height: 20px;
+}
+.blockquote {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+pre {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714302062988px;
+}
+*/
+
+/*
+p, li {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+*/
+
+p, li, a {
+  font-family: 'Open-Sans', Verdana, Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+  line-height: 1.7;
+  orphans: 2;
+  widows: 2;
+}
+
+h1, h2 {
+  //margin: 1.3em 0.67em 0;
+  font-family: "Open Sans Condensed", Verdana, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  padding: 0;
+  white-space: normal;
+  word-wrap: break-word;
+  orphans: 2;
+  widows: 2;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.2;
+  //margin-top: 1.3em;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.1;
+}
+
+span {
+  font-family: "Open Sans Condensed" Verdana, Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  line-height: 1.2;
+  font-weight: 700;
+  font-style: italic;
 }
 
 .invisible {
@@ -173,7 +255,11 @@ p,
     Header
 *****************************************/
 .main-nav {
-  padding: 0.5em;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  line-height: 1;
+  font-wieght: 700;
   position: fixed;
   z-index: 100;
 }
@@ -420,8 +506,8 @@ p,
   margin-left: $header-text-margin-left;
   padding-top: $header-p-padding-top;
   //padding-left: $header-p-padding-left;
-  font-family: $header-p-font-family;
-  font-size: $header-p-font-size;
+  //font-family: $header-p-font-family;
+  //font-size: $header-p-font-size;
   color: $header-p-color;
   width: 50%;
   z-index: 60;
@@ -435,15 +521,11 @@ img {
 
 .text-highlight {
   vertical-align: middle;
-  //font-family: 'Vast Shadow';
-  //font-family: 'Fredericka the Great';
-  //font-family: 'Mystery Quest';
 
-  //font-family: 'Lemon';
-  //font-family: 'Cherry Swash';
   font-family: 'Lily Script One';
-  //font-family: 'Lobster';
-  //line-height: 48px;
+  font-size: 1em;
+
+  line-height: 0.8em;
   //text-transform: all-caps;;
 }
 
@@ -576,9 +658,9 @@ img {
 }
 
 .content-p {
-  font-family: 'Roboto';
-  font-size: 1em;
-  line-height: 1.2em;
+  //font-family: 'Roboto';
+  //font-size: 1em;
+  //line-height: 1.2em;
 }
 
 .skills-text,
@@ -592,7 +674,6 @@ img {
   color: $name-font-color;
 }
 
-.content-headline,
 .neat-block {
   @include span-columns(12);
   text-align: center;
@@ -602,13 +683,14 @@ img {
   margin: 0;
   margin-bottom: 0.5em;
   color: $name-font-color;
+  text-align: center;
 }
 
 .neat-sub3 {
   @include span-columns(2);
   height: 150px;
   margin-bottom: 0.5em;
-  font-size: 1.2em;
+  //font-size: 1.2em;
   color: $name-font-color;
   @include media($tablet){
     @include span-columns(2);
@@ -745,6 +827,25 @@ img {
 /******************************************
     Start Bio Section
 ******************************************/
+.contact-wrap {
+  margin: 0 auto;
+  padding: 0 10%;
+  @include media(max-width 850px){
+    padding: 0 5%;
+    font-size: 0.8em;
+    line-height: 1.5;
+  }
+  @include media(min-width 851px){
+
+  }
+}
+
+.bio-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+
 .author-img-wrap {
   float:left;
   width: 29%;
@@ -760,24 +861,26 @@ img {
   border: 3px solid $main-content-border-color;
 }
 
+/*
 .blockquote {
   padding: 0;
   margin-top: 0.5em;
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
-  font-family: 'Roboto';
-  font-size: 1.1em;
-  font-weight: 900;
-  font-style: italic;
+ // font-family: 'Roboto';
+ // font-size: 1.1em;
+  //font-weight: 900;
+  //font-style: italic;
 }
+*/
 
 .bio-text {
-  float:right;
+  float:left;
   margin-top: 0;
   margin-bottom: 0.5em;
-  padding-right: 0.5em;
   width: 70%;
+  max-width: 800px;
 }
 
 .second-p {
@@ -785,20 +888,21 @@ img {
 }
 
 .third-p {
-  float: right;
+  float: left;
   width: 70%;
-  margin-top: 0;
+  margin-top: 0.1em;
   padding-top: 0;
 }
 
 .fourth-p {
+  margin: 0 auto;
   clear: both;
   width: 100%;
+  text-align: center;
 }
 
-
 .tabs {
-  float: right;
+  float: left;
   margin: 0;
   padding-right: 5em;
 }
@@ -881,8 +985,8 @@ img {
   background-color: rgba(229, 229, 229, 0.8);
   width: 90%;
   //height: 60%;
-  font-size: 0.8em;
-  line-height: 1em;
+ // font-size: 0.8em;
+ // line-height: 1em;
   border-radius: 10px;
   z-index: 40;
 }
@@ -894,18 +998,18 @@ img {
 
 .overlay-heading {
   margin: 10px 0;
-  font-size: 1em;
+  //font-size: 1em;
   text-align: center;
   color: $accent-dark-blue;
 }
 
 .overlay-p-text {
   margin-top: -0.5em;
-  font-family: cursive;
-  font-size: 0.8em;
-  font-weight: 800;
+  //font-family: cursive;
+  //font-size: 0.8em;
+  //font-weight: 800;
   text-align: center;
-  line-height: 1.2em;
+  //line-height: 1.2em;
   color: $accent-dark-blue;
 }
 

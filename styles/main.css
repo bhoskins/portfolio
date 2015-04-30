@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400|Fredericka+the+Great|Mystery+Quest|Lily+Script+One|Cherry+Swash|Lemon|Lobster);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400|Fredericka+the+Great|Mystery+Quest|Lily+Script+One|Cherry+Swash|Lemon|Lobster|Open+Sans+Condensed:300,700|Open+Sans:700italic,400);
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -39,9 +39,7 @@ body {
   width: 100%;
   min-height: 100%;
   height: 100%;
-  background: url("../images/wild_flowers.png") repeat;
-  font: 'Roboto';
-  font-size: 1.2em; }
+  background: url("../images/wild_flowers.png") repeat; }
 
 ul, li, a {
   margin: 0;
@@ -49,14 +47,88 @@ ul, li, a {
   text-decoration: none;
   list-style: none; }
 
-p,
-.projects-wrap li {
+/*
+h1 {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.3999996185303px;
+}
+h3 {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.3999996185303px;
+}
+p, li, a {
   font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
-  line-height: 20px; }
+  line-height: 20px;
+}
+.blockquote {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+pre {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714302062988px;
+}
+*/
+/*
+p, li {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+*/
+p, li, a {
+  font-family: 'Open-Sans', Verdana, Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+  line-height: 1.7;
+  orphans: 2;
+  widows: 2; }
+
+h1, h2 {
+  font-family: "Open Sans Condensed", Verdana, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  padding: 0;
+  white-space: normal;
+  word-wrap: break-word;
+  orphans: 2;
+  widows: 2; }
+
+h2 {
+  font-size: 2em;
+  line-height: 1.2; }
+
+h1 {
+  font-size: 3em;
+  line-height: 1.1; }
+
+span {
+  font-family: "Open Sans Condensed" Verdana, Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  line-height: 1.2;
+  font-weight: 700;
+  font-style: italic; }
 
 .invisible {
   display: none; }
@@ -89,7 +161,11 @@ p,
     Header
 *****************************************/
 .main-nav {
-  padding: 0.5em;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  line-height: 1;
+  font-wieght: 700;
   position: fixed;
   z-index: 100; }
 
@@ -295,8 +371,6 @@ p,
   margin-top: 0;
   margin-left: 15%;
   padding-top: 1em;
-  font-family: arial, sanserif;
-  font-size: 1em;
   color: #441F00;
   width: 50%;
   z-index: 60; }
@@ -308,7 +382,9 @@ img {
 
 .text-highlight {
   vertical-align: middle;
-  font-family: 'Lily Script One'; }
+  font-family: 'Lily Script One';
+  font-size: 1em;
+  line-height: 0.8em; }
 
 .communicate {
   padding-left: 1em; }
@@ -413,11 +489,6 @@ img {
 .skill-wrapper {
   text-align: center; }
 
-.content-p {
-  font-family: 'Roboto';
-  font-size: 1em;
-  line-height: 1.2em; }
-
 .skills-text,
 .bio-wrapper {
   padding: 2.35765% 0.1em 2.35765% 0.1em; }
@@ -427,21 +498,20 @@ img {
   padding: 0;
   color: #441F00; }
 
-.content-headline,
 .neat-block {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 100%;
   text-align: center; }
-  .content-headline:last-child,
   .neat-block:last-child {
     margin-right: 0; }
 
 .content-headline {
   margin: 0;
   margin-bottom: 0.5em;
-  color: #441F00; }
+  color: #441F00;
+  text-align: center; }
 
 .neat-sub3 {
   float: left;
@@ -450,7 +520,6 @@ img {
   width: 14.70196%;
   height: 150px;
   margin-bottom: 0.5em;
-  font-size: 1.2em;
   color: #441F00; }
   .neat-sub3:last-child {
     margin-right: 0; }
@@ -574,6 +643,19 @@ img {
 /******************************************
     Start Bio Section
 ******************************************/
+.contact-wrap {
+  margin: 0 auto;
+  padding: 0 10%; }
+  @media screen and (max-width: 850px) {
+    .contact-wrap {
+      padding: 0 5%;
+      font-size: 0.8em;
+      line-height: 1.5; } }
+
+.bio-wrapper {
+  max-width: 850px;
+  margin: 0 auto; }
+
 .author-img-wrap {
   float: left;
   width: 29%;
@@ -587,39 +669,43 @@ img {
   border-radius: 1em;
   border: 3px solid #441F00; }
 
+/*
 .blockquote {
   padding: 0;
   margin-top: 0.5em;
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
-  font-family: 'Roboto';
-  font-size: 1.1em;
-  font-weight: 900;
-  font-style: italic; }
-
+ // font-family: 'Roboto';
+ // font-size: 1.1em;
+  //font-weight: 900;
+  //font-style: italic;
+}
+*/
 .bio-text {
-  float: right;
+  float: left;
   margin-top: 0;
   margin-bottom: 0.5em;
-  padding-right: 0.5em;
-  width: 70%; }
+  width: 70%;
+  max-width: 800px; }
 
 .second-p {
   margin-bottom: 0; }
 
 .third-p {
-  float: right;
+  float: left;
   width: 70%;
-  margin-top: 0;
+  margin-top: 0.1em;
   padding-top: 0; }
 
 .fourth-p {
+  margin: 0 auto;
   clear: both;
-  width: 100%; }
+  width: 100%;
+  text-align: center; }
 
 .tabs {
-  float: right;
+  float: left;
   margin: 0;
   padding-right: 5em; }
 
@@ -707,8 +793,6 @@ img {
   color: #FF3D56;
   background-color: rgba(229, 229, 229, 0.8);
   width: 90%;
-  font-size: 0.8em;
-  line-height: 1em;
   border-radius: 10px;
   z-index: 40; }
 
@@ -718,17 +802,12 @@ img {
 
 .overlay-heading {
   margin: 10px 0;
-  font-size: 1em;
   text-align: center;
   color: RGBA(2, 115, 215, 1); }
 
 .overlay-p-text {
   margin-top: -0.5em;
-  font-family: cursive;
-  font-size: 0.8em;
-  font-weight: 800;
   text-align: center;
-  line-height: 1.2em;
   color: RGBA(2, 115, 215, 1); }
 
 ul.overlay-desc-text li {
