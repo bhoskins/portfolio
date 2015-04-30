@@ -106,53 +106,45 @@ $(window).on('resize', textFit);
    });
 
 
-
-
-
-
-  // function toggleDiv(item) {
-  //     $('.js-' + item +'-toggle-cover').hover(function(){
-  //     $('.js-' + item + '-icon-bw').fadeOut( "fast");
-  //     $('.js-' + item + '-icon-info').animate(
-  //       { color: 'blue' }, "fast" );
-  //   },
-  //     function(){
-  //      $('.js-' + item + '-icon-bw').fadeIn( "fast" );
-  //   }
-  //   }
-
-    // function('food');
-
-
-
     $('.js-food-toggle-cover').hover(function(){
-      $('.js-food-icon').fadeOut( "fast");
+      //$('.js-food-icon').fadeOut( "fast");
       $('.js-food-toggle-cover').css( 'box-shadow',
-        '0px 0px 50px 11px yellow' );
+        '0px 0px 50px 11px #ffaa00' );
+      $('.js-meal-overlay-desc-text').slideDown('slow');
     },
       function(){
-       $('.js-food-icon').fadeIn( "fast" );
         $('.js-food-toggle-cover').css( 'box-shadow',
         'none' );
+        $('.js-meal-overlay-desc-text').slideUp('slow');
+
     });
 
 
     $('.js-surf-toggle-cover').hover(function(){
-      $('.js-surf-icon').fadeOut( "fast");
-      $('.js-surf-icon-info').animate(
-        { color: 'blue' }, "fast" );
+      //$('.js-surf-icon').fadeOut( "fast");
+      $('.js-surf-toggle-cover').css( 'box-shadow',
+        '0px 0px 50px 11px #ffaa00' );
+      $('.js-surf-overlay-desc-text').slideDown('slow');
     },
       function(){
-       $('.js-surf-icon').fadeIn( "fast" );
+      // $('.js-surf-icon').fadeIn( "fast" );
+        $('.js-surf-toggle-cover').css( 'box-shadow',
+          'none' );
+        $('.js-surf-overlay-desc-text').slideUp('slow');
     });
 
     $('.js-github-toggle-cover').hover(function(){
-      $('.js-github-icon').fadeOut( "fast");
-      $('.js-github-icon-info').animate(
-        { color: 'blue' }, "fast" );
+      //$('.js-github-icon').fadeOut( "fast");
+      $('.js-github-toggle-cover').css( 'box-shadow',
+        '0px 0px 50px 11px #ffaa00' );
+      $('.js-github-overlay-desc-text').slideDown('slow');
+
     },
-      function(){
-       $('.js-github-icon').fadeIn( "fast" );
+    function(){
+      //$('.js-github-icon').fadeIn( "fast" );
+      $('.js-github-toggle-cover').css( 'box-shadow',
+      'none' );
+      $('.js-github-overlay-desc-text').slideUp('slow');
     });
 
 

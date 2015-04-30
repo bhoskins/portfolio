@@ -42,9 +42,13 @@ $main-content-border-color: #441F00; //dark brown
 ***********************************/
 $accent-green: RGBA(90, 114, 0, 1); //green leaf
 $accent-yellow: RGBA(242, 183, 0, 1); //ucla gold
-$accent-brown: RGBA(140, 92, 0, 1); //Rusty Nail
-$accent-light-blue: RGBA(4, 157, 214, 1); //Cerulean
-$accent-dark-blue: RGBA(2, 115, 215, 1); // True Blue
+$accent-brown: RGBA(140, 92, 0, 1); //#784c00 Rusty Nail
+    //highlight: #e08e00
+    //text color: #f5f1d7
+    // box shadow color golden: #ffaa00
+    //box shadow color grey: #737373
+$accent-light-blue: RGBA(4, 157, 214, 1); //#049DD6 Cerulean
+$accent-dark-blue: RGBA(2, 115, 215, 1); // #0273D7 True Blue
 
 $primary-color: navy;
 $secondary-color: gold;
@@ -111,7 +115,6 @@ body {
   //sand-bg.png, grey_sandbag.png, wild_flowers.png
   font: 'Roboto';
   font-size: 1.2em;
-  border: 3px solid green;
 }
 
 ul, li, a {
@@ -119,6 +122,16 @@ ul, li, a {
   padding: 0;
   text-decoration: none;
   list-style: none;
+}
+
+p,
+.projects-wrap li {
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 .invisible {
@@ -586,7 +599,8 @@ img {
 }
 
 .content-headline {
-  margin: 1em;
+  margin: 0;
+  margin-bottom: 0.5em;
   color: $name-font-color;
 }
 
@@ -812,6 +826,10 @@ img {
 /***********************************
     Projects Section
 ***********************************/
+.neat12 {
+  @include span-columns(12);
+}
+
 .neat-sub4 {
   @include span-columns(4);
 }
@@ -820,20 +838,16 @@ img {
   @include span-columns(4);
   position: relative;
   display: inline-block;
-  //width: 90%;
-  height: 150px;
+  height: 530px;
   margin-top: 0.5em;
-  border: 1px solid black;
 }
 
 .samples-ul li {
   @include span-columns(4);
   position: relative;
   display: inline-block;
-  //width: 90%;
-  height: 150px;
+  height: 530px;
   margin-top: 0.5em;
-  border: 1px solid black;
 }
 
 .neat-last {
@@ -847,7 +861,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 150px;
+  height: 530px;
 }
 
 .icon-bw {
@@ -860,13 +874,13 @@ img {
 
 .icon-info {
   position: absolute;
-  //display: none;
-  bottom: 0;
+  top: 1em;
   left: 5%;
+  padding: 1.5em;
   color: $highlight-text-color;
   background-color: rgba(229, 229, 229, 0.8);
   width: 90%;
-  height: 60%;
+  //height: 60%;
   font-size: 0.8em;
   line-height: 1em;
   border-radius: 10px;
@@ -878,14 +892,11 @@ img {
   background-color: none;
 }
 
-.border {
-  border: 3px solid $accent-green;
-}
-
 .overlay-heading {
   margin: 10px 0;
   font-size: 1em;
   text-align: center;
+  color: $accent-dark-blue;
 }
 
 .overlay-p-text {
@@ -895,15 +906,23 @@ img {
   font-weight: 800;
   text-align: center;
   line-height: 1.2em;
+  color: $accent-dark-blue;
+}
+
+ul.overlay-desc-text li {
+  list-style-type: square;
+  list-style-position: outside;
+  margin-left: 15%;
+  color: #441F00;
 }
 
 .food-icon {
-  background: url('../images/food-icon.png') no-repeat;
+  background: url('../images/food.png') no-repeat;
   background-size: cover;
 }
 
 .food-icon-bw {
-  background: url('../images/food-icon-bw.png') no-repeat;
+  background: url('../images/food-bw.png') no-repeat;
   background-size: cover;
 }
 
@@ -918,7 +937,7 @@ img {
 }
 
 .surf-icon {
-  background: url('../images/surf-and-paddle.png') no-repeat;
+  background: url('../images/surf-icon.png') no-repeat;
   background-size: cover;
 }
 
@@ -937,6 +956,92 @@ img {
   background-size: cover;
 }
 
+.projects-link-wrap {
+  position: relative;
+}
+
+.live-link,
+.code-link {
+  margin-top: 1em;
+  z-index: 51;
+}
+
+.live-link {
+  float: left;
+  margin-left: 1.5em;
+}
+
+.code-link {
+  float: right;
+  margin-right: 1.5em;
+}
+
+.project-btn {
+  border : solid 0px #000000;
+  border-radius : 5px;
+  moz-border-radius : 5px;
+  -webkit-box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
+  -moz-box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
+  box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
+  font-size : 20px;
+  color : #ffffff;
+  padding : 1px 17px;
+  background : #49ccfc;
+  background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#49ccfc), color-stop(100%,#0273d7));
+  background : -moz-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
+  background : -webkit-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
+  background : -o-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
+  background : -ms-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
+  background : linear-gradient(top, #49ccfc 0%, #0273d7 100%);
+  filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#49ccfc', endColorstr='#0273d7',GradientType=0 );
+
+}
+
+.project-btn {
+  -webkit-box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
+  -moz-box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
+  box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e08e00), color-stop(1, #784c00) );
+  background:-moz-linear-gradient( center top, #e08e00 5%, #784c00 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e08e00', endColorstr='#784c00');
+  background-color:#e08e00;
+  -webkit-border-top-left-radius:5px;
+  -moz-border-radius-topleft:5px;
+  border-top-left-radius:5px;
+  -webkit-border-top-right-radius:5px;
+  -moz-border-radius-topright:5px;
+  border-top-right-radius:5px;
+  -webkit-border-bottom-right-radius:5px;
+  -moz-border-radius-bottomright:5px;
+  border-bottom-right-radius:5px;
+  -webkit-border-bottom-left-radius:5px;
+  -moz-border-radius-bottomleft:5px;
+  border-bottom-left-radius:5px;
+  text-indent:0;
+  display:inline-block;
+  color:#f5f1d7;
+  font-family:Trebuchet MS;
+  font-size:18px;
+  font-weight:bold;
+  font-style:normal;
+  height:25px;
+  line-height:25px;
+  width:130px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #664203;
+}
+.project-btn:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #784c00), color-stop(1, #e08e00) );
+  background:-moz-linear-gradient( center top, #784c00 5%, #e08e00 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#784c00', endColorstr='#e08e00');
+  background-color:#784c00;
+}
+.project-btn:active {
+  position:relative;
+  top:1px;
+}
+
 /***********************************
     Media Queries
 ***********************************/
@@ -945,7 +1050,6 @@ img {
 @media screen only and (min-width: 1375px) {
   .header {
     padding-bottom: $header-padding-bottom-xlarge;
-    border: 3px solid green;
   }
 }
 
