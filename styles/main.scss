@@ -298,6 +298,10 @@ blockquote {
   text-align: center;
 }
 
+.main-nav a:hover {
+  color: red;
+}
+
 
 .header-wrap {
   margin: 0 auto;
@@ -622,14 +626,14 @@ img {
 .btn-wrapper {
   position: relative;
   top: -30px;
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
   z-index: 100;
 }
 
 .nav-btn {
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   border-radius: 100%;
   //background-color: #A75600;
 }
@@ -653,22 +657,22 @@ img {
 }
 
 .github-btn {
-  background: url(../images/buttons/github-icon.png) no-repeat center center;
+  background: url(../images/buttons/0437-github4.png) no-repeat center center;
   background-size: contain;
 }
 
 .linkedin-btn {
-  background: url(../images/buttons/linkedin-icon-1.png) no-repeat center center;
+  background: url(../images/buttons/0457-linkedin.png) no-repeat center center;
   background-size: contain;
 }
 
 .twitter-btn {
-  background: url(../images/buttons/twitter-2-icon.png) no-repeat center center;
+  background: url(../images/buttons/0402-twitter.png) no-repeat center center;
   background-size: contain;
 }
 
 .wordpress-btn {
-  background: url(../images/buttons/wordpress-icon.png) no-repeat center center;
+  background: url(../images/buttons/0439-wordpress.png) no-repeat center center;
   background-size: contain;
 }
 

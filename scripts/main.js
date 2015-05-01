@@ -208,11 +208,7 @@ jQuery.extend( jQuery.easing,
 
 
 $(document).ready(function(){
-    //window.router = new AppRouter();
-    //Backbone.history.start();
     console.log('Welcome to my code!');
-
-
 
     var viewWidth = $(window).width();
     var viewHeight = $(window).height();
@@ -221,12 +217,8 @@ $(document).ready(function(){
     var totalHeight = window.screen.height; // total screen real estate
     var height = viewHeight + "px";
     var bodyHeight = (4 * viewHeight) + "px";
-
     var padBot = (((viewHeight) / viewWidth) * 100) + "%";
 
-    console.log('height ' + height);
-    console.log('body height ' + bodyHeight);
-    console.log('pad bottom is ' + padBot);
     $('.body').outerHeight( bodyHeight);
     $('.header-wrap').css('padding-bottom', padBot);
     $('.skillSet-wrap, .projects-wrap, .contact-wrap').height(height);
@@ -386,7 +378,6 @@ $(window).on('resize', textFit);
   var projectsOffset = $('#projects').offset();
   var contactOffset = $('#contact').offset();
 
-    console.log('home' + homeOffset.top);
     $('[href=#top]').click(function(e){
       e.preventDefault();
       $('html, body').animate({
