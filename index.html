@@ -7,8 +7,8 @@
   <title>Beth Hoskins Portfolio</title>
 </head>
 <body class="body">
-<div class="header-wrap">
-  <header class="header clearfix">
+  <a id="home"></a>
+  <div class="header-wrap">
     <nav class="main-nav">
       <ul>
         <li>
@@ -25,6 +25,8 @@
         </li>
       </ul>
     </nav>
+
+    <header class="header clearfix">
 
     <div class="header-overlay js-header-overlay">
       <h3 class="flower-text composite-text">
@@ -86,9 +88,11 @@
         interact & respond
       </span><br />
     </p>
+    <!--
     <h3 class="tagline-text">
       Bringing the web to life
     </h3>
+    -->
 
   </header>
 
@@ -138,7 +142,7 @@
     <button class="contact nav-btn">LI</button>
     <button class="github nav-btn">GH</button>
     <button class="email nav-btn">Email</button>
-  </div><!-- .btn-wrapper -->
+  </div> <!-- .btn-wrapper -->
     <!--</nav>-->
 
 
@@ -147,9 +151,9 @@
     <div class="skillSet-wrap">
 
       <div class="neat-block skill-wrapper">
-      <h3 class="content-headline skill-set-headline">
+      <h2 class="content-headline skill-set-headline">
       Skill Set
-      </h3>
+      </h2>
       <ul>
           <li class="spacer neat-sub3"></li>
           <li class="neat-sub3 skill-icon">
@@ -238,8 +242,8 @@
       </div><!-- .skillSet-wrap -->
 
       <a id="projects" name="projects"></a>
-      <div class="projects-wrap">
-          <h3 class="content-headline samples-headline neat-block">Projects</h3>
+      <div class="projects-wrap clearfix">
+          <h2 class="content-headline samples-headline neat-block">Projects</h2>
 
         <div class="neat-sub4 project">
           <div class="js-food-toggle-cover food-toggle-cover toggle-cover">
@@ -259,13 +263,13 @@
               with a Parse back-end.
             </p>
             <ul class="overlay-desc-text js-meal-overlay-desc-text invisible">
-              <li>Ember app made with Ember-Cli</li>
+              <li>Ember/Ember-Cli app</li>
               <li>Parse back-end</li>
               <li>Styled with Sass/Bourbon/Neat</li>
               <li>User authentification</li>
               <li>Designed for mobile</li>
-              <li>Maximization of screen real estate to accomodate lots of data</li>
-              <li>Other Addons: Simple Auth &amp; Ember-CLI Datepicker</li>
+              <li>Maximizes mobile screen space for lots of data</li>
+              <li>Uses Simple Auth &amp; Ember-CLI Datepicker</li>
             </ul>
           </div><!-- .food-icon-info -->
 
@@ -297,7 +301,7 @@
               <li>Copy of a strangely positioned original</li>
               <li>Responsive Navigation</li>
               <li>Manipulation of character and word spacing</li>
-              <li>NOTE: I did not choose any of the styles, colors or fonts used in this example!</li>
+              <li>An exercise in copying someone else's style</li>
             </ul>
           </div><!-- .food-icon-info -->
 
@@ -314,7 +318,7 @@
 
           <div class="github-icon-info js-github-icon-info icon-info">
             <h4 class="overlay-heading">
-              GitHub Repository Redo
+              GitHub Redo
             </h4>
             <p class="overlay-p-text">
               Ajax and template work<br />
@@ -322,12 +326,12 @@
             </p>
 
             <ul class="overlay-desc-text js-github-overlay-desc-text invisible">
-              <li>A very thorough recreation of my GitHub repository page including:</li>
+              <li>A recreation of my GitHub repository page</li>
               <li>Ajax connection with GitHub api</li>
               <li>Html and CSS positioning</li>
               <li>Javascript/JQuery tool tips</li>
-              <li>Templates to recreate content areas</li>
-              <li>Sass/Bourbon/Neat for styling</li>
+              <li>Templates for content areas</li>
+              <li>Uses Sass/Bourbon/Neat</li>
             </ul>
           </div><!-- .food-icon-info -->
 
@@ -369,36 +373,38 @@
 <!-- Contact Section Below -->
 
       <a id="contact" name="contact"></a>
-      <div class="contact-wrap">
+      <div class="projects-wrap contact-wrap">
 
-    <h3 class="content-headline bio-headline">Bio</h3>
+    <h2 class="content-headline bio-headline">Bio</h2>
 
-    <div class="bio-wrapper">
+    <div class="bio-wrapper clearfix">
 
       <div class="author-img-wrap">
-    <img src="images/author-200.png" class="author-img" width="200">
+    <img src="images/author-200.png" class="author-img" width="300">
 
-    <blockquote class="blockquote content-p">
-      <span class="start-quotation-span">
-        <img src="images/examplestartquote.gif" width="20px" >
-      </span>
-      Live, love, learn. <br />
+    <div class="blockquote-wrap content-p">
+        <div class="quote open-quote">
+        </div>
+      <blockquote class="blockquote">Live, love, learn. <br />
       Rinse and repeat.
-      <span class="end-quotation-span">
-        <img src="images/exampleendquote.gif" width="20px" >
-      </span>
-    </blockquote>
+        </blockquote>
+
+        <div class="quote close-quote">
+        </div>
+
+    </div><!-- .blockquote-wrap -->
 
     </div><!-- .author-img-wrap -->
 
-
-
       <p class="content-p bio-text first-p">
-      I grew up in Rock Hill, SC and have had a life long love affair with technology. Recently I followed my dream to The Iron Yard in Greenville, SC where I finished a course in Front-end Engineering.
+      I grew up in Rock Hill, SC with a life long love affair with technology. Recently I followed my dream to The Iron Yard in Greenville, SC where I finished a course in Front-end Engineering.
       </p>
       <p class='content-p bio-text second-p'>
       On a personal note I spent many years serving as a minister in the Presbyterian Church (USA) in different places with all kinds of people.
       <p />
+      <p class="content-p bio-text third-p">
+        In addition to coding,
+      </p>
 
         <p class="content-p bio-text third-p">
           <ul class="tabs">
@@ -409,15 +415,16 @@
             <li>a good bottle of wine shared with friends.</li>
           </ul>
           </p>
-          <p class="fourth-p content-p bio-text neat-inner-block"> If you want to consult about a project or need to know more contact me&hellip;
 
-          <br />
-          <button class="phone-btn">Phone</button>
-          <button class="email-btn">Email</button>
+          <p class="fourth-p content-p neat-inner-block">
+            If you want to consult about a project or need to know more contact me&hellip;
 
         </p>
-
-      </p>
+      <div class="contact-btn-wrap">
+        <a href="tel:8642665784" class="phone-btn project-btn"
+          id="phone">(864) 266-5784</a>
+        <a href="mailto:bhoskins@charter.net" class="email-btn project-btn" id="email">bhoskins@charter.net</a>
+      </div>
 
     </div><!--.bio-wrapper -->
 

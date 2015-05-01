@@ -27,8 +27,8 @@ $header-padding-bottom-xlarge: 6em;
 $header-padding-bottom-large: 1em;
 $header-padding-bottom-small: 0;
 $header-margin-top: 2em;
-$header-margin-left: 8%;
-$header-text-margin-left: 15%;
+$header-margin-left: 5%;
+$header-text-margin-left: 10%;
 
 $tagline-line-height: 1em;
 $tagline-margin-top: 1.6em;
@@ -71,7 +71,7 @@ $tagline-color: #D7E098; //flower yellow
     Fonts
 ***********************************/
 // font-family: 'Abril Fatface', cursive;
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400|Fredericka+the+Great|Mystery+Quest|Lily+Script+One|Cherry+Swash|Lemon|Lobster|Open+Sans+Condensed:300,700|Open+Sans:700italic,400);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400|Fredericka+the+Great|Mystery+Quest|Lily+Script+One|Cherry+Swash|Lemon|Lobster|Open+Sans+Condensed:300,700|Open+Sans:700italic,400,700);
 // 'Droid Serif', serif;
 // 'Abril Fatface', cursive;
 // 'Rancho', cursive;
@@ -88,9 +88,6 @@ $header-subtitle-size: 2.5em; //2.2
 $header-p-font-size: 1em;
 
 $header-tagline-size: 1em;
-
-
-
 
 
 /*****************************************
@@ -198,9 +195,10 @@ h1, h2 {
 }
 
 h2 {
+  font-family: "Droid Serif", Georgia, serif;
   font-size: 2em;
   line-height: 1.2;
-  //margin-top: 1.3em;
+  margin-top: 0;
 }
 
 h1 {
@@ -209,11 +207,28 @@ h1 {
 }
 
 span {
-  font-family: "Open Sans Condensed" Verdana, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Condensed", Verdana, Helvetica, Arial, sans-serif;
+  padding: 0.1em 0 0 0;
   font-size: 0.8em;
   line-height: 1.2;
   font-weight: 700;
   font-style: italic;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+  font-family: "Lily Script One";
+  //"Open Sans Condensed", Verdana, Helvetica, Arial, sans-serif;
+  font-size: 1.6em;
+  line-height: 1.4;
+  font-wieght: 700;
+  color: $accent-dark-blue;
+  text-align: center;
+  @include media(max-width 1060px){
+    font-size: 1.2em;
+    line-height: 1.0;
+  }
 }
 
 .invisible {
@@ -227,8 +242,12 @@ span {
 .projects-wrap,
 .contact-wrap {
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   padding: 1em;
+  @include media($phone){
+    padding: 0.2em;
+  }
 }
 
 .skillSet-wrap {
@@ -237,7 +256,13 @@ span {
 }
 
 .projects-wrap {
+  padding-right: 10%;
+  padding-left: 10%;
   background: rgba(242, 183, 0, 0.3); //yellow
+  @include media($tablet){
+    padding-right: 5%;
+    padding-left: 5%;
+  }
 }
 
 .contact-wrap {
@@ -496,8 +521,6 @@ span {
   left: 0;
   margin-top: $header-margin-top;
   margin-left: $header-margin-left;
-  //padding-top: $header-text-block-margin;
-  //padding-left: $header-text-block-margin;
 }
 
 .header-p-text {
@@ -555,6 +578,14 @@ img {
   line-height: $tagline-line-height;
 }
 
+.content-headline {
+  text-align: center;
+  color: $name-font-color;
+  @include media(max-width 1060px){
+    font-size: 1.5em;
+    line-height: 1.2;
+  }
+}
 
 /******************************************
     Nav
@@ -657,15 +688,9 @@ img {
   text-align: center;
 }
 
-.content-p {
-  //font-family: 'Roboto';
-  //font-size: 1em;
-  //line-height: 1.2em;
-}
-
 .skills-text,
 .bio-wrapper {
-  @include pad(default 0.1em default 0.1em);
+  //@include pad(default 0.1em default 0.1em);
 }
 
 .skill-comment {
@@ -677,13 +702,7 @@ img {
 .neat-block {
   @include span-columns(12);
   text-align: center;
-}
-
-.content-headline {
-  margin: 0;
-  margin-bottom: 0.5em;
-  color: $name-font-color;
-  text-align: center;
+  margin-top: 0;
 }
 
 .neat-sub3 {
@@ -829,7 +848,8 @@ img {
 ******************************************/
 .contact-wrap {
   margin: 0 auto;
-  padding: 0 10%;
+  padding-right: 5%;
+  padding-left: 5%;
   @include media(max-width 850px){
     padding: 0 5%;
     font-size: 0.8em;
@@ -841,14 +861,14 @@ img {
 }
 
 .bio-wrapper {
-  max-width: 850px;
+  position: relative;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-
 .author-img-wrap {
   float:left;
-  width: 29%;
+  width: 35%;
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
@@ -861,50 +881,75 @@ img {
   border: 3px solid $main-content-border-color;
 }
 
-/*
-.blockquote {
-  padding: 0;
+.blockquote-wrap {
+  position: relative;
   margin-top: 0.5em;
-  margin-right: auto;
-  margin-bottom: 0;
-  margin-left: auto;
- // font-family: 'Roboto';
- // font-size: 1.1em;
-  //font-weight: 900;
-  //font-style: italic;
+  margin-bottom: 1em;
+  width: 95%;
+  text-align: center;
 }
-*/
+
+.quote,
+.blockquote {
+  display: inline-block;
+}
+
+.quote {
+  position: relative;
+   width: 25px;
+   height: 25px;
+   @include media(max-width 1060px){
+    width: 15px;
+    height: 15px;
+   }
+    @include media($tablet){
+    display: none;
+   }
+}
+
+.open-quote {
+  bottom: 2.3em;
+  background: url('../images/examplestartquote.gif') no-repeat center center;
+  background-size: contain;
+  @include media(max-width 1060px){
+    bottom: 1.5em;
+  }
+}
+
+.close-quote {
+  background: url('../images/exampleendquote.gif') no-repeat center center;
+  background-size: contain;
+  bottom: 0.3em;
+}
+
 
 .bio-text {
   float:left;
   margin-top: 0;
   margin-bottom: 0.5em;
-  width: 70%;
+  width: 60%;
   max-width: 800px;
 }
 
-.second-p {
-  margin-bottom: 0;
-}
-
 .third-p {
-  float: left;
-  width: 70%;
-  margin-top: 0.1em;
-  padding-top: 0;
+  margin: 0;
 }
 
 .fourth-p {
-  margin: 0 auto;
   clear: both;
-  width: 100%;
+  padding-top: 1.2em;
+  font-family: "Open Sans", Verdana, Helvetica, Arial, sans-serif;
   text-align: center;
+  font-size: 1em;
+  font-style: italic;
+  font-wieght: 700;
+  color: $accent-brown;
 }
 
 .tabs {
   float: left;
   margin: 0;
-  padding-right: 5em;
+  padding-left: 2em;
 }
 
 .tabs li:nth-child(2) {
@@ -930,6 +975,8 @@ img {
 /***********************************
     Projects Section
 ***********************************/
+
+$project-height: 480px;
 .neat12 {
   @include span-columns(12);
 }
@@ -942,15 +989,22 @@ img {
   @include span-columns(4);
   position: relative;
   display: inline-block;
-  height: 530px;
+  height: $project-height;
   margin-top: 0.5em;
+  @include media($phone){
+    @include span-columns(12);
+    @include omega();
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .samples-ul li {
   @include span-columns(4);
   position: relative;
   display: inline-block;
-  height: 530px;
+  height: $project-height;
   margin-top: 0.5em;
 }
 
@@ -965,7 +1019,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 530px;
+  height: $project-height;
 }
 
 .icon-bw {
@@ -980,11 +1034,11 @@ img {
   position: absolute;
   top: 1em;
   left: 5%;
-  padding: 1.5em;
+  padding: 1.2em;
   color: $highlight-text-color;
   background-color: rgba(229, 229, 229, 0.8);
   width: 90%;
-  //height: 60%;
+  //height: 95%;
  // font-size: 0.8em;
  // line-height: 1em;
   border-radius: 10px;
@@ -997,27 +1051,46 @@ img {
 }
 
 .overlay-heading {
-  margin: 10px 0;
-  //font-size: 1em;
+  margin: 0.5em;
+  margin-top: 0;
+  font-size: 1.2em;
   text-align: center;
   color: $accent-dark-blue;
+  @include media(max-width 1270px){
+    font-size: 0.9em;
+    line-height: 1.4em;
+  }
 }
 
 .overlay-p-text {
   margin-top: -0.5em;
-  //font-family: cursive;
-  //font-size: 0.8em;
-  //font-weight: 800;
+  //margin-bottom: 0.5em;
   text-align: center;
-  //line-height: 1.2em;
+  line-height: 1.4;
   color: $accent-dark-blue;
+  font-style: italic;
+    @include media(max-width 1270px){
+    font-size: 0.7em;
+    line-height: 1.2em;
+  }
+}
+
+.overlay-desc-text {
+  margin-top: -0.5em;
 }
 
 ul.overlay-desc-text li {
   list-style-type: square;
   list-style-position: outside;
   margin-left: 15%;
+  font-size: 0.8em;
+  line-height: 1.6em;
   color: #441F00;
+    font-style: italic;
+    @include media(max-width 1270px){
+    font-size: 0.7em;
+    line-height: 1.5em;
+  }
 }
 
 .food-icon {
@@ -1062,22 +1135,38 @@ ul.overlay-desc-text li {
 
 .projects-link-wrap {
   position: relative;
+  //width: 100%;
+}
+
+.live-link {
+  float: left;
+  margin-left: 1.5em;
+    @include media(max-width 1060px){
+    float: right;
+    margin-right: 50%;
+    transform: translateX(60px);
+    padding: 0;
+    }
+}
+
+.code-link {
+  float: right;
+  margin-right: 1.5em;
+  @include media(max-width 1060px){
+    float: right;
+    margin-right: 50%;
+    transform: translateX(60px);
+    padding: 0;
+    }
 }
 
 .live-link,
 .code-link {
   margin-top: 1em;
   z-index: 51;
-}
-
-.live-link {
-  float: left;
-  margin-left: 1.5em;
-}
-
-.code-link {
-  float: right;
-  margin-right: 1.5em;
+  @include media(max-width 1060px){
+    margin-top: 0.5em;
+  }
 }
 
 .project-btn {
@@ -1124,11 +1213,11 @@ ul.overlay-desc-text li {
   text-indent:0;
   display:inline-block;
   color:#f5f1d7;
-  font-family:Trebuchet MS;
-  font-size:18px;
+  font-family: "Open Sans Condensed";
+  font-size:20px;
   font-weight:bold;
   font-style:normal;
-  height:25px;
+  height: 44px;
   line-height:25px;
   width:130px;
   text-decoration:none;
@@ -1144,6 +1233,40 @@ ul.overlay-desc-text li {
 .project-btn:active {
   position:relative;
   top:1px;
+}
+
+.contact-btn-wrap {
+  width: 100%;
+  height: 50px;
+}
+
+.email-btn,
+.phone-btn {
+  width: 200px;
+}
+
+.phone-btn {
+  float: right;
+  margin-right: 10%;
+}
+
+.email-btn {
+  float: left;
+  margin-left: 10%;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
 }
 
 /***********************************
