@@ -234,6 +234,49 @@ function textFit(){
 
 $(window).on('resize', textFit);
 
+// Mobile Navigation
+
+$('.menu-img').click(function(e){
+  e.preventDefault();
+  console.log('img got clicked');
+  if($('.main-nav').hasClass('hidden')){
+    $('.main-nav').removeClass('hidden')
+      .addClass('showing')
+      .css("background-color", "rgba(255,255,255,0.8")
+      .animate({
+        "left": "0"
+      }, 'slow');
+  }else {
+    $('.main-nav').removeClass('showing')
+      .addClass('hidden')
+      .animate({
+      "left": "-110px"
+        }, "slow")
+  }
+      });
+
+// $('.menu-img').toggle(function(e){
+//   e.preventDefault();
+//   e.preventPropagation();
+//   console.log('img got clicked');
+//   $('.main-nav').animate({
+//         "left": "0"
+//       }, 'slow');
+//   },
+//     function (){
+//       $('.main-nav').animate({
+//         "left": "-100px"
+//       }, 'slow');
+//     });
+
+
+    // .animate({
+    //   '-webkit-tranform': 'translateX(100px)',
+    //   '-moz-transform': 'translateX(100px)',
+    //   '-o-transform': 'translateX(100px)',
+    //   'transform': 'translateX(100px)'
+    // }, 400, 'easeInOutQuint');
+
 
     $('.js-communicate').hover(function(){
       $(".js-header-overlay, .js-sunflower-info").fadeIn( "slow");

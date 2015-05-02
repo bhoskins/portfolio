@@ -121,59 +121,6 @@ ul, li, a {
   list-style: none;
 }
 
-/*
-h1 {
-  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 500;
-  line-height: 26.3999996185303px;
-}
-h3 {
-  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 500;
-  line-height: 15.3999996185303px;
-}
-p, li, a {
-  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 20px;
-}
-.blockquote {
-  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-  font-size: 21px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 30px;
-}
-pre {
-  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-  font-size: 13px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 18.5714302062988px;
-}
-*/
-
-/*
-p, li {
-  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 20px;
-}
-*/
 
 p, li, a {
   font-family: 'Open-Sans', Verdana, Helvetica, Arial, sans-serif;
@@ -181,6 +128,7 @@ p, li, a {
   line-height: 1.7;
   orphans: 2;
   widows: 2;
+  color: $header-p-color;
 }
 
 h1, h2 {
@@ -276,9 +224,10 @@ blockquote {
 }
 
 
-/*****************************************
+/*************************************
     Header
-*****************************************/
+*************************************/
+
 .main-nav {
   margin: 0;
   padding: 0;
@@ -286,20 +235,62 @@ blockquote {
   line-height: 1;
   font-wieght: 700;
   position: fixed;
-  z-index: 100;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 120;
+  width: 42%;
+  @include media(max-width 980px){
+    position: fixed;
+    top: 0;
+    left: -110px;
+    width: 110px;
+    height: 300px;
+    background-color: transparent;
+  }
+}
+
+.hidden {
+
+}
+
+.showing {
+
+}
+
+.menu-img {
+  display: none;
+  position: relative;
+  left: 110px;
+  cursor: pointer;
+  @include media(max-width 980px){
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .main-nav li {
   display: inline-block;
-  width: 5em;
   padding: 0.5em;
   border-radius: 5px;
-  //background: url('../images/grey_sandbag.png') repeat;
   text-align: center;
+    @include media(max-width 980px){
+    display: block;
+    padding-left: 0.5em;
+    text-align: left;
+  }
+}
+
+.main-nav li:last-child {
+  padding-right: 0;
 }
 
 .main-nav a:hover {
   color: red;
+}
+
+.main-nav a:active {
+  color: #FCFFFF;
 }
 
 
@@ -319,15 +310,8 @@ blockquote {
   padding-top: 0;
   padding-right: 0;
   padding-left: 0;
-  //padding-bottom: $header-padding-bottom-xlarge;
-  //margin: -2em;
   width: 100%;
   height: 100%;
-  /*
-  background-image: url(../images/sunflower-bg-no-sky.png);
-
-  background-image: url('../images/flower-transparent-bg.png');
-  */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -335,8 +319,11 @@ blockquote {
 }
 
 .header-bg {
-  background: url('../images/flower-transparent-bg.png');
+  background: url('../images/sunflower-bg-gradient.png');
   z-index: -1;
+  @include media($phone){
+    background: url('../images/sunflower-bg-gradient-mobile.png') no-repeat center center;
+  }
 }
 
 .live-flower {
@@ -625,10 +612,13 @@ img {
 
 .btn-wrapper {
   position: relative;
-  top: -30px;
   width: 30%;
   margin: 0 auto;
   z-index: 100;
+  @include media($phone){
+    width: 50%;
+    margin-top: 1em;
+  }
 }
 
 .nav-btn {
@@ -638,23 +628,32 @@ img {
   //background-color: #A75600;
 }
 
-.btn-wrapper li:nth-child(2) {
+.btn-wrapper li {
   position: absolute;
-  top: 0;
-  left: 30%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  transform: translateX(-50%);
+}
+
+.btn-wrapper li:first-child {
+  left: 0;
+}
+
+.btn-wrapper li:nth-child(2) {
+  left: 33.333%;
 }
 
 .btn-wrapper li:nth-child(3) {
-  position: absolute;
-  top: 0;
-  right: 30%;
+  left: 66.666%;
 }
 
 .btn-wrapper li:last-child {
   position: absolute;
-  top: 0;
-  right: 0;
+  left: 100%;
 }
+
 
 .github-btn {
   background: url(../images/buttons/0437-github4.png) no-repeat center center;
@@ -667,7 +666,7 @@ img {
 }
 
 .twitter-btn {
-  background: url(../images/buttons/0402-twitter.png) no-repeat center center;
+  background: url(../images/buttons/0404-twitter3.png) no-repeat center center;
   background-size: contain;
 }
 
@@ -684,7 +683,6 @@ img {
 
 .main-content-wrapper {
   @include outer-container;
-  border: $main-content-border;
   border-top: none;
 }
 
@@ -1138,39 +1136,44 @@ ul.overlay-desc-text li {
 }
 
 .projects-link-wrap {
-  position: relative;
-  //width: 100%;
-}
-
-.live-link {
-  float: left;
-  margin-left: 1.5em;
-    @include media(max-width 1060px){
-    float: right;
-    margin-right: 50%;
-    transform: translateX(60px);
-    padding: 0;
-    }
-}
-
-.code-link {
-  float: right;
-  margin-right: 1.5em;
-  @include media(max-width 1060px){
-    float: right;
-    margin-right: 50%;
-    transform: translateX(60px);
-    padding: 0;
-    }
+  //background: lime;
+  position: absolute;
+  bottom: -55px;
+  width: 100%;
+  height: 45px;
+  @include media($phone){
+    @include span-columns(12);
+    @include omega();
+  }
 }
 
 .live-link,
 .code-link {
-  margin-top: 1em;
-  z-index: 51;
-  @include media(max-width 1060px){
-    margin-top: 0.5em;
+  display: inline-block;
+  position: absolute;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 100;
+  color: $accent-brown;
   }
+
+.live-link:hover,
+.code-link:hover {
+  color: $accent-dark-blue;
+  text-decoration: underline;
+}
+
+.live-link:active,
+.code-link:active {
+  color: red;
+}
+
+.live-link {
+  left: 30%;
+}
+
+.code-link {
+  left: 70%;
 }
 
 .project-btn {
@@ -1240,23 +1243,54 @@ ul.overlay-desc-text li {
 }
 
 .contact-btn-wrap {
-  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  width: 70%;
   height: 50px;
+  @include media($phone){
+  width: 100%;
+  padding: 0;
+  }
 }
 
 .email-btn,
 .phone-btn {
+  position: absolute;
   width: 200px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  transform: translateX(-50%);
+  @include media($phone){
+    position: static;
+    display: block;
+    margin: 0 auto;
+    -webkit-transform: translateX(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    transform: translateX(0);
+  }
 }
 
 .phone-btn {
-  float: right;
-  margin-right: 10%;
+  left: 25%;
 }
 
 .email-btn {
-  float: left;
-  margin-left: 10%;
+  left: 75%;
+}
+
+.email-btn,
+.phone-btn {
+  color: $accent-dark-blue;
+  font-size: 1.2em;
+}
+
+.email-btn:hover,
+.phone-btn:hover {
+  color: $accent-green;
 }
 
 .clearfix:before,

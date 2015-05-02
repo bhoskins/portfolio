@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles/main.css">
-
   <title>Beth Hoskins Portfolio</title>
 </head>
 <body class="body">
   <a id="home"></a>
   <div class="header-wrap">
-    <nav class="main-nav">
+    <nav class="main-nav hidden">
+
       <ul>
+        <li>
+          <img src="images/icons/menu-bar.gif" width="25px" class="menu-img js-menu-img"/>
+        </li>
         <li>
           <a href="#top" name="home" class="nav-a home">Home</a>
         </li>
@@ -237,6 +240,17 @@
             </ul>
           </div><!-- .food-icon-info -->
 
+          <div class="projects-link-wrap">
+            <a href="http://bhoskins.github.io/meal-planner" rel="external" target="_blank" class="live-link">
+                Live View
+            </a>
+
+            <a href="https://github.com/bhoskins/meal-planner" rel="external" target="_blank" class="code-link">
+            Code View
+            </a>
+
+          </div><!-- .projects-link-wrap -->
+
         </div> <!-- .neat-sub4 project -->
 
 
@@ -269,6 +283,16 @@
             </ul>
           </div><!-- .food-icon-info -->
 
+          <div class="projects-link-wrap">
+            <a href="http://bhoskins.github.io/surf-and-paddle-exercise/" target="_blank" class="live-link">
+                Live View
+            </a>
+
+            <a href="https://github.com/bhoskins/surf-and-paddle-exercise" rel="external" target="_blank" class="code-link">
+            Code View
+            </a>
+        </div>
+
         </div> <!-- .project neat-sub4 -->
 
         <div class="neat-sub4 neat-last project">
@@ -299,38 +323,17 @@
             </ul>
           </div><!-- .food-icon-info -->
 
+          <div class="projects-link-wrap">
+            <a href="http://bhoskins.github.io/github/" rel="external" target="_blank" class="live-link">
+                Live View
+            </a>
+
+            <a href="https://github.com/bhoskins/github" rel="external" target="_blank" class="code-link">
+            Code View
+            </a>
+        </div>
+
         </div><!-- .neat-sub4 neat-last project-->
-
-
-        <div class="projects-link-wrap neat-sub4">
-          <a href="http://bhoskins.github.io/meal-planner" rel="external" target="_blank" class="project-btn live-link">
-              Live View
-          </a>
-
-          <a href="https://github.com/bhoskins/meal-planner" rel="external" target="_blank" class="project-btn code-link">
-          Code View
-          </a>
-        </div>
-
-        <div class="projects-link-wrap neat-sub4">
-          <a href="http://bhoskins.github.io/surf-and-paddle-exercise/" target="_blank" class="project-btn live-link">
-              Live View
-          </a>
-
-          <a href="https://github.com/bhoskins/surf-and-paddle-exercise" rel="external" target="_blank" class="project-btn code-link">
-          Code View
-          </a>
-        </div>
-
-        <div class="projects-link-wrap neat-sub4">
-          <a href="http://bhoskins.github.io/github/" rel="external" target="_blank" class="project-btn live-link">
-              Live View
-          </a>
-
-          <a href="https://github.com/bhoskins/github" rel="external" target="_blank" class="project-btn code-link">
-          Code View
-          </a>
-        </div>
 
         </div><!-- .projects-wrap -->
 
@@ -385,15 +388,14 @@
 
         </p>
       <div class="contact-btn-wrap">
-        <a href="tel:8642665784" class="phone-btn project-btn"
+        <a href="tel:8642665784" class="phone-btn"
           id="phone">(864) 266-5784</a>
-        <a href="mailto:bhoskins@charter.net" class="email-btn project-btn" id="email">bhoskins@charter.net</a>
+        <a href="mailto:bhoskins@charter.net" class="email-btn" id="email">bhoskins@charter.net</a>
       </div>
 
     </div><!--.bio-wrapper -->
 
-
-    <nav class="nav-social">
+    <div class="nav-social">
 
       <ul class="main-nav btn-wrapper">
         <li class="github-nav nav-btn">
@@ -422,7 +424,7 @@
         </li>
       </ul>
 
-    </nav>
+    </div><!-- .nav-social -->
 
     </div><!-- .contact-wrap -->
 
