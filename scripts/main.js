@@ -264,7 +264,6 @@ $(window).on('resize', textFit);
 
 $('.menu-img').click(function(e){
   e.preventDefault();
-  console.log('img got clicked');
   if($('.main-nav').hasClass('hidden')){
     $('.main-nav').removeClass('hidden')
       .addClass('showing')
@@ -292,10 +291,9 @@ $('.menu-img').click(function(e){
 
 
     $('.js-communicate').hover(function(){
+        if (viewWidth > 768 ) {
       $(".js-header-overlay, .js-sunflower-info").fadeIn( "slow");
-      setTimeout(function(){
-
-      });
+          } else { return; }
     },
     function (){
       $(".js-header-overlay, .js-sunflower-info").fadeOut( "slow");

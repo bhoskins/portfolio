@@ -318,6 +318,9 @@ blockquote {
 .header-bg {
   background: url('../images/sunflower-bg-gradient.png');
   z-index: -1;
+  @include media($tablet){
+    background: url('../images/sunflower-bg-mobile.png') no-repeat center center;
+  }
   @include media($phone){
     background: url('../images/sunflower-bg-mobile.png') no-repeat center center;
   }
@@ -326,6 +329,9 @@ blockquote {
 .live-flower {
   background: url(../images/sunflower-bg-flower-only.png);
   z-index: 30;
+  @include media($tablet){
+    display: none;
+  }
   @include media($phone){
     display: none;
   }
@@ -355,7 +361,10 @@ blockquote {
   height: 95%;
   text-align: right;
   z-index: -10;
-    @include media($phone){
+  @include media($tablet){
+    display: none;
+  }
+  @include media($phone){
     display: none;
   }
 }
@@ -390,7 +399,10 @@ blockquote {
   height: 50%;
   text-align: right;
   z-index: 50;
-    @include media($phone){
+  @include media($tablet){
+    display: none;
+  }
+  @include media($phone){
     display: none;
   }
 }
@@ -401,7 +413,10 @@ blockquote {
   font-family: 'Rancho', cursive;
   font-size: 2em;
   color: RGBA(95, 58, 0, 1);
-    @include media($phone){
+  @include media($tablet){
+    display: none;
+  }
+  @include media($phone){
     display: none;
   }
 }
@@ -410,6 +425,9 @@ blockquote {
   text-align: center;
   margin-bottom: -0.4em;
   padding-right: 3em;
+  @include media($tablet){
+    display: none;
+  }
   @include media($phone){
     display: none;
   }
@@ -418,6 +436,9 @@ blockquote {
 .disk-text,
 .disk2-text {
   padding-right: 0.5em;
+  @include media($tablet){
+    display: none;
+  }
   @include media($phone){
     display: none;
   }
@@ -427,11 +448,17 @@ blockquote {
   margin-top: 0;
   margin-bottom: -0.3em;
   padding-right: 0.8em;
+  @include media($tablet){
+    display: none;
+  }
 }
 
 .disk2-text {
   margin: 0;
   padding-top: 0;
+  @include media($tablet){
+    display: none;
+  }
 }
 
 .left-arrow {
@@ -441,6 +468,9 @@ blockquote {
   height: 120px;
   background: url(../images/left-arrow-dark-brown.gif) no-repeat center center;
   background-size: cover;
+  @include media($tablet){
+    display: none;
+  }
   @include media($phone){
     display: none;
   }
@@ -450,6 +480,9 @@ blockquote {
   text-align: left;
   margin-top: 1em;
   margin-bottom: -0.2em;
+  @include media($tablet){
+    display: none;
+  }
 }
 
 .right-arrow {
@@ -459,6 +492,9 @@ blockquote {
   height: 33px;
   background: url(../images/right-arrow-dark-brown.gif) no-repeat center center;
   background-size: cover;
+  @include media($tablet){
+    display: none;
+  }
   @include media($phone){
     display: none;
   }
@@ -477,7 +513,17 @@ blockquote {
   border-bottom-right-radius: 2em;
   border: 3px solid RGBA(95, 58, 0, 1);
   z-index: 50;
+  @include media($tablet){
+    display: none;
+  }
   @include media($phone){
+    display: none;
+  }
+}
+
+.sunflower-info,
+.js-sunflower-info {
+  @include media($tablet){
     display: none;
   }
 }
@@ -489,22 +535,34 @@ blockquote {
   padding: 0;
   color: RGBA(95, 58, 0, 1);
   text-align: center;
+  @include media($tablet){
+    display: none;
+  }
 }
 
 .sunflower-info-headline {
   font-family: Georgia, sans-serif;
   font-size: 1.1em;
   padding-top: 0.2em;
+  @include media($tablet){
+    display: none;
+  }
 }
 
 .sunflower-subtitle-text {
   font-family: cursive;
   font-size: 1em;
+  @include media($tablet){
+    display: none;
+  }
 }
 
 .sunflower-p {
   font-family: arial, sans-serif;
   font-size: 0.8em;
+  @include media($tablet){
+    display: none;
+  }
 }
 
 /**************************************

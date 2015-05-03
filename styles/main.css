@@ -216,6 +216,9 @@ blockquote {
 .header-bg {
   background: url("../images/sunflower-bg-gradient.png");
   z-index: -1; }
+  @media screen and (max-width: 768px) {
+    .header-bg {
+      background: url("../images/sunflower-bg-mobile.png") no-repeat center center; } }
   @media screen and (max-width: 480px) {
     .header-bg {
       background: url("../images/sunflower-bg-mobile.png") no-repeat center center; } }
@@ -223,6 +226,9 @@ blockquote {
 .live-flower {
   background: url(../images/sunflower-bg-flower-only.png);
   z-index: 30; }
+  @media screen and (max-width: 768px) {
+    .live-flower {
+      display: none; } }
   @media screen and (max-width: 480px) {
     .live-flower {
       display: none; } }
@@ -249,6 +255,9 @@ blockquote {
   height: 95%;
   text-align: right;
   z-index: -10; }
+  @media screen and (max-width: 768px) {
+    .flower-color {
+      display: none; } }
   @media screen and (max-width: 480px) {
     .flower-color {
       display: none; } }
@@ -277,6 +286,9 @@ blockquote {
   height: 50%;
   text-align: right;
   z-index: 50; }
+  @media screen and (max-width: 768px) {
+    .header-overlay {
+      display: none; } }
   @media screen and (max-width: 480px) {
     .header-overlay {
       display: none; } }
@@ -287,6 +299,9 @@ blockquote {
   font-family: 'Rancho', cursive;
   font-size: 2em;
   color: RGBA(95, 58, 0, 1); }
+  @media screen and (max-width: 768px) {
+    .flower-text {
+      display: none; } }
   @media screen and (max-width: 480px) {
     .flower-text {
       display: none; } }
@@ -295,6 +310,9 @@ blockquote {
   text-align: center;
   margin-bottom: -0.4em;
   padding-right: 3em; }
+  @media screen and (max-width: 768px) {
+    .composite-text {
+      display: none; } }
   @media screen and (max-width: 480px) {
     .composite-text {
       display: none; } }
@@ -302,6 +320,10 @@ blockquote {
 .disk-text,
 .disk2-text {
   padding-right: 0.5em; }
+  @media screen and (max-width: 768px) {
+    .disk-text,
+    .disk2-text {
+      display: none; } }
   @media screen and (max-width: 480px) {
     .disk-text,
     .disk2-text {
@@ -311,10 +333,16 @@ blockquote {
   margin-top: 0;
   margin-bottom: -0.3em;
   padding-right: 0.8em; }
+  @media screen and (max-width: 768px) {
+    .disk-text {
+      display: none; } }
 
 .disk2-text {
   margin: 0;
   padding-top: 0; }
+  @media screen and (max-width: 768px) {
+    .disk2-text {
+      display: none; } }
 
 .left-arrow {
   position: absolute;
@@ -323,6 +351,9 @@ blockquote {
   height: 120px;
   background: url(../images/left-arrow-dark-brown.gif) no-repeat center center;
   background-size: cover; }
+  @media screen and (max-width: 768px) {
+    .left-arrow {
+      display: none; } }
   @media screen and (max-width: 480px) {
     .left-arrow {
       display: none; } }
@@ -331,6 +362,9 @@ blockquote {
   text-align: left;
   margin-top: 1em;
   margin-bottom: -0.2em; }
+  @media screen and (max-width: 768px) {
+    .ray-text {
+      display: none; } }
 
 .right-arrow {
   position: absolute;
@@ -339,6 +373,9 @@ blockquote {
   height: 33px;
   background: url(../images/right-arrow-dark-brown.gif) no-repeat center center;
   background-size: cover; }
+  @media screen and (max-width: 768px) {
+    .right-arrow {
+      display: none; } }
   @media screen and (max-width: 480px) {
     .right-arrow {
       display: none; } }
@@ -356,9 +393,17 @@ blockquote {
   border-bottom-right-radius: 2em;
   border: 3px solid RGBA(95, 58, 0, 1);
   z-index: 50; }
+  @media screen and (max-width: 768px) {
+    .sunflower-info {
+      display: none; } }
   @media screen and (max-width: 480px) {
     .sunflower-info {
       display: none; } }
+
+@media screen and (max-width: 768px) {
+  .sunflower-info,
+  .js-sunflower-info {
+    display: none; } }
 
 .sunflower-info-headline,
 .sunflower-subtitle-text,
@@ -367,19 +412,33 @@ blockquote {
   padding: 0;
   color: RGBA(95, 58, 0, 1);
   text-align: center; }
+  @media screen and (max-width: 768px) {
+    .sunflower-info-headline,
+    .sunflower-subtitle-text,
+    .sunflower-p {
+      display: none; } }
 
 .sunflower-info-headline {
   font-family: Georgia, sans-serif;
   font-size: 1.1em;
   padding-top: 0.2em; }
+  @media screen and (max-width: 768px) {
+    .sunflower-info-headline {
+      display: none; } }
 
 .sunflower-subtitle-text {
   font-family: cursive;
   font-size: 1em; }
+  @media screen and (max-width: 768px) {
+    .sunflower-subtitle-text {
+      display: none; } }
 
 .sunflower-p {
   font-family: arial, sans-serif;
   font-size: 0.8em; }
+  @media screen and (max-width: 768px) {
+    .sunflower-p {
+      display: none; } }
 
 /**************************************
     Main Headline
