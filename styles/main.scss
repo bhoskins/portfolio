@@ -13,6 +13,7 @@
 ************************************/
 
 $tablet: new-breakpoint(max-width 768px 8);
+$tablet-landscape: new-breakpoint(max-width 1024px 12);
 
 $phone: new-breakpoint(max-width 480px 8);
 
@@ -57,6 +58,7 @@ $secondary-color: gold;
 $background-color: #E5E5E5;
  //#441F00; //dark brown
 $name-font-color: #441F00;
+$text-color: #441F00;
 // #EB8C00; gold
 $subtitle-color: $name-font-color;
 $header-p-color: #441F00;
@@ -107,11 +109,8 @@ body {
   width: 100%;
   min-height: 100%;
   height: 100%;
-  //background-color: $background-color;
   background: url('../images/wild_flowers.png')repeat;
-  //sand-bg.png, grey_sandbag.png, wild_flowers.png
-  //font: 'Roboto';
-  //font-size: 1.2em;
+
 }
 
 ul, li, a {
@@ -193,6 +192,7 @@ blockquote {
   height: 100%;
   margin: 0 auto;
   padding: 1em;
+  padding-top: 1.5em;
   @include media($phone){
     padding: 0.2em;
   }
@@ -204,6 +204,7 @@ blockquote {
 }
 
 .projects-wrap {
+  min-height: 100%;
   padding-right: 10%;
   padding-left: 10%;
   background: rgba(242, 183, 0, 0.3); //yellow
@@ -215,7 +216,6 @@ blockquote {
 
 .contact-wrap {
   background: rgba(90, 114, 0, 0.3); //green
-  //background: rgba(242, 183, 0, 0.3);
 }
 
 .neat-block {
@@ -250,17 +250,15 @@ blockquote {
 }
 
 .hidden {
-
 }
 
 .showing {
-
 }
 
 .menu-img {
   display: none;
   position: relative;
-  left: 110px;
+  left: 100px;
   cursor: pointer;
   @include media(max-width 980px){
     display: block;
@@ -293,7 +291,6 @@ blockquote {
   color: #FCFFFF;
 }
 
-
 .header-wrap {
   margin: 0 auto;
   display: block;
@@ -322,13 +319,16 @@ blockquote {
   background: url('../images/sunflower-bg-gradient.png');
   z-index: -1;
   @include media($phone){
-    background: url('../images/sunflower-bg-gradient-mobile.png') no-repeat center center;
+    background: url('../images/sunflower-bg-mobile.png') no-repeat center center;
   }
 }
 
 .live-flower {
   background: url(../images/sunflower-bg-flower-only.png);
   z-index: 30;
+  @include media($phone){
+    display: none;
+  }
 }
 
 .header-bg,
@@ -355,6 +355,9 @@ blockquote {
   height: 95%;
   text-align: right;
   z-index: -10;
+    @include media($phone){
+    display: none;
+  }
 }
 
 .grow {
@@ -387,6 +390,9 @@ blockquote {
   height: 50%;
   text-align: right;
   z-index: 50;
+    @include media($phone){
+    display: none;
+  }
 }
 
 .flower-text {
@@ -395,17 +401,26 @@ blockquote {
   font-family: 'Rancho', cursive;
   font-size: 2em;
   color: RGBA(95, 58, 0, 1);
+    @include media($phone){
+    display: none;
+  }
 }
 
 .composite-text {
   text-align: center;
   margin-bottom: -0.4em;
   padding-right: 3em;
+  @include media($phone){
+    display: none;
+  }
 }
 
 .disk-text,
 .disk2-text {
   padding-right: 0.5em;
+  @include media($phone){
+    display: none;
+  }
 }
 
 .disk-text {
@@ -426,6 +441,9 @@ blockquote {
   height: 120px;
   background: url(../images/left-arrow-dark-brown.gif) no-repeat center center;
   background-size: cover;
+  @include media($phone){
+    display: none;
+  }
 }
 
 .ray-text {
@@ -441,6 +459,9 @@ blockquote {
   height: 33px;
   background: url(../images/right-arrow-dark-brown.gif) no-repeat center center;
   background-size: cover;
+  @include media($phone){
+    display: none;
+  }
 }
 
 .sunflower-info {
@@ -456,6 +477,9 @@ blockquote {
   border-bottom-right-radius: 2em;
   border: 3px solid RGBA(95, 58, 0, 1);
   z-index: 50;
+  @include media($phone){
+    display: none;
+  }
 }
 
 .sunflower-info-headline,
@@ -486,6 +510,10 @@ blockquote {
 /**************************************
     Main Headline
 **************************************/
+$name-size-mobile: 4em;
+$subtitle-size-mobile: 2em;
+$title-padding-top-mobile: 0.3em;
+$title-padding-left-mobile: 25px;
 
 .name-text {
   padding-top: $header-text-block-margin;
@@ -495,6 +523,11 @@ blockquote {
   font-family: $name-font-family;
   font-size: $header-name-size;
   color: $name-font-color;
+  @include media($phone){
+    font-size: $name-size-mobile;
+    padding-top: $title-padding-top-mobile;
+    padding-left: $title-padding-left-mobile;
+  }
 }
 
 .header-subtitle {
@@ -504,6 +537,40 @@ blockquote {
   font-size: $header-subtitle-size;
   color: $subtitle-color;
   z-index: 60;
+  @include media($phone){
+    font-size: $subtitle-size-mobile;
+    padding-left: $title-padding-left-mobile;
+  }
+}
+
+.mobile-links {
+  display: none;
+  @include media($phone){
+  display: block;
+  height: 45px;
+  width: 90px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  border: 1px solid $accent-dark-blue;
+  text-align: center;
+  line-height: 45px;
+  font-weight: 700;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: $text-color;
+  }
+}
+
+.mobile-links:hover {
+  color: $accent-dark-blue;
+  text-decoration: underline;
+  background: rgba(252,255,255,0.7);
+}
+
+.email-mobile {
+  @include media($phone){
+    margin-top: 120px;
+  }
 }
 
 .header-text-block {
@@ -525,6 +592,9 @@ blockquote {
   color: $header-p-color;
   width: 50%;
   z-index: 60;
+  @include media($phone){
+    display: none;
+  }
 }
 
 img {
@@ -610,6 +680,13 @@ img {
   zoom: 1;
 }
 
+.nav-social {
+  width: 100%;
+  height: 45px;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+
 .btn-wrapper {
   position: relative;
   width: 30%;
@@ -626,6 +703,10 @@ img {
   height: 45px;
   border-radius: 100%;
   //background-color: #A75600;
+}
+
+.nav-btn:hover {
+  background-color: $accent-brown;
 }
 
 .btn-wrapper li {
@@ -656,22 +737,22 @@ img {
 
 
 .github-btn {
-  background: url(../images/buttons/0437-github4.png) no-repeat center center;
+  background: url(../images/buttons/0437-github4.gif) no-repeat center center;
   background-size: contain;
 }
 
 .linkedin-btn {
-  background: url(../images/buttons/0457-linkedin.png) no-repeat center center;
+  background: url(../images/buttons/0457-linkedin.gif) no-repeat center center;
   background-size: contain;
 }
 
 .twitter-btn {
-  background: url(../images/buttons/0404-twitter3.png) no-repeat center center;
+  background: url(../images/buttons/0404-twitter3.gif) no-repeat center center;
   background-size: contain;
 }
 
 .wordpress-btn {
-  background: url(../images/buttons/0439-wordpress.png) no-repeat center center;
+  background: url(../images/buttons/0439-wordpress.gif) no-repeat center center;
   background-size: contain;
 }
 
@@ -779,20 +860,7 @@ img {
   background-size: 80%;
 }
 
-.jquery-li,
-.sass-li,
-.github-li {
-    @include media($tablet) {
-    @include span-columns(1.5);
-    @include omega();
-  }
-}
-
 .icon-inner {
-  @include media($tablet) {
-    width: 70px;
-    height: 70px;
-  }
   margin: 0 auto;
   width: 100px;
   height: 100px;
@@ -801,6 +869,23 @@ img {
   background-position: center center;
   border: 3px solid $name-font-color;
   border-radius: 10px;
+  @include media($tablet) {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.neat-last {
+  @include omega();
+}
+
+.jquery-li,
+.sass-li,
+.github-li {
+    @include media($tablet) {
+    @include span-columns(1.5);
+    @include omega();
+  }
 }
 
 .skill-icon {
@@ -813,7 +898,12 @@ img {
 .icon-text {
   margin: 0 auto;
   text-align: center;
+  font-size: 1.2em;
+  font-wieght: 700;
   @include media($tablet){
+    font-size: 0.9em;
+  }
+    @include media($phone){
     font-size: 0.8em;
   }
 }
@@ -822,10 +912,6 @@ img {
   @include media($phone){
     overflow: hidden;
   }
-}
-
-.neat-last {
-  @include omega();
 }
 
 .skills-text {
@@ -939,7 +1025,8 @@ img {
 
 .fourth-p {
   clear: both;
-  padding-top: 1.2em;
+  margin: 0;
+  padding: 10px;
   font-family: "Open Sans", Verdana, Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 1em;
@@ -978,7 +1065,9 @@ img {
     Projects Section
 ***********************************/
 
-$project-height: 480px;
+$project-height: 500px;
+$project-height-mobile: 400px;
+$project-padding-bottom-mobile: 100px;
 .neat12 {
   @include span-columns(12);
 }
@@ -993,11 +1082,13 @@ $project-height: 480px;
   display: inline-block;
   height: $project-height;
   margin-top: 0.5em;
-  @include media($phone){
+  @include media($tablet){
     @include span-columns(12);
     @include omega();
+    height: $project-height-mobile;
     width: 95%;
     margin-right: auto;
+    margin-bottom: 3em;
     margin-left: auto;
   }
 }
@@ -1008,6 +1099,9 @@ $project-height: 480px;
   display: inline-block;
   height: $project-height;
   margin-top: 0.5em;
+  @include media($tablet){
+    height: $project-height-mobile;
+  }
 }
 
 .neat-last {
@@ -1022,6 +1116,9 @@ $project-height: 480px;
   left: 0;
   width: 100%;
   height: $project-height;
+    @include media($tablet){
+    height: $project-height-mobile;
+  }
 }
 
 .icon-bw {
@@ -1093,6 +1190,14 @@ ul.overlay-desc-text li {
     font-size: 0.7em;
     line-height: 1.5em;
   }
+  @include media($tablet-landscape){
+    margin-left: 0;
+  }
+  @include media($tablet){
+    font-size: 0.7em;
+    line-height: 1.5em;
+    margin-left: 15%;
+  }
 }
 
 .food-icon {
@@ -1136,44 +1241,109 @@ ul.overlay-desc-text li {
 }
 
 .projects-link-wrap {
-  //background: lime;
   position: absolute;
-  bottom: -55px;
+  bottom: -140px;
   width: 100%;
-  height: 45px;
-  @include media($phone){
-    @include span-columns(12);
-    @include omega();
+  margin-bottom: 0.5em;
+  height: em(100px);
+  @include media($tablet){
+    bottom: -2em;
+    padding: 0;
+    height: 1em;
   }
 }
 
 .live-link,
 .code-link {
-  display: inline-block;
   position: absolute;
-  bottom: 50%;
-  transform: translate(-50%, 50%);
+  width: 6em;
+  background: rgba(255,255,255,0.5);
+  border-radius: 10px;
+  text-align: center;
+  color: $text-color;
+  font-weight: 700;
   z-index: 100;
-  color: $accent-brown;
+
+  @include media($tablet-landscape){
+  position: absolute;
+  margin: 0.5em auto;
+  padding: 0;
+  width: 8em;
+  left: 50%;
   }
+  @include media($tablet){
+    width: 40%;
+    font-size: 0.8em;
+    position: absolute;
+  }
+  @include media($phone){
+    -webkit-transform: translateX(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    transform: translateX(0);
+  }
+  }
+
+.live-link {
+  left: 0.5em;
+  @include media($tablet-landscape){
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translateX(-50%);
+  }
+  @include media($tablet){
+    left: 0.5em;
+    -webkit-transform: translateX(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    transform: translateX(0);
+  }
+  @include media($phone){
+    left: 0.5em;
+  }
+}
+
+.code-link {
+  right: 0.5em;
+  padding-bottom: 0.1em;
+  @include media($tablet-landscape){
+    top: 40px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translateX(-50%);
+  }
+  @include media($tablet){
+    top: 0;
+    right: 0.5em;
+    -webkit-transform: translateX(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    transform: translateX(0);
+  }
+  @include media($phone){
+    top: 0;
+    right: 0.5em;
+  }
+}
 
 .live-link:hover,
 .code-link:hover {
   color: $accent-dark-blue;
   text-decoration: underline;
+  background: RGBA(242, 183, 0, 0.5);
 }
 
 .live-link:active,
 .code-link:active {
   color: red;
-}
-
-.live-link {
-  left: 30%;
-}
-
-.code-link {
-  left: 70%;
 }
 
 .project-btn {
@@ -1245,6 +1415,7 @@ ul.overlay-desc-text li {
 .contact-btn-wrap {
   position: relative;
   margin: 0 auto;
+  padding-bottom: 5px;
   width: 70%;
   height: 50px;
   @include media($phone){

@@ -216,23 +216,49 @@ $(document).ready(function(){
     var availHeight = window.screen.availHeight; // minus menu bars
     var totalHeight = window.screen.height; // total screen real estate
     var height = viewHeight + "px";
-    var bodyHeight = (4 * viewHeight) + "px";
+
+
     var padBot = (((viewHeight) / viewWidth) * 100) + "%";
 
-    $('.body').outerHeight( bodyHeight);
-    $('.header-wrap').css('padding-bottom', padBot);
-    $('.skillSet-wrap, .projects-wrap, .contact-wrap').height(height);
 
 
-function textFit(){
-  var nameWidth = $('.name-text').width();
-  var nameWRatio = nameWidth / viewWidth  ;
-  // Starting size 5em for name and 2.5em for subtitle
-  $('.name-text').css('font-size', (nameWRatio * 5) + 'em');
-  $('.header-subtitle').css('font-size', (nameWRatio * 2.5) + 'em');
-}
+      if(viewWidth > 768){
+        var bodyHeight = (4 * viewHeight) + "px";
+        var bodyHeightMobile = (6 * viewHeight) + "px";
+        $('.body').outerHeight( bodyHeight);
+        $('.header-wrap').css('padding-bottom', padBot);
+        $('.skillSet-wrap, .projects-wrap, .contact-wrap').height(height);
+      } else {
+        $('.body').outerHeight( bodyHeightMobile);
+        $('.header-wrap').css('padding-bottom', padBot);
+        $('.skillSet-wrap, .contact-wrap').height(height);
+        $('.projects-wrap').height( 3 * height);
+        //$('.name-text').css('font-size', "20px");
+      }
+
+
+    function textFit(){
+      var viewWidth = $(window).width();
+      console.log('viewWidth ' + viewWidth);
+      var viewHeight = $(window).height();
+      var nameWidth = $('.name-text').width();
+      console.log('nameWidth is: ' + nameWidth);
+      var nameWRatio = nameWidth / viewWidth  ;
+      var nameHeight = $('.name-text').height();
+      var nameHRatio = nameHeight / viewHeight;
+      // Starting size 5em for name and 2.5em for subtitle
+      if (viewWidth >= viewHeight){
+        console.log('landscape');
+      $('.name-text').css('font-size', (nameWRatio * 5) + 'em');
+      $('.header-subtitle').css('font-size', (nameWRatio * 2.5) + 'em');
+      console.log('name font size: ' + (nameWRatio * 5));
+    } else {
+      console.log("its portrait sized");
+    }
+    }
 
 $(window).on('resize', textFit);
+//$(window).resize(textFit);
 
 // Mobile Navigation
 
@@ -245,29 +271,16 @@ $('.menu-img').click(function(e){
       .css("background-color", "rgba(255,255,255,0.8")
       .animate({
         "left": "0"
-      }, 'slow');
+      }, 'easeInOutQuint');
   }else {
     $('.main-nav').removeClass('showing')
       .addClass('hidden')
       .animate({
       "left": "-110px"
-        }, "slow")
+        }, "easeInOutQuint")
   }
       });
 
-// $('.menu-img').toggle(function(e){
-//   e.preventDefault();
-//   e.preventPropagation();
-//   console.log('img got clicked');
-//   $('.main-nav').animate({
-//         "left": "0"
-//       }, 'slow');
-//   },
-//     function (){
-//       $('.main-nav').animate({
-//         "left": "-100px"
-//       }, 'slow');
-//     });
 
 
     // .animate({
@@ -347,6 +360,13 @@ $('.menu-img').click(function(e){
    });
 
 
+// Hover effect on projects (not on tablet-portrait or phone)
+
+    if (viewWidth <= 768 ){
+      $('.js-meal-overlay-desc-text, .js-surf-overlay-desc-text, .js-github-overlay-desc-text').removeClass('invisible');
+    }
+
+    if (viewWidth > 768){
     $('.js-food-toggle-cover').hover(function(){
       //$('.js-food-icon').fadeOut( "fast");
       $('.js-food-toggle-cover').css( 'box-shadow',
@@ -360,15 +380,13 @@ $('.menu-img').click(function(e){
 
     });
 
-
     $('.js-surf-toggle-cover').hover(function(){
       //$('.js-surf-icon').fadeOut( "fast");
-      $('.js-surf-toggle-cover').css( 'box-shadow',
-        '0px 0px 50px 11px #ffaa00' );
-      $('.js-surf-overlay-desc-text').slideDown('slow');
-    },
+        $('.js-surf-toggle-cover').css( 'box-shadow',
+          '0px 0px 50px 11px #ffaa00' );
+        $('.js-surf-overlay-desc-text').slideDown('slow');
+      },
       function(){
-      // $('.js-surf-icon').fadeIn( "fast" );
         $('.js-surf-toggle-cover').css( 'box-shadow',
           'none' );
         $('.js-surf-overlay-desc-text').slideUp('slow');
@@ -387,6 +405,10 @@ $('.menu-img').click(function(e){
       'none' );
       $('.js-github-overlay-desc-text').slideUp('slow');
     });
+
+    } else {
+        return;
+      }
 
 
 
