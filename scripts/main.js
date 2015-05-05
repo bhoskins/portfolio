@@ -245,15 +245,17 @@ $(document).ready(function(){
       console.log('nameWidth is: ' + nameWidth);
       var nameWRatio = nameWidth / viewWidth  ;
       var nameHeight = $('.name-text').height();
-      var nameHRatio = nameHeight / viewHeight;
+      var nameWidthRatioLandscape = viewWidth / 1300;
+      var nameWidthRatioPortrait = viewWidth / 400 ;
       // Starting size 5em for name and 2.5em for subtitle
       if (viewWidth >= viewHeight){
         console.log('landscape');
-      $('.name-text').css('font-size', (nameWRatio * 5) + 'em');
-      $('.header-subtitle').css('font-size', (nameWRatio * 2.5) + 'em');
-      console.log('name font size: ' + (nameWRatio * 5));
+      $('.name-text').css('font-size', ( 5 * nameWidthRatioLandscape) + 'em');
+      $('.header-subtitle').css('font-size', ( 2.5 * nameWidthRatioLandscape) + 'em');
     } else {
       console.log("its portrait sized");
+      $('.name-text').css('font-size', ( 3.2 * nameWidthRatioPortrait) + 'em');
+      $('.header-subtitle').css('font-size', ( 1.8 * nameWidthRatioPortrait) + 'em');
     }
     }
 

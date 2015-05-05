@@ -142,15 +142,16 @@ blockquote {
 *************************************/
 .main-nav {
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
   font-size: 1.2em;
   line-height: 1;
   font-wieght: 700;
   position: fixed;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  z-index: 120;
-  width: 42%; }
+  border-bottom-right-radius: 10px;
+  border: 1px solid RGBA(2, 115, 215, 1);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #441F00;
+  z-index: 120; }
   @media screen and (max-width: 980px) {
     .main-nav {
       position: fixed;
@@ -308,6 +309,7 @@ blockquote {
 
 .composite-text {
   text-align: center;
+  margin-top: 0.5em;
   margin-bottom: -0.4em;
   padding-right: 3em; }
   @media screen and (max-width: 768px) {
@@ -452,9 +454,13 @@ blockquote {
   color: #441F00; }
   @media screen and (max-width: 480px) {
     .name-text {
-      font-size: 4em;
+      font-size: 3.2em;
       padding-top: 0.3em;
-      padding-left: 25px; } }
+      padding-left: 25px;
+      padding-right: 50px; } }
+  @media screen and (max-width: 768px) {
+    .name-text {
+      padding-right: 50px; } }
 
 .header-subtitle {
   position: relative;
@@ -465,7 +471,7 @@ blockquote {
   z-index: 60; }
   @media screen and (max-width: 480px) {
     .header-subtitle {
-      font-size: 2em;
+      font-size: 1.8em;
       padding-left: 25px; } }
 
 .mobile-links {
@@ -492,7 +498,7 @@ blockquote {
 
 @media screen and (max-width: 480px) {
   .email-mobile {
-    margin-top: 120px; } }
+    margin-top: 50px; } }
 
 .header-text-block {
   position: relative;
@@ -559,10 +565,7 @@ img {
   margin: 0 auto;
   width: 3000px;
   display: block;
-  height: 2em;
-  border: 1px solid #441F00;
-  border-top: none;
-  border-bottom: none; }
+  height: 2em; }
 
 .nav:before,
 .nav:after {
