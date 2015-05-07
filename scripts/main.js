@@ -179,7 +179,6 @@ $('.menu-img').click(function(e){
   if($('.main-nav').hasClass('hidden')){
     $('.main-nav').removeClass('hidden')
       .addClass('showing')
-      .css("background-color", "rgba(255,255,255,0.8")
       .animate({
         "left": "0"
       }, 'easeInOutQuint');
@@ -191,6 +190,8 @@ $('.menu-img').click(function(e){
         }, "easeInOutQuint")
   }
       });
+
+//      .css("background-color", "rgba(255,255,255,0.8")
 
     $('.js-communicate').hover(function(){
         if (viewWidth > 1024 ) {
