@@ -1,5 +1,6 @@
 (function(){
   'use strict';
+
 /*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
  *
@@ -86,91 +87,8 @@ jQuery.extend( jQuery.easing,
   easeInOutQuint: function (x, t, b, c, d) {
     if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
     return c/2*((t-=2)*t*t*t*t + 2) + b;
-  },
-  easeInSine: function (x, t, b, c, d) {
-    return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
-  },
-  easeOutSine: function (x, t, b, c, d) {
-    return c * Math.sin(t/d * (Math.PI/2)) + b;
-  },
-  easeInOutSine: function (x, t, b, c, d) {
-    return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
-  },
-  easeInExpo: function (x, t, b, c, d) {
-    return (t==0) ? b : c * Math.pow(2, 10 * (t/d - 1)) + b;
-  },
-  easeOutExpo: function (x, t, b, c, d) {
-    return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
-  },
-  easeInOutExpo: function (x, t, b, c, d) {
-    if (t==0) return b;
-    if (t==d) return b+c;
-    if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
-    return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
-  },
-  easeInCirc: function (x, t, b, c, d) {
-    return -c * (Math.sqrt(1 - (t/=d)*t) - 1) + b;
-  },
-  easeOutCirc: function (x, t, b, c, d) {
-    return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
-  },
-  easeInOutCirc: function (x, t, b, c, d) {
-    if ((t/=d/2) < 1) return -c/2 * (Math.sqrt(1 - t*t) - 1) + b;
-    return c/2 * (Math.sqrt(1 - (t-=2)*t) + 1) + b;
-  },
-  easeInElastic: function (x, t, b, c, d) {
-    var s=1.70158;var p=0;var a=c;
-    if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
-    if (a < Math.abs(c)) { a=c; var s=p/4; }
-    else var s = p/(2*Math.PI) * Math.asin (c/a);
-    return -(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
-  },
-  easeOutElastic: function (x, t, b, c, d) {
-    var s=1.70158;var p=0;var a=c;
-    if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
-    if (a < Math.abs(c)) { a=c; var s=p/4; }
-    else var s = p/(2*Math.PI) * Math.asin (c/a);
-    return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
-  },
-  easeInOutElastic: function (x, t, b, c, d) {
-    var s=1.70158;var p=0;var a=c;
-    if (t==0) return b;  if ((t/=d/2)==2) return b+c;  if (!p) p=d*(.3*1.5);
-    if (a < Math.abs(c)) { a=c; var s=p/4; }
-    else var s = p/(2*Math.PI) * Math.asin (c/a);
-    if (t < 1) return -.5*(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
-    return a*Math.pow(2,-10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b;
-  },
-  easeInBack: function (x, t, b, c, d, s) {
-    if (s == undefined) s = 1.70158;
-    return c*(t/=d)*t*((s+1)*t - s) + b;
-  },
-  easeOutBack: function (x, t, b, c, d, s) {
-    if (s == undefined) s = 1.70158;
-    return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
-  },
-  easeInOutBack: function (x, t, b, c, d, s) {
-    if (s == undefined) s = 1.70158;
-    if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
-    return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
-  },
-  easeInBounce: function (x, t, b, c, d) {
-    return c - jQuery.easing.easeOutBounce (x, d-t, 0, c, d) + b;
-  },
-  easeOutBounce: function (x, t, b, c, d) {
-    if ((t/=d) < (1/2.75)) {
-      return c*(7.5625*t*t) + b;
-    } else if (t < (2/2.75)) {
-      return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
-    } else if (t < (2.5/2.75)) {
-      return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
-    } else {
-      return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
-    }
-  },
-  easeInOutBounce: function (x, t, b, c, d) {
-    if (t < d/2) return jQuery.easing.easeInBounce (x, t*2, 0, c, d) * .5 + b;
-    return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
   }
+
 });
 
 /*
@@ -216,11 +134,7 @@ $(document).ready(function(){
     var availHeight = window.screen.availHeight; // minus menu bars
     var totalHeight = window.screen.height; // total screen real estate
     var height = viewHeight + "px";
-
-
     var padBot = (((viewHeight) / viewWidth) * 100) + "%";
-
-
 
       if(viewWidth > 768){
         var bodyHeight = (4 * viewHeight) + "px";
@@ -231,36 +145,32 @@ $(document).ready(function(){
       } else {
         $('.body').outerHeight( bodyHeightMobile);
         $('.header-wrap').css('padding-bottom', padBot);
-        $('.skillSet-wrap, .contact-wrap').height(height);
+        $('.skillSet-wrap').height(height);
+        $('.contact-wrap').height('680px');
         $('.projects-wrap').height( 3 * height);
-        //$('.name-text').css('font-size', "20px");
       }
 
 
     function textFit(){
       var viewWidth = $(window).width();
-      console.log('viewWidth ' + viewWidth);
       var viewHeight = $(window).height();
       var nameWidth = $('.name-text').width();
-      console.log('nameWidth is: ' + nameWidth);
       var nameWRatio = nameWidth / viewWidth  ;
       var nameHeight = $('.name-text').height();
       var nameWidthRatioLandscape = viewWidth / 1300;
       var nameWidthRatioPortrait = viewWidth / 400 ;
       // Starting size 5em for name and 2.5em for subtitle
       if (viewWidth >= viewHeight){
-        console.log('landscape');
       $('.name-text').css('font-size', ( 5 * nameWidthRatioLandscape) + 'em');
       $('.header-subtitle').css('font-size', ( 2.5 * nameWidthRatioLandscape) + 'em');
     } else {
-      console.log("its portrait sized");
       $('.name-text').css('font-size', ( 3.2 * nameWidthRatioPortrait) + 'em');
       $('.header-subtitle').css('font-size', ( 1.8 * nameWidthRatioPortrait) + 'em');
     }
     }
 
-$(window).on('resize', textFit);
-//$(window).resize(textFit);
+//$(window).on('resize', textFit);
+$(window).resize(textFit);
 
 // Mobile Navigation
 
@@ -282,19 +192,9 @@ $('.menu-img').click(function(e){
   }
       });
 
-
-
-    // .animate({
-    //   '-webkit-tranform': 'translateX(100px)',
-    //   '-moz-transform': 'translateX(100px)',
-    //   '-o-transform': 'translateX(100px)',
-    //   'transform': 'translateX(100px)'
-    // }, 400, 'easeInOutQuint');
-
-
     $('.js-communicate').hover(function(){
-        if (viewWidth > 768 ) {
-      $(".js-header-overlay, .js-sunflower-info").fadeIn( "slow");
+        if (viewWidth > 1024 ) {
+      $(".js-header-overlay, .js-sunflower-info").fadeIn( 'slow');
           } else { return; }
     },
     function (){
@@ -302,59 +202,53 @@ $('.menu-img').click(function(e){
 
     });
 
-   //  $('.js-inspire').hover(function(){
-   //    console.log('mousein');
-   //    $(".js-live-flower").animate({
-   //        'background-size': '130%'
-   //    }, 1000, function(){
-   //    });
-   //  },
-   //  function (){
-   //    console.log('mouseout');
-   //   $(".js-live-flower").animate({
-   //        'background-size': '100%'
-   //    }, 1000, function(){
-   //  });
-   // });
 
-    $('.js-interact').hover(function(){
-      var totalWidth = $('.js-interact').outerWidth();
-      var width = totalWidth / 12;
-      $('.interact').on( 'mousemove', function(e){
-      $('.js-live-flower').addClass('invisible');
-      var offset = $(this).offset();
-      var x = Math.floor(e.pageX - offset.left);
-      var y = e.pageY - offset.top;
-      if ( x > 0 && x < width) {
-        $('.js-flower-color').css('background-color', 'rgb(255, 255, 255)');
-      } else if ( x >= (width + 1) && x < (2 * width)) {
-        $('.js-flower-color').css('background-color', 'rgb(255, 0, 220)');
-      } else if (x >= (2 * width) && x < (3 * width) ) {
-        $('.js-flower-color').css('background-color', 'rgb(255, 120, 0)');
-      } else if ( x >= (3 * width) && x < (4 * width)) {
-        $('.js-flower-color').css('background-color', 'rgb(128, 255, 0)');
-      } else if ( x >= (4 * width) && x < (5 * width)) {
-        $('.js-flower-color').css('background-color', 'rgb(0, 199, 94)');
-      } else if ( x >= (5 * width) && x < (6 * width)) {
-        $('.js-flower-color').css('background-color', 'rgb(0, 255, 128)');
-      } else if ( x >= (6 * width) && x < (7 * width)) {
-        $('.js-flower-color').css('background-color', 'rgb(0, 255, 255)');
-      } else if ( x >= (7 * width) && x < (8 * width)) {
-        $('.js-flower-color').css('background-color', 'rgb(0, 128, 255)');
-      } else if ( x >= (8 * width) && x < (9 * width)) {
-        $('.js-flower-color').css('background-color', 'rgb(0, 0, 255)');
-      } else if ( x >= (9 * width) && x < (10 * width)) {
-        $('.js-flower-color').css('background-color', 'rgb(128, 0, 255)');
-      } else if ( x >= (10 * width) && x < (11 * width)) {
-        $('.js-flower-color').css('background-color', 'rgb(255, 0, 0)');
-      } else {
-        $('.js-flower-color').css('background-color', 'rgb(2, 124, 219)');
-        $('.js-live-flower').removeClass('invisible');
-      }
-    });
+    $('.js-inspire').hover(function(){
+      $(".js-inspire-flowers").fadeIn(1000, 'easeInOutQuint');
     },
     function (){
-      console.log('mouseout');
+      $(".js-inspire-flowers").fadeOut(1000);
+   });
+
+    $('.js-interact').hover(function(){
+      if (viewWidth > 1024 ) {
+        var totalWidth = $('.js-interact').outerWidth();
+        var width = totalWidth / 12;
+        $('.interact').on( 'mousemove', function(e){
+        $('.js-live-flower').addClass('invisible');
+        var offset = $(this).offset();
+        var x = Math.floor(e.pageX - offset.left);
+        var y = e.pageY - offset.top;
+        if ( x > 0 && x < width) {
+          $('.js-flower-color').css('background-color', 'rgb(255, 255, 255)');
+        } else if ( x >= (width + 1) && x < (2 * width)) {
+          $('.js-flower-color').css('background-color', 'rgb(255, 0, 220)');
+        } else if (x >= (2 * width) && x < (3 * width) ) {
+          $('.js-flower-color').css('background-color', 'rgb(255, 120, 0)');
+        } else if ( x >= (3 * width) && x < (4 * width)) {
+          $('.js-flower-color').css('background-color', 'rgb(128, 255, 0)');
+        } else if ( x >= (4 * width) && x < (5 * width)) {
+          $('.js-flower-color').css('background-color', 'rgb(0, 199, 94)');
+        } else if ( x >= (5 * width) && x < (6 * width)) {
+          $('.js-flower-color').css('background-color', 'rgb(0, 255, 128)');
+        } else if ( x >= (6 * width) && x < (7 * width)) {
+          $('.js-flower-color').css('background-color', 'rgb(0, 255, 255)');
+        } else if ( x >= (7 * width) && x < (8 * width)) {
+          $('.js-flower-color').css('background-color', 'rgb(0, 128, 255)');
+        } else if ( x >= (8 * width) && x < (9 * width)) {
+          $('.js-flower-color').css('background-color', 'rgb(0, 0, 255)');
+        } else if ( x >= (9 * width) && x < (10 * width)) {
+          $('.js-flower-color').css('background-color', 'rgb(128, 0, 255)');
+        } else if ( x >= (10 * width) && x < (11 * width)) {
+          $('.js-flower-color').css('background-color', 'rgb(255, 0, 0)');
+        } else {
+          $('.js-flower-color').css('background-color', 'rgb(2, 124, 219)');
+          $('.js-live-flower').removeClass('invisible');
+        }
+      });
+    } else { return; }
+    },
+    function (){
      $('.js-flower-color').css('background-color', 'rgb(2, 124, 219)');
       $('.js-live-flower').removeClass('invisible');
    });
@@ -409,32 +303,6 @@ $('.menu-img').click(function(e){
     } else {
         return;
       }
-
-
-
-
-/*  Canvas Doodles Below */
-    // var canvas = document.getElementById('sf-canvas');
-    // var context = canvas.getContext('2d');
-    // var x = 80;
-    // var y = 100;
-    // // context.font = '40pt Arial';
-    // context.fillStyle = 'blue';
-    // // context.fillText('Composite Flower', 0, 0);
-
-    // context.beginPath();
-    // context.moveTo(0, 0);
-    // context.lineTo(800, 600);
-    // context.stroke();
-
-    // context.lineWidth = 1;
-    // context.font = '40px Rancho, cursive';
-    // context.fillText('Composite Flower', 10, 50);
-    // context.strokeStyle = 'pink';
-    // context.strokeText('Composite Flower', 10, 50);
-
-    // context.strokeStyle = 'pink';
-    // context.strokeText('Stroking Yeah!', x, y);
 
 // Page Scroll Effect
   var homeOffset = $("#home").offset();

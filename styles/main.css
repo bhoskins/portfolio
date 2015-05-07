@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400|Fredericka+the+Great|Mystery+Quest|Lily+Script+One|Cherry+Swash|Lemon|Lobster|Open+Sans+Condensed:300,700|Open+Sans:700italic,400,700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Rancho|Roboto:500,900italic,300,400|Lily+Script+One|Open+Sans:700italic,400,700);
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9,11 +9,10 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
-/*
-// needs latest Compass, add '@import "compass"' to your scss
-@include filter-gradient(#007db9e8, #0872da, horizontal); // IE6-9
-@include background-image(linear-gradient(left,  rgba(125,185,232,0) 1%,rgba(125,185,232,0.33) 26%,rgba(20,121,219,1) 77%,rgba(8,114,218,1) 83%));
-*/
+@font-face {
+  font-family: Fertigo;
+  src: url("../fonts/fertigo/Fertigo_PRO-webfont.eot");
+  src: url("../fonts/fertigo/Fertigo_PRO-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/fertigo/Fertigo_PRO-webfont.woff2") format("woff2"), url("../fonts/fertigo/Fertigo_PRO-webfont.woff") format("woff"), url("../fonts/fertigo/Fertigo_PRO-webfont.ttf") format("truetype"), url("../fonts/fertigo/Fertigo_PRO-webfont.svg#svgFontName") format("svg"); }
 /***********************************
     Margins and Paddings and Borders
 ************************************/
@@ -39,7 +38,8 @@ body {
   width: 100%;
   min-height: 100%;
   height: 100%;
-  background: url("../images/wild_flowers.png") repeat; }
+  background-image: url(../images/wild_flowers.png);
+  background-repeat: repeat; }
 
 ul, li, a {
   margin: 0;
@@ -89,7 +89,7 @@ blockquote {
   font-size: 1.6em;
   line-height: 1.4;
   font-wieght: 700;
-  color: RGBA(2, 115, 215, 1);
+  color: RGBA(90, 114, 0, 1);
   text-align: center; }
   @media screen and (max-width: 1060px) {
     blockquote {
@@ -142,13 +142,12 @@ blockquote {
 *************************************/
 .main-nav {
   margin: 0;
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 1.2em;
   line-height: 1;
   font-wieght: 700;
   position: fixed;
   border-bottom-right-radius: 10px;
-  border: 1px solid RGBA(2, 115, 215, 1);
   background-color: rgba(255, 255, 255, 0.5);
   color: #441F00;
   z-index: 120; }
@@ -164,7 +163,7 @@ blockquote {
 .menu-img {
   display: none;
   position: relative;
-  left: 100px;
+  left: 90px;
   cursor: pointer; }
   @media screen and (max-width: 980px) {
     .menu-img {
@@ -187,11 +186,14 @@ blockquote {
   padding-right: 0; }
 
 .main-nav a:hover {
+  color: RGBA(242, 183, 0, 1);
   color: red; }
 
+/*
 .main-nav a:active {
-  color: #FCFFFF; }
-
+  color: #FCFFFF;
+}
+*/
 .header-wrap {
   margin: 0 auto;
   display: block;
@@ -246,6 +248,18 @@ blockquote {
   background-position: right center;
   background-size: cover;
   background-repeat: no-repeat; }
+
+.inspire-flowers {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  right: 0;
+  background: url("../images/sunflowers-color.png") no-repeat right center;
+  background-size: cover; }
 
 .flower-color {
   background: RGBA(2, 124, 219, 1);
@@ -362,7 +376,7 @@ blockquote {
 
 .ray-text {
   text-align: left;
-  margin-top: 1em;
+  margin-top: 3em;
   margin-bottom: -0.2em; }
   @media screen and (max-width: 768px) {
     .ray-text {
@@ -389,7 +403,7 @@ blockquote {
   bottom: 30px;
   right: 440px;
   width: 23%;
-  height: 30%;
+  height: 20%;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
@@ -449,9 +463,15 @@ blockquote {
   padding-top: 3%;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Droid Serif, serif";
+  font-family: Fertigo, serif;
   font-size: 5em;
-  color: #441F00; }
+  color: RGBA(140, 92, 0, 1); }
+  @media screen and (max-width: 1024px) {
+    .name-text {
+      font-size: 4em; } }
+  @media screen and (max-width: 768px) {
+    .name-text {
+      font-size: 4em; } }
   @media screen and (max-width: 480px) {
     .name-text {
       font-size: 3.2em;
@@ -467,8 +487,14 @@ blockquote {
   margin: 0;
   font-family: helvetica, sans-serif;
   font-size: 2.5em;
-  color: #441F00;
+  color: RGBA(140, 92, 0, 1);
   z-index: 60; }
+  @media screen and (max-width: 1024px) {
+    .header-subtitle {
+      font-size: 2em; } }
+  @media screen and (max-width: 768px) {
+    .header-subtitle {
+      font-size: 2em; } }
   @media screen and (max-width: 480px) {
     .header-subtitle {
       font-size: 1.8em;
@@ -476,7 +502,7 @@ blockquote {
 
 .mobile-links {
   display: none; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 768px) {
     .mobile-links {
       display: block;
       height: 45px;
@@ -509,12 +535,16 @@ blockquote {
 
 .header-p-text {
   position: relative;
-  margin-top: 0;
+  margin-top: 1.5%;
   margin-left: 10%;
   padding-top: 1em;
   color: #441F00;
   width: 50%;
   z-index: 60; }
+  @media screen and (max-width: 1024px) {
+    .header-p-text {
+      margin-top: 0;
+      font-size: 0.8em; } }
   @media screen and (max-width: 480px) {
     .header-p-text {
       display: none; } }
@@ -545,18 +575,21 @@ img {
 .tagline-text {
   margin-top: 1.6em;
   margin-left: 8%;
-  font-family: "Droid Serif, serif";
+  font-family: Fertigo, serif;
   font-size: 1em;
   color: #D7E098;
   line-height: 1em; }
 
 .content-headline {
   text-align: center;
-  color: #441F00; }
-  @media screen and (max-width: 1060px) {
+  color: RGBA(140, 92, 0, 1); }
+  @media screen and (max-width: 1024px) {
     .content-headline {
       font-size: 1.5em;
       line-height: 1.2; } }
+  @media screen and (max-width: 480px) {
+    .content-headline {
+      padding-top: 10px; } }
 
 /******************************************
     Nav
@@ -600,7 +633,7 @@ img {
   border-radius: 100%; }
 
 .nav-btn:hover {
-  background-color: RGBA(140, 92, 0, 1); }
+  background-color: RGBA(2, 115, 215, 1); }
 
 .btn-wrapper li {
   position: absolute;
@@ -658,7 +691,7 @@ img {
 .skill-comment {
   margin: 0;
   padding: 0;
-  color: #441F00; }
+  color: RGBA(140, 92, 0, 1); }
 
 .neat-block {
   float: left;
@@ -677,7 +710,7 @@ img {
   width: 14.70196%;
   height: 150px;
   margin-bottom: 0.5em;
-  color: #441F00; }
+  color: RGBA(140, 92, 0, 1); }
   .neat-sub3:last-child {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
@@ -688,6 +721,9 @@ img {
       width: 22.316%; }
       .neat-sub3:last-child {
         margin-right: 0; } }
+  @media screen and (max-width: 480px) {
+    .neat-sub3 {
+      height: 100px; } }
 
 .html5 {
   background: url("../images/icons/html5.png") no-repeat bottom center;
@@ -744,7 +780,7 @@ img {
   background-color: white;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 3px solid #441F00;
+  border: 3px solid RGBA(140, 92, 0, 1);
   border-radius: 10px; }
   @media screen and (max-width: 768px) {
     .icon-inner {
@@ -791,7 +827,7 @@ img {
 
 .skills-text {
   text-align: center;
-  color: #441F00; }
+  color: RGBA(140, 92, 0, 1); }
 
 @media screen and (max-width: 768px) {
   .spacer {
@@ -875,6 +911,10 @@ img {
   margin-bottom: 0.5em;
   width: 60%;
   max-width: 800px; }
+  @media screen and (max-width: 1024px) {
+    .bio-text {
+      font-size: 0.8em;
+      line-height: 1.8em; } }
 
 .third-p {
   margin: 0; }
@@ -947,7 +987,7 @@ img {
       margin-right: 3.57866%;
       width: 151.78933%;
       margin-right: 0;
-      height: 400px;
+      height: 325px;
       width: 95%;
       margin-right: auto;
       margin-bottom: 3em;
@@ -968,7 +1008,7 @@ img {
     margin-right: 0; }
   @media screen and (max-width: 768px) {
     .samples-ul li {
-      height: 400px; } }
+      height: 325px; } }
 
 .neat-last {
   margin-right: 0; }
@@ -985,7 +1025,7 @@ img {
     .sample-icon,
     .icon-bw,
     .toggle-cover {
-      height: 400px; } }
+      height: 325px; } }
 
 .icon-bw {
   z-index: 1; }
@@ -1077,7 +1117,7 @@ ul.overlay-desc-text li {
   background-size: cover; }
 
 .github-icon {
-  background: url("../images/github-icon.png") no-repeat;
+  background: url("../images/github-cover.png") no-repeat;
   background-size: cover; }
 
 .github-icon-bw {
@@ -1186,69 +1226,6 @@ ul.overlay-desc-text li {
 .code-link:active {
   color: red; }
 
-.project-btn {
-  border: solid 0px #000000;
-  border-radius: 5px;
-  moz-border-radius: 5px;
-  -webkit-box-shadow: 0px 3px 6px #5c5c5c;
-  -moz-box-shadow: 0px 3px 6px #5c5c5c;
-  box-shadow: 0px 3px 6px #5c5c5c;
-  font-size: 20px;
-  color: #ffffff;
-  padding: 1px 17px;
-  background: #49ccfc;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #49ccfc), color-stop(100%, #0273d7));
-  background: -moz-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
-  background: -webkit-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
-  background: -o-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
-  background: -ms-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
-  background: linear-gradient(top, #49ccfc 0%, #0273d7 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49ccfc', endColorstr='#0273d7',GradientType=0 ); }
-
-.project-btn {
-  -webkit-box-shadow: 0px 3px 6px #5c5c5c;
-  -moz-box-shadow: 0px 3px 6px #5c5c5c;
-  box-shadow: 0px 3px 6px #5c5c5c;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e08e00), color-stop(1, #784c00));
-  background: -moz-linear-gradient(center top, #e08e00 5%, #784c00 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e08e00', endColorstr='#784c00');
-  background-color: #e08e00;
-  -webkit-border-top-left-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -moz-border-radius-topright: 5px;
-  border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-bottom-left-radius: 5px;
-  text-indent: 0;
-  display: inline-block;
-  color: #f5f1d7;
-  font-family: "Open Sans Condensed";
-  font-size: 20px;
-  font-weight: bold;
-  font-style: normal;
-  height: 44px;
-  line-height: 25px;
-  width: 130px;
-  text-decoration: none;
-  text-align: center;
-  text-shadow: 1px 1px 0px #664203; }
-
-.project-btn:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #784c00), color-stop(1, #e08e00));
-  background: -moz-linear-gradient(center top, #784c00 5%, #e08e00 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#784c00', endColorstr='#e08e00');
-  background-color: #784c00; }
-
-.project-btn:active {
-  position: relative;
-  top: 1px; }
-
 .contact-btn-wrap {
   position: relative;
   margin: 0 auto;
@@ -1289,12 +1266,12 @@ ul.overlay-desc-text li {
 
 .email-btn,
 .phone-btn {
-  color: RGBA(2, 115, 215, 1);
+  color: RGBA(90, 114, 0, 1);
   font-size: 1.2em; }
 
 .email-btn:hover,
 .phone-btn:hover {
-  color: RGBA(90, 114, 0, 1); }
+  color: RGBA(2, 115, 215, 1); }
 
 .clearfix:before,
 .clearfix:after {

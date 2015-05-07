@@ -1,12 +1,16 @@
 @import 'bourbon/bourbon';
 @import 'neat/neat';
-//@import 'compass';
 
-/*
-// needs latest Compass, add '@import "compass"' to your scss
-@include filter-gradient(#007db9e8, #0872da, horizontal); // IE6-9
-@include background-image(linear-gradient(left,  rgba(125,185,232,0) 1%,rgba(125,185,232,0.33) 26%,rgba(20,121,219,1) 77%,rgba(8,114,218,1) 83%));
-*/
+
+@font-face {
+  font-family: Fertigo;
+  src: url('../fonts/fertigo/Fertigo_PRO-webfont.eot');
+  src: url('../fonts/fertigo/Fertigo_PRO-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/fertigo/Fertigo_PRO-webfont.woff2') format('woff2'),
+       url('../fonts/fertigo/Fertigo_PRO-webfont.woff') format('woff'),
+       url('../fonts/fertigo/Fertigo_PRO-webfont.ttf')  format('truetype'),
+       url('../fonts/fertigo/Fertigo_PRO-webfont.svg#svgFontName') format('svg');
+}
 
 /***********************************
     Margins and Paddings and Borders
@@ -57,7 +61,9 @@ $secondary-color: gold;
 
 $background-color: #E5E5E5;
  //#441F00; //dark brown
-$name-font-color: #441F00;
+$name-font-color: $accent-brown;
+//$accent-green;
+//#441F00;
 $text-color: #441F00;
 // #EB8C00; gold
 $subtitle-color: $name-font-color;
@@ -73,19 +79,24 @@ $tagline-color: #D7E098; //flower yellow
     Fonts
 ***********************************/
 // font-family: 'Abril Fatface', cursive;
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Abril+Fatface|Rancho|Roboto:500,900italic,300,400|Fredericka+the+Great|Mystery+Quest|Lily+Script+One|Cherry+Swash|Lemon|Lobster|Open+Sans+Condensed:300,700|Open+Sans:700italic,400,700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Rancho|Roboto:500,900italic,300,400|Lily+Script+One|Open+Sans:700italic,400,700);
 // 'Droid Serif', serif;
 // 'Abril Fatface', cursive;
 // 'Rancho', cursive;
 
 
 $body-font: 'Roboto', sans-serif;
-$name-font-family: 'Droid Serif, serif';
-$header-p-font-family: 'Open Sans', Verdana, Helvetica, Arial, sans-serif;
+$name-font-family: Fertigo, serif;
+$header-p-font-family: 'Open Sans', Verdana, Helvetica, Arial,
+sans-serif;
 $tagline-font-family: $name-font-family;
 
 $header-name-size: 5em; //4
 $header-subtitle-size: 2.5em; //2.2
+$name-size-tablet: 4em;
+$subtitle-size-tablet: 2em;
+$name-size-tablet-landscape: 4.5em;
+$subtitle-size-tablet-landscape: 2em;
 
 $header-p-font-size: 1em;
 
@@ -109,8 +120,9 @@ body {
   width: 100%;
   min-height: 100%;
   height: 100%;
-  background: url('../images/wild_flowers.png')repeat;
-
+  //background-color: rgba(90, 114, 0, 0.3);
+  background-image: url(../images/wild_flowers.png);
+  background-repeat: repeat;
 }
 
 ul, li, a {
@@ -170,7 +182,7 @@ blockquote {
   font-size: 1.6em;
   line-height: 1.4;
   font-wieght: 700;
-  color: $accent-dark-blue;
+  color: $accent-green;
   text-align: center;
   @include media(max-width 1060px){
     font-size: 1.2em;
@@ -230,14 +242,14 @@ blockquote {
 
 .main-nav {
   margin: 0;
-  padding: 0 20px;
+  padding: 0 10px;
   font-size: 1.2em;
   line-height: 1;
   font-wieght: 700;
   position: fixed;
   //border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border: 1px solid $accent-dark-blue;
+  //border: 1px solid $accent-dark-blue;
   background-color: rgba(255, 255, 255, 0.5);
   color: $text-color;
   z-index: 120;
@@ -250,8 +262,8 @@ blockquote {
     width: 110px;
     height: 300px;
     background-color: transparent;
-
   }
+
 }
 
 .hidden {
@@ -263,7 +275,7 @@ blockquote {
 .menu-img {
   display: none;
   position: relative;
-  left: 100px;
+  left: 90px;
   cursor: pointer;
   @include media(max-width 980px){
     display: block;
@@ -289,13 +301,16 @@ blockquote {
 }
 
 .main-nav a:hover {
-  //color: $accent-dark-blue;
+  color: $accent-yellow;
+  //#FCFFFF;
   color: red;
 }
 
+/*
 .main-nav a:active {
   color: #FCFFFF;
 }
+*/
 
 .header-wrap {
   margin: 0 auto;
@@ -355,6 +370,19 @@ blockquote {
   background-position: right center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.inspire-flowers {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  right: 0;
+  background: url('../images/sunflowers-color.png') no-repeat right center;
+  background-size: cover;
 }
 
 .flower-color {
@@ -485,7 +513,7 @@ blockquote {
 
 .ray-text {
   text-align: left;
-  margin-top: 1em;
+  margin-top: 3em;
   margin-bottom: -0.2em;
   @include media($tablet){
     display: none;
@@ -514,7 +542,7 @@ blockquote {
   bottom: 30px;
   right: 440px;
   width: 23%;
-  height: 30%;
+  height: 20%;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
@@ -582,12 +610,17 @@ $title-padding-left-mobile: 25px;
 
 .name-text {
   padding-top: $header-text-block-margin;
-  //margin-top pushes entire header down, gap
   margin-top: 0;
   margin-bottom: 0;
   font-family: $name-font-family;
   font-size: $header-name-size;
   color: $name-font-color;
+  @include media($tablet-landscape){
+    font-size: $name-size-tablet;
+  }
+  @include media($tablet){
+    font-size: $name-size-tablet;
+  }
   @include media($phone){
     font-size: $name-size-mobile;
     padding-top: $title-padding-top-mobile;
@@ -606,6 +639,12 @@ $title-padding-left-mobile: 25px;
   font-size: $header-subtitle-size;
   color: $subtitle-color;
   z-index: 60;
+  @include media($tablet-landscape) {
+    font-size: $subtitle-size-tablet;
+  }
+  @include media($tablet) {
+    font-size: $subtitle-size-tablet;
+  }
   @include media($phone){
     font-size: $subtitle-size-mobile;
     padding-left: $title-padding-left-mobile;
@@ -614,7 +653,7 @@ $title-padding-left-mobile: 25px;
 
 .mobile-links {
   display: none;
-  @include media($phone){
+  @include media($tablet){
   display: block;
   height: 45px;
   width: 90px;
@@ -652,15 +691,16 @@ $title-padding-left-mobile: 25px;
 
 .header-p-text {
   position: relative;
-  margin-top: $header-p-margin-top;
+  margin-top: 1.5%;
   margin-left: $header-text-margin-left;
   padding-top: $header-p-padding-top;
-  //padding-left: $header-p-padding-left;
-  //font-family: $header-p-font-family;
-  //font-size: $header-p-font-size;
   color: $header-p-color;
   width: 50%;
   z-index: 60;
+  @include media($tablet-landscape){
+    margin-top: 0;
+    font-size: 0.8em;
+  }
   @include media($phone){
     display: none;
   }
@@ -679,7 +719,6 @@ img {
   font-size: 1em;
 
   line-height: 0.8em;
-  //text-transform: all-caps;;
 }
 
 .communicate {
@@ -711,9 +750,12 @@ img {
 .content-headline {
   text-align: center;
   color: $name-font-color;
-  @include media(max-width 1060px){
+  @include media($tablet-landscape){
     font-size: 1.5em;
     line-height: 1.2;
+    }
+  @include media($phone){
+    padding-top: 10px;
   }
 }
 
@@ -721,9 +763,6 @@ img {
     Nav
 ******************************************/
 .nav {
-  //position: absolute;
-  //bottom: -2em;
-  //left: 0;
   margin: 0 auto;
   width: $max-width;
   display: block;
@@ -771,7 +810,7 @@ img {
 }
 
 .nav-btn:hover {
-  background-color: $accent-brown;
+  background-color: $accent-dark-blue;
 }
 
 .btn-wrapper li {
@@ -861,6 +900,9 @@ img {
   color: $name-font-color;
   @include media($tablet){
     @include span-columns(2);
+  }
+  @include media($phone){
+    height: 100px;
   }
 }
 
@@ -1082,6 +1124,10 @@ img {
   margin-bottom: 0.5em;
   width: 60%;
   max-width: 800px;
+  @include media($tablet-landscape) {
+    font-size: 0.8em;
+    line-height: 1.8em;
+  }
 }
 
 .third-p {
@@ -1131,7 +1177,7 @@ img {
 ***********************************/
 
 $project-height: 500px;
-$project-height-mobile: 400px;
+$project-height-mobile: 325px;
 $project-padding-bottom-mobile: 100px;
 .neat12 {
   @include span-columns(12);
@@ -1296,7 +1342,7 @@ ul.overlay-desc-text li {
 }
 
 .github-icon {
-  background: url('../images/github-icon.png') no-repeat;
+  background: url('../images/github-cover.png') no-repeat;
   background-size: cover;
 }
 
@@ -1411,72 +1457,6 @@ ul.overlay-desc-text li {
   color: red;
 }
 
-.project-btn {
-  border : solid 0px #000000;
-  border-radius : 5px;
-  moz-border-radius : 5px;
-  -webkit-box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
-  -moz-box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
-  box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
-  font-size : 20px;
-  color : #ffffff;
-  padding : 1px 17px;
-  background : #49ccfc;
-  background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#49ccfc), color-stop(100%,#0273d7));
-  background : -moz-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
-  background : -webkit-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
-  background : -o-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
-  background : -ms-linear-gradient(top, #49ccfc 0%, #0273d7 100%);
-  background : linear-gradient(top, #49ccfc 0%, #0273d7 100%);
-  filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#49ccfc', endColorstr='#0273d7',GradientType=0 );
-
-}
-
-.project-btn {
-  -webkit-box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
-  -moz-box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
-  box-shadow : 0px 3px 6px rgba(92,92,92,1.0);
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e08e00), color-stop(1, #784c00) );
-  background:-moz-linear-gradient( center top, #e08e00 5%, #784c00 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e08e00', endColorstr='#784c00');
-  background-color:#e08e00;
-  -webkit-border-top-left-radius:5px;
-  -moz-border-radius-topleft:5px;
-  border-top-left-radius:5px;
-  -webkit-border-top-right-radius:5px;
-  -moz-border-radius-topright:5px;
-  border-top-right-radius:5px;
-  -webkit-border-bottom-right-radius:5px;
-  -moz-border-radius-bottomright:5px;
-  border-bottom-right-radius:5px;
-  -webkit-border-bottom-left-radius:5px;
-  -moz-border-radius-bottomleft:5px;
-  border-bottom-left-radius:5px;
-  text-indent:0;
-  display:inline-block;
-  color:#f5f1d7;
-  font-family: "Open Sans Condensed";
-  font-size:20px;
-  font-weight:bold;
-  font-style:normal;
-  height: 44px;
-  line-height:25px;
-  width:130px;
-  text-decoration:none;
-  text-align:center;
-  text-shadow:1px 1px 0px #664203;
-}
-.project-btn:hover {
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #784c00), color-stop(1, #e08e00) );
-  background:-moz-linear-gradient( center top, #784c00 5%, #e08e00 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#784c00', endColorstr='#e08e00');
-  background-color:#784c00;
-}
-.project-btn:active {
-  position:relative;
-  top:1px;
-}
-
 .contact-btn-wrap {
   position: relative;
   margin: 0 auto;
@@ -1520,13 +1500,13 @@ ul.overlay-desc-text li {
 
 .email-btn,
 .phone-btn {
-  color: $accent-dark-blue;
+  color: $accent-green;
   font-size: 1.2em;
 }
 
 .email-btn:hover,
 .phone-btn:hover {
-  color: $accent-green;
+  color: $accent-dark-blue;
 }
 
 .clearfix:before,
