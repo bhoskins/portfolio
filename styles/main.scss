@@ -259,7 +259,7 @@ blockquote {
     left: -110px;
     width: 110px;
     height: 300px;
-    background: white;
+    background-color: white;
   }
 }
 
@@ -298,8 +298,6 @@ blockquote {
 }
 
 .main-nav a:hover {
-  color: $accent-yellow;
-  //#FCFFFF;
   color: red;
 }
 
