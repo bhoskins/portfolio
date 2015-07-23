@@ -125,20 +125,36 @@ jQuery.extend( jQuery.easing,
  */
 
 
+
 $(document).ready(function(){
     console.log('Welcome to my code!');
 
-    var viewWidth = $(window).width();
-    var viewHeight = $(window).height();
+  var pageWidth = window.innerWidth,
+    pageHeight = window.innerHeight;
 
-    var availHeight = window.screen.availHeight; // minus menu bars
-    var totalHeight = window.screen.height; // total screen real estate
-    var height = viewHeight + "px";
-    var padBot = (((viewHeight) / viewWidth) * 100) + "%";
+  function pageFit (){
+    //Cross Browser page viewport size
+    if (typeof pageWidth != "number") {
+    // check for standards mode in IE else its in quirks mode
+      if (document.compatMode == "CSS1Compat") {
+        pageWidth = document.documentElement.clientWidth;
+        pageHeight = document.documentElement.clientHeight;
+      } else {
+        pageWidth = document.body.clientWidth;
+        pageHeight = document.body.clientHeight;
+      }
+    }
 
-      if(viewWidth > 768){
-        var bodyHeight = (4 * viewHeight) + "px";
-        var bodyHeightMobile = (6 * viewHeight) + "px";
+    var height = pageHeight + "px";
+    var padBot = (((pageHeight) / pageWidth) * 100) + "%";
+
+    // console.log('page width: ' + pageWidth);
+    // console.log('page height: ' + pageHeight);
+
+      if(pageWidth > 768){
+        var bodyHeight = (4 * pageHeight) + "px";
+        var bodyHeightMobile = (6 * pageHeight) + "px";
+        //$("html").css('height', bodyHeight);
         $('.body').outerHeight( bodyHeight);
         $('.header-wrap').css('padding-bottom', padBot);
         $('.skillSet-wrap, .projects-wrap, .contact-wrap').height(height);
@@ -149,18 +165,18 @@ $(document).ready(function(){
         $('.contact-wrap').height('680px');
         $('.projects-wrap').height( 3 * height);
       }
-
+  }
 
     function textFit(){
       var viewWidth = $(window).width();
       var viewHeight = $(window).height();
       var nameWidth = $('.name-text').width();
-      var nameWRatio = nameWidth / viewWidth  ;
+      var nameWRatio = nameWidth / pageWidth  ;
       var nameHeight = $('.name-text').height();
-      var nameWidthRatioLandscape = viewWidth / 1300;
-      var nameWidthRatioPortrait = viewWidth / 400 ;
+      var nameWidthRatioLandscape = pageWidth / 1300;
+      var nameWidthRatioPortrait = pageWidth / 400 ;
       // Starting size 5em for name and 2.5em for subtitle
-      if (viewWidth >= viewHeight){
+      if (pageWidth >= pageHeight){
       $('.name-text').css('font-size', ( 5 * nameWidthRatioLandscape) + 'em');
       $('.header-subtitle').css('font-size', ( 2.5 * nameWidthRatioLandscape) + 'em');
     } else {
@@ -169,8 +185,7 @@ $(document).ready(function(){
     }
     }
 
-//$(window).on('resize', textFit);
-$(window).resize(textFit);
+
 
 // Mobile Navigation
 
@@ -194,25 +209,22 @@ $('.menu-img').click(function(e){
 //      .css("background-color", "rgba(255,255,255,0.8")
 
     $('.js-communicate').hover(function(){
-        if (viewWidth > 1024 ) {
+        if (pageWidth > 1024 ) {
       $(".js-header-overlay, .js-sunflower-info").fadeIn( 'slow');
           } else { return; }
     },
     function (){
       $(".js-header-overlay, .js-sunflower-info").fadeOut( "slow");
-
     });
-
-
     $('.js-inspire').hover(function(){
-      $(".js-inspire-flowers").fadeIn(1000, 'easeInOutQuint');
+    $(".js-inspire-flowers").fadeIn(1000, 'easeInOutQuint');
     },
     function (){
       $(".js-inspire-flowers").fadeOut(1000);
    });
 
     $('.js-interact').hover(function(){
-      if (viewWidth > 1024 ) {
+      if (pageWidth > 1024 ) {
         var totalWidth = $('.js-interact').outerWidth();
         var width = totalWidth / 12;
         $('.interact').on( 'mousemove', function(e){
@@ -257,11 +269,11 @@ $('.menu-img').click(function(e){
 
 // Hover effect on projects (not on tablet-portrait or phone)
 
-    if (viewWidth <= 768 ){
+    if (pageWidth <= 768 ){
       $('.js-meal-overlay-desc-text, .js-surf-overlay-desc-text, .js-github-overlay-desc-text').removeClass('invisible');
     }
 
-    if (viewWidth > 768){
+    if (pageWidth > 768){
     $('.js-food-toggle-cover').hover(function(){
       //$('.js-food-icon').fadeOut( "fast");
       $('.js-food-toggle-cover').css( 'box-shadow',
@@ -306,40 +318,23 @@ $('.menu-img').click(function(e){
       }
 
 // Page Scroll Effect
-  var homeOffset = $("#home").offset();
 
-  var skillSetOffset = $('#skillSet').offset();
-  var projectsOffset = $('#projects').offset();
-  var contactOffset = $('#contact').offset();
-
-    $('[href=#top]').click(function(e){
+    $('[href]').click(function(e){
       e.preventDefault();
-      $('html, body').animate({
-        scrollTop: homeOffset.top
-      }, 1000, 'easeInOutQuint')
+      var $anchor = $(this);
+
+      $('html, body').stop().animate({
+        scrollTop: $($anchor.attr('href')).offset().top
+      }, 2000, 'easeInOutQuint');
     });
 
-    $('[href=#skillSet]').click(function(e){
-      e.preventDefault();
-      $('html, body').animate({
-        scrollTop: skillSetOffset.top
-      }, 1000, 'easeInOutQuint')
+    $(window).resize(function(){
+      textFit();
+      pageFit();
+      location.reload();
     });
 
-    $('[href=#projects]').click(function(e){
-      e.preventDefault();
-      $('html, body').animate({
-        scrollTop: projectsOffset.top
-      }, 1000, 'easeInOutQuint')
-    });
-
-    $('[href=#contact]').click(function(e){
-      e.preventDefault();
-      $('html, body').animate({
-        scrollTop: contactOffset.top
-      }, 1000, 'easeInOutQuint')
-    });
-
+    pageFit();
 
   });
 })();

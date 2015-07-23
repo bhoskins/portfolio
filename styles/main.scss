@@ -109,10 +109,12 @@ $header-tagline-size: 1em;
 html {
   margin: 0;
   padding: 0;
+  overflow: -moz-scrollbars-vertical;
+  overflow: scroll;
 }
 
 body {
-  margin-top: -14px;
+  //margin-top: -14px;
   margin-right: auto;
   margin-left: auto;
   padding: 0;
@@ -200,11 +202,12 @@ blockquote {
 .skillSet-wrap,
 .projects-wrap,
 .contact-wrap {
+  position: relative;
   width: 100%;
   height: 100%;
   margin: 0 auto;
   padding: 1em;
-  padding-top: 1.5em;
+  padding-top: 1.8em;
   @include media($phone){
     padding: 0.2em;
   }
@@ -212,6 +215,7 @@ blockquote {
 
 .skillSet-wrap {
   position: relative;
+  margin-top: 0;
   background: rgba(140, 92, 0, 0.3); //brown
 }
 
@@ -232,6 +236,7 @@ blockquote {
 
 .neat-block {
   position: relative;
+  margin-top: 0;
   z-index: 10;
 }
 
@@ -241,12 +246,15 @@ blockquote {
 *************************************/
 
 .main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   margin: 0;
   padding: 0 10px;
   font-size: 1.2em;
   line-height: 1;
   font-wieght: 700;
-  position: fixed;
+
   border-bottom-right-radius: 10px;
   //border: 1px solid $accent-dark-blue;
   background-color: rgba(255, 255, 255, 0.5);
@@ -273,6 +281,7 @@ blockquote {
 .menu-img {
   display: none;
   position: relative;
+  margin-top: 0;
   left: 90px;
   cursor: pointer;
   @include media(max-width 980px){
@@ -388,7 +397,7 @@ blockquote {
   bottom: 0;
   right: 0;
   width: 60%;
-  height: 95%;
+  height: 100%;
   text-align: right;
   z-index: -10;
   @include media($tablet){
@@ -595,6 +604,37 @@ blockquote {
     display: none;
   }
 }
+
+.nav-arrow-down,
+.nav-arrow-up {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  z-index: 5000;
+}
+.nav-arrow-down {
+  bottom: 8%;
+  //1%;
+  border-top: 20px solid rgba(255,255,255,0.5);
+}
+.nav-arrow-up {
+  top: 1%;
+  border-bottom: 20px solid rgba(255,255,255,0.5);
+}
+.nav-arrow-down:hover {
+  border-top: 20px solid rgba(255,255,255,0.7);
+}
+.nav-arrow-up:hover {
+  border-bottom: 20px solid rgba(255,255,255,0.7);
+}
+.home-arrow-down {
+  bottom: 1%;
+}
+
 
 /**************************************
     Main Headline
