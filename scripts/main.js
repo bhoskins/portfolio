@@ -61,29 +61,6 @@ jQuery.extend( jQuery.easing,
   easeInCubic: function (x, t, b, c, d) {
     return c*(t/=d)*t*t + b;
   },
-  easeOutCubic: function (x, t, b, c, d) {
-    return c*((t=t/d-1)*t*t + 1) + b;
-  },
-  easeInOutCubic: function (x, t, b, c, d) {
-    if ((t/=d/2) < 1) return c/2*t*t*t + b;
-    return c/2*((t-=2)*t*t + 2) + b;
-  },
-  easeInQuart: function (x, t, b, c, d) {
-    return c*(t/=d)*t*t*t + b;
-  },
-  easeOutQuart: function (x, t, b, c, d) {
-    return -c * ((t=t/d-1)*t*t*t - 1) + b;
-  },
-  easeInOutQuart: function (x, t, b, c, d) {
-    if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
-    return -c/2 * ((t-=2)*t*t*t - 2) + b;
-  },
-  easeInQuint: function (x, t, b, c, d) {
-    return c*(t/=d)*t*t*t*t + b;
-  },
-  easeOutQuint: function (x, t, b, c, d) {
-    return c*((t=t/d-1)*t*t*t*t + 1) + b;
-  },
   easeInOutQuint: function (x, t, b, c, d) {
     if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
     return c/2*((t-=2)*t*t*t*t + 2) + b;
@@ -92,48 +69,21 @@ jQuery.extend( jQuery.easing,
 });
 
 /*
- *
- * TERMS OF USE - EASING EQUATIONS
- *
- * Open source under the BSD License.
- *
  * Copyright Â© 2001 Robert Penner
  * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
- *
- * Redistributions of source code must retain the above copyright notice, this list of
- * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list
- * of conditions and the following disclaimer in the documentation and/or other materials
- * provided with the distribution.
- *
- * Neither the name of the author nor the names of contributors may be used to endorse
- * or promote products derived from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
- * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
- * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
- * OF THE POSSIBILITY OF SUCH DAMAGE.
- *
  */
-
-
 
 $(document).ready(function(){
     console.log('Welcome to my code!');
 
   var pageWidth = window.innerWidth,
-    pageHeight = window.innerHeight;
+    pageHeight = window.innerHeight,
+    projectHeightMobile = 3 * pageHeight + "px",
+    height = pageHeight + "px",
+    padBot = (((pageHeight) / pageWidth) * 100) + "%",
+    padBotPortrait = (((pageWidth) / pageHeight) * 100) + "%";
 
-  function pageFit (){
-    //Cross Browser page viewport size
+    //Get Cross Browser page viewport size
     if (typeof pageWidth != "number") {
     // check for standards mode in IE else its in quirks mode
       if (document.compatMode == "CSS1Compat") {
@@ -145,31 +95,30 @@ $(document).ready(function(){
       }
     }
 
-    var height = pageHeight + "px";
-    var padBot = (((pageHeight) / pageWidth) * 100) + "%";
+  function pageFit() {
+    if(pageWidth > 768){
+      var bodyHeight = (4 * pageHeight) + "px";
+      var bodyHeightMobile = (6 * pageHeight) + "px";
 
-    // console.log('page width: ' + pageWidth);
-    // console.log('page height: ' + pageHeight);
-
-      if(pageWidth > 768){
-        var bodyHeight = (4 * pageHeight) + "px";
-        var bodyHeightMobile = (6 * pageHeight) + "px";
-        //$("html").css('height', bodyHeight);
-        $('.body').outerHeight( bodyHeight);
-        $('.header-wrap').css('padding-bottom', padBot);
-        $('.skillSet-wrap, .projects-wrap, .contact-wrap').height(height);
-      } else {
-        $('.body').outerHeight( bodyHeightMobile);
-        $('.header-wrap').css('padding-bottom', padBot);
-        $('.skillSet-wrap').height(height);
-        $('.contact-wrap').height('680px');
-        $('.projects-wrap').height( 3 * height);
-      }
+      $("html").css('height', bodyHeight);
+      $('.body').outerHeight( bodyHeight);
+      $('.header-wrap').height(pageHeight);
+      //$('.header-wrap').css('padding-bottom', padBot);
+      $('.skillSet-wrap, .projects-wrap, .contact-wrap').height(height);
+    } else {
+      console.log('page width under 768: ' + pageWidth);
+      console.log('else its mobile');
+      $('.body').outerHeight( bodyHeightMobile);
+      $('.header-wrap').height(pageHeight);
+      $('.header-wrap').css('padding-bottom', padBot);
+      console.log('padBot: ' + padBot);
+      $('.skillSet-wrap').height(height);
+      $('.contact-wrap').height('680px');
+      $('.projects-wrap').height( projectHeightMobile);
+    }
   }
 
     function textFit(){
-      var viewWidth = $(window).width();
-      var viewHeight = $(window).height();
       var nameWidth = $('.name-text').width();
       var nameWRatio = nameWidth / pageWidth  ;
       var nameHeight = $('.name-text').height();
@@ -177,12 +126,12 @@ $(document).ready(function(){
       var nameWidthRatioPortrait = pageWidth / 400 ;
       // Starting size 5em for name and 2.5em for subtitle
       if (pageWidth >= pageHeight){
-      $('.name-text').css('font-size', ( 5 * nameWidthRatioLandscape) + 'em');
-      $('.header-subtitle').css('font-size', ( 2.5 * nameWidthRatioLandscape) + 'em');
-    } else {
-      $('.name-text').css('font-size', ( 3.2 * nameWidthRatioPortrait) + 'em');
-      $('.header-subtitle').css('font-size', ( 1.8 * nameWidthRatioPortrait) + 'em');
-    }
+        $('.name-text').css('font-size', ( 5 * nameWidthRatioLandscape) + 'em');
+        $('.header-subtitle').css('font-size', ( 2.5 * nameWidthRatioLandscape) + 'em');
+      } else {
+        $('.name-text').css('font-size', ( 3.2 * nameWidthRatioPortrait) + 'em');
+        $('.header-subtitle').css('font-size', ( 1.8 * nameWidthRatioPortrait) + 'em');
+      }
     }
 
 
@@ -204,7 +153,7 @@ $('.menu-img').click(function(e){
       "left": "-110px"
         }, "easeInOutQuint")
   }
-      });
+});
 
 //      .css("background-color", "rgba(255,255,255,0.8")
 
@@ -217,7 +166,9 @@ $('.menu-img').click(function(e){
       $(".js-header-overlay, .js-sunflower-info").fadeOut( "slow");
     });
     $('.js-inspire').hover(function(){
-    $(".js-inspire-flowers").fadeIn(1000, 'easeInOutQuint');
+      if (pageWidth > 1024 ) {
+        $(".js-inspire-flowers").fadeIn(1000, 'easeInOutQuint');
+      } else { return; }
     },
     function (){
       $(".js-inspire-flowers").fadeOut(1000);
@@ -314,8 +265,8 @@ $('.menu-img').click(function(e){
     });
 
     } else {
-        return;
-      }
+      return;
+    }
 
 // Page Scroll Effect
 
@@ -325,16 +276,22 @@ $('.menu-img').click(function(e){
 
       $('html, body').stop().animate({
         scrollTop: $($anchor.attr('href')).offset().top
-      }, 2000, 'easeInOutQuint');
+      }, 1500, 'easeInOutQuint');
     });
 
-    $(window).resize(function(){
+    $(window).bind('change', function(){
       textFit();
       pageFit();
-      location.reload();
+      //location.reload();
     });
 
+    textFit();
     pageFit();
+
+
+
+
+
 
   });
 })();
