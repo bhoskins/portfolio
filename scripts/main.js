@@ -270,7 +270,7 @@ $('.menu-img').click(function(e){
 
 // Page Scroll Effect
 
-    $('[href]').click(function(e){
+    $('[href^="#"]').click(function(e){
       e.preventDefault();
       var $anchor = $(this);
 
